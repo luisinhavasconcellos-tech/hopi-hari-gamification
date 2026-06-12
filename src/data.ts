@@ -28,20 +28,20 @@ export const RARITY_META: Record<
   COMUM: {
     label: "Comum",
     stars: 1,
-    color: "#7C8DB5",
-    gradient: "linear-gradient(90deg, #5C6E96, #7C8DB5)",
+    color: "#5C6E96",
+    gradient: "linear-gradient(90deg, #8FA3C8, #B9C6E0)",
   },
   RARA: {
     label: "Rara",
     stars: 2,
-    color: "#FFC72C",
-    gradient: "linear-gradient(90deg, #E8A20C, #FFC72C)",
+    color: "#E8970A",
+    gradient: "linear-gradient(90deg, #F0A800, #FFC72C)",
   },
   LENDÁRIA: {
     label: "Lendária",
     stars: 3,
-    color: "#C77DFF",
-    gradient: "linear-gradient(90deg, #7B2FBE, #C77DFF)",
+    color: "#8E3FD4",
+    gradient: "linear-gradient(90deg, #9B50DC, #C77DFF)",
   },
 };
 
@@ -126,20 +126,20 @@ export const ATTRACTIONS: Attraction[] = [
     artTo: "#0E6E5C",
   },
   {
-    id: "toureiffel",
-    name: "La Tour Eiffel",
+    id: "aeroventuri",
+    name: "Aero Venturi",
     zone: "kaminda",
-    category: "PANORÂMICA",
-    intensity: 5,
-    points: 300,
-    rarity: "COMUM",
-    clue: "Há um pedaço de Paris em Kaminda Mundi. Sobe até onde o parque inteiro cabe nos teus olhos.",
+    category: "RADICAL",
+    intensity: 8,
+    points: 400,
+    rarity: "RARA",
+    clue: "A estrela mais nova de Kaminda Mundi gira a 40 metros do chão. Olha para cima e segue os gritos!",
     story:
-      "Do topo da Tour Eiffel, os primeiros habitantes de Hopi Hari desenharam o mapa do parque. É lá que todas as caças ao tesouro começam.",
+      "O Aero Venturi é o mais novo guardião dos céus de Hopi Hari — 12 braços voadores que giram a 40 metros e veem o parque inteiro.",
     challenge:
-      "Sobe ao topo da Tour Eiffel e encontra as 5 zonas do parque no horizonte.",
-    artFrom: "#6E8BFF",
-    artTo: "#2A2E7A",
+      "Voa no Aero Venturi e tenta avistar o Montezum lá do alto, a 40 metros de altura.",
+    artFrom: "#5EC8F8",
+    artTo: "#1B3FA0",
   },
   {
     id: "giranda",
@@ -196,7 +196,7 @@ export const TRACKS: Track[] = [
       "Para quem quer descobrir os segredos e as lendas escondidas nas 5 zonas.",
     icon: "compass",
     missionTitle: "Decifra as 4 lendas",
-    missionItems: ["vurang", "toureiffel", "montezum", "katapul"],
+    missionItems: ["vurang", "aeroventuri", "montezum", "katapul"],
     reward: "Carta lendária surpresa + 300 Hari Coins",
   },
   {
@@ -207,7 +207,7 @@ export const TRACKS: Track[] = [
       "Para tribos de todas as idades. Diversão garantida do mais pequeno ao maior.",
     icon: "heart",
     missionTitle: "Completa as 4 em equipa",
-    missionItems: ["giranda", "toureiffel", "riobravo", "katapul"],
+    missionItems: ["giranda", "aeroventuri", "riobravo", "katapul"],
     reward: "Foto de família profissional grátis",
   },
 ];

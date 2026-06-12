@@ -40,9 +40,9 @@ export function TreasureHunt() {
                 </span>
                 <span className={`checkpoint-state ${isFound ? "ok" : ""}`}>
                   {isFound ? (
-                    <CheckIcon size={15} color="#1B1B47" />
+                    <CheckIcon size={15} color="#fff" />
                   ) : (
-                    <QrIcon size={17} color="#FFC72C" />
+                    <QrIcon size={17} color="#1C3EB8" />
                   )}
                 </span>
               </button>

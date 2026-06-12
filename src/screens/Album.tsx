@@ -40,7 +40,7 @@ export function Album() {
       )}
       {game.albumRewardClaimed && (
         <div className="album-reward-banner claimed">
-          <StarIcon size={18} color="#FFC72C" />
+          <StarIcon size={18} color="#F0A800" />
           <span>
             <strong>Colecionador Hópi</strong>
             <small>Fast Pass + 20% no merchandising resgatados</small>
@@ -65,7 +65,7 @@ export function Album() {
             </button>
           ) : (
             <div key={a.id} className="album-slot locked">
-              <LockIcon size={22} color="rgba(255,255,255,0.4)" />
+              <LockIcon size={22} color="rgba(28,62,184,0.45)" />
               <span className="locked-name">???</span>
               <small>Encontra o totem {a.name}</small>
             </div>

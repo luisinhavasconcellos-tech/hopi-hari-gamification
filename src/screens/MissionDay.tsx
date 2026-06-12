@@ -47,7 +47,7 @@ export function MissionDay() {
       <div className="mission-body">
         <div className="mission-track-card">
           <span className="mission-track-icon">
-            <Icon size={20} color="#1B1B47" />
+            <Icon size={20} color="#122A80" />
           </span>
           <div>
             <strong>{track?.name ?? "Escolhe um perfil"}</strong>
@@ -87,7 +87,7 @@ export function MissionDay() {
 
         {game.missionRewardClaimed ? (
           <div className="mission-claimed">
-            <CheckIcon size={14} color="#2DBE7E" /> Recompensa resgatada —{" "}
+            <CheckIcon size={14} color="#4A9E33" /> Recompensa resgatada —{" "}
             {track?.reward}
           </div>
         ) : (

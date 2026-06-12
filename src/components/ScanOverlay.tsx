@@ -34,7 +34,7 @@ export function ScanOverlay({
         <span className="scan-corner br" />
         {found ? (
           <div className="scan-success">
-            <CheckIcon size={42} color="#1B1B47" />
+            <CheckIcon size={42} color="#fff" />
           </div>
         ) : (
           <>

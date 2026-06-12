@@ -90,18 +90,20 @@ function Silhouette({ id }: { id: string }) {
           <path d="M70 60q14-8 26 0M210 54q14-8 26 0" stroke={glow} strokeWidth="5" fill="none" strokeLinecap="round" />
         </g>
       );
-    case "toureiffel":
-      // Eiffel tower at dusk
+    case "aeroventuri":
+      // 40m swing tower: mast, rotating hub, flying seats on lines, clouds
       return (
         <g>
-          <circle cx="60" cy="50" r="16" fill={glow} />
-          <path
-            d="M150 8 158 60 178 116 212 158 232 170 68 170 88 158 122 116 142 60Z"
-            fill={ink}
-          />
-          <path d="M118 122h64M134 78h32" stroke={glow} strokeWidth="5" />
-          <path d="M150 122c-6 22-22 38-40 48M150 122c6 22 22 38 40 48" stroke={ink} strokeWidth="8" fill="none" />
-          <path d="M0 170h300v-14c-120-10-180-10-300 0Z" fill={inkSoft} />
+          <path d="M40 52q16-10 30 0M226 36q16-10 30 0" stroke={glow} strokeWidth="6" fill="none" strokeLinecap="round" />
+          <rect x="144" y="26" width="12" height="144" fill={ink} />
+          <ellipse cx="150" cy="26" rx="34" ry="9" fill={ink} />
+          <path d="M120 30 84 74M136 32l-26 56M164 32l26 56M180 30l36 44" stroke={inkSoft} strokeWidth="4" />
+          <circle cx="84" cy="80" r="8" fill={ink} />
+          <circle cx="110" cy="94" r="8" fill={ink} />
+          <circle cx="190" cy="94" r="8" fill={ink} />
+          <circle cx="216" cy="80" r="8" fill={ink} />
+          <path d="M118 170h64l-10-14h-44Z" fill={ink} />
+          <path d="M0 170h300v-12c-120-9-180-9-300 0Z" fill={inkSoft} />
         </g>
       );
     case "giranda":

@@ -29,7 +29,7 @@ export function CardReveal({
       {stage === "story" ? (
         <div className="story-panel pop-in">
           <span className="story-kicker">
-            <SparkIcon size={16} color="#FFC72C" /> Pista desbloqueada
+            <SparkIcon size={16} color="#62BB46" /> Pista desbloqueada
           </span>
           <h2>{attraction.name}</h2>
           <p className="story-text">“{attraction.story}”</p>

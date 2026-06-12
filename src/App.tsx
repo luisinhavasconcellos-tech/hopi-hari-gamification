@@ -4,6 +4,7 @@ import { BottomNav } from "./components/BottomNav";
 import { DemoControls } from "./components/DemoControls";
 import { ScanOverlay } from "./components/ScanOverlay";
 import { CardReveal } from "./components/CardReveal";
+import { HomeIcon } from "./components/Icons";
 import { Welcome } from "./screens/Welcome";
 import { MissionDay } from "./screens/MissionDay";
 import { TreasureHunt } from "./screens/TreasureHunt";
@@ -21,6 +22,13 @@ function Phone() {
           <Welcome />
         ) : (
           <>
+            <button
+              className="home-btn"
+              onClick={game.goHome}
+              aria-label="Voltar ao início"
+            >
+              <HomeIcon size={17} />
+            </button>
             {game.tab === "missao" && <MissionDay />}
             {game.tab === "tesouro" && <TreasureHunt />}
             {game.tab === "album" && <Album />}

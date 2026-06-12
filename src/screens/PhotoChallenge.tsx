@@ -27,7 +27,7 @@ export function PhotoChallenge() {
       <div className={`photo-frame ${stage === "shutter" ? "flash" : ""}`}>
         {stage === "brief" || stage === "shutter" ? (
           <div className="photo-placeholder">
-            <CameraIcon size={42} color="rgba(255,255,255,0.35)" />
+            <CameraIcon size={42} color="rgba(28,62,184,0.4)" />
             <span>O enquadramento aparece aqui</span>
           </div>
         ) : (
@@ -35,7 +35,7 @@ export function PhotoChallenge() {
         )}
         {stage === "submitted" && (
           <div className="photo-badge">
-            <SparkIcon size={14} color="#1B1B47" /> Em destaque nos ecrãs do parque
+            <SparkIcon size={14} color="#122A80" /> Em destaque nos ecrãs do parque
           </div>
         )}
       </div>
@@ -43,7 +43,7 @@ export function PhotoChallenge() {
       <div className="photo-actions">
         {stage === "brief" || stage === "shutter" ? (
           <button className="btn-primary btn-block" onClick={takePhoto}>
-            <CameraIcon size={18} color="#1B1B47" /> Tirar foto
+            <CameraIcon size={18} color="#122A80" /> Tirar foto
           </button>
         ) : stage === "preview" ? (
           <>

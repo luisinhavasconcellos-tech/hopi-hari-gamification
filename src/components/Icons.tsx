@@ -122,6 +122,14 @@ export function SparkIcon({ size = 18, color = "currentColor" }: IconProps) {
   );
 }
 
+export function HomeIcon({ size = 18, color = "currentColor" }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill={color}>
+      <path d="M12 3 2.5 11h2.7v9a1 1 0 0 0 1 1H10v-6h4v6h3.8a1 1 0 0 0 1-1v-9h2.7L12 3Z" />
+    </svg>
+  );
+}
+
 export function PadIcon({ size = 22, color = "currentColor" }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 24" fill={color}>

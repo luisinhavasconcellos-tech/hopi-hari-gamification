@@ -19,7 +19,7 @@ export function RewardModal({
       <Confetti count={90} />
       <div className="reward-panel pop-in">
         <div className="reward-icon">
-          <GiftIcon size={34} color="#1B1B47" />
+          <GiftIcon size={34} color="#122A80" />
         </div>
         <span className="story-kicker">{kicker}</span>
         <h2>{title}</h2>

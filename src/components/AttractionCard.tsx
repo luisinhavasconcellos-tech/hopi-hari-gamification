@@ -16,7 +16,7 @@ export function AttractionCard({ attraction }: { attraction: Attraction }) {
             <StarIcon
               key={i}
               size={13}
-              color={i < rarity.stars ? "#1B1B47" : "rgba(27,27,71,0.25)"}
+              color={i < rarity.stars ? "#122A80" : "rgba(18,42,128,0.25)"}
             />
           ))}
         </span>

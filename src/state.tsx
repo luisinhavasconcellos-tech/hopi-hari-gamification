@@ -37,6 +37,7 @@ interface GameApi extends GameState {
   scanTarget: string | null;
   revealTarget: string | null;
   start: () => void;
+  goHome: () => void;
   chooseTrack: (id: TrackId) => void;
   setTab: (tab: Tab) => void;
   unlock: (id: string) => void;
@@ -81,10 +82,10 @@ const PRESETS: Record<DemoPreset, GameState> = {
     started: true,
     tab: "album",
     track: "conquistador",
-    unlocked: ["katapul", "montezum", "vurang", "riobravo", "toureiffel"],
+    unlocked: ["katapul", "montezum", "vurang", "riobravo", "aeroventuri"],
     coins:
       STARTING_COINS +
-      ["katapul", "montezum", "vurang", "riobravo", "toureiffel"].reduce(
+      ["katapul", "montezum", "vurang", "riobravo", "aeroventuri"].reduce(
         (s, id) => s + ATTRACTION_BY_ID[id].points,
         0
       ) +
@@ -120,6 +121,13 @@ export function GameProvider({ children }: { children: ReactNode }) {
 
   const start = useCallback(() => {
     setState((s) => ({ ...s, started: true }));
+  }, []);
+
+  // Back to the home/welcome page without losing progress.
+  const goHome = useCallback(() => {
+    setScanTarget(null);
+    setRevealTarget(null);
+    setState((s) => ({ ...s, started: false, tab: "missao" }));
   }, []);
 
   const chooseTrack = useCallback((id: TrackId) => {
@@ -204,6 +212,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
       scanTarget,
       revealTarget,
       start,
+      goHome,
       chooseTrack,
       setTab,
       unlock,
@@ -221,6 +230,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
     scanTarget,
     revealTarget,
     start,
+    goHome,
     chooseTrack,
     setTab,
     unlock,

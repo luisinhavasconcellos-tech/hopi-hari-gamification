@@ -1,26 +1,29 @@
 /* ============================================================
    Hopi Hari · Parque em Jogo — demo prototype styles
-   Palette from the strategy deck: navy / yellow #FFC72C / coral
+   Look & feel after hopihari.com.br: royal blue + verde Hopi,
+   yellow pill CTAs, bright white surfaces, rounded bold type.
    ============================================================ */
 
 :root {
-  --navy: #1b1b47;
-  --navy-deep: #12122e;
-  --navy-panel: #232360;
-  --navy-soft: #2c2c6e;
+  --blue: #1c3eb8;
+  --blue-bright: #2b57e0;
+  --blue-deep: #122a80;
+  --ink: #122456;
+  --ink-dim: rgba(18, 36, 86, 0.66);
+  --ink-faint: rgba(18, 36, 86, 0.42);
+  --green: #62bb46;
+  --green-deep: #4a9e33;
   --yellow: #ffc72c;
-  --yellow-deep: #e8a20c;
-  --coral: #f4604c;
-  --orange: #f59b2d;
-  --green: #2dbe7e;
-  --ink: #ffffff;
-  --ink-dim: rgba(255, 255, 255, 0.66);
-  --ink-faint: rgba(255, 255, 255, 0.4);
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, sans-serif;
+  --yellow-deep: #f0a800;
+  --red: #e84b3c;
+  --bg: #f2f6ff;
+  --card: #ffffff;
+  --line: rgba(18, 36, 86, 0.1);
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Trebuchet MS", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   --radius: 18px;
-  --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  --shadow: 0 18px 50px rgba(18, 42, 128, 0.18);
+  --shadow-card: 0 6px 22px rgba(18, 42, 128, 0.1);
 }
 
 * {
@@ -37,7 +40,7 @@ body,
 
 body {
   font-family: var(--sans);
-  background: radial-gradient(1200px 800px at 70% 20%, #1f1f55 0%, var(--navy-deep) 55%);
+  background: linear-gradient(180deg, #e8efff 0%, #f6f9ff 60%, #eaf6e4 100%);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
 }
@@ -53,8 +56,8 @@ button {
 h1,
 h2,
 h3 {
-  font-family: var(--serif);
-  font-weight: 700;
+  font-weight: 900;
+  letter-spacing: -0.015em;
 }
 
 /* ---------- Stage (around the phone) ---------- */
@@ -75,16 +78,17 @@ h3 {
 .stage-kicker {
   display: block;
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.28em;
+  font-weight: 800;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: var(--yellow);
+  color: var(--green-deep);
   margin-bottom: 16px;
 }
 
 .stage-title {
   font-size: 44px;
-  line-height: 1.08;
+  line-height: 1.06;
+  color: var(--blue);
   margin-bottom: 16px;
 }
 
@@ -110,8 +114,8 @@ h3 {
   max-height: calc(100vh - 110px);
   border-radius: 46px;
   padding: 10px;
-  background: linear-gradient(180deg, #3a3a72, #191938);
-  box-shadow: var(--shadow), inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, #2a3354, #131a33);
+  box-shadow: var(--shadow), inset 0 0 0 2px rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
 }
 
@@ -123,7 +127,7 @@ h3 {
   width: 110px;
   height: 24px;
   border-radius: 14px;
-  background: #0b0b1d;
+  background: #0b0f22;
   z-index: 40;
 }
 
@@ -132,7 +136,7 @@ h3 {
   width: 100%;
   height: 100%;
   border-radius: 38px;
-  background: var(--navy);
+  background: var(--bg);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -152,6 +156,30 @@ h3 {
     height: min(800px, calc(100dvh - 90px));
     max-height: none;
   }
+}
+
+/* ---------- Home button ---------- */
+
+.home-btn {
+  position: absolute;
+  top: 16px;
+  left: 14px;
+  z-index: 35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--blue);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--line);
+  transition: transform 0.15s;
+}
+
+.home-btn:active {
+  transform: scale(0.92);
 }
 
 /* ---------- Generic screen scaffolding ---------- */
@@ -177,16 +205,17 @@ h3 {
 .screen-kicker {
   display: block;
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.26em;
+  font-weight: 800;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--yellow);
+  color: var(--green-deep);
   margin-bottom: 8px;
 }
 
 .screen-header h1 {
   font-size: 26px;
-  line-height: 1.15;
+  line-height: 1.12;
+  color: var(--blue);
 }
 
 .screen-sub {
@@ -204,12 +233,12 @@ h3 {
   justify-content: center;
   gap: 8px;
   background: linear-gradient(180deg, var(--yellow), var(--yellow-deep));
-  color: var(--navy);
-  font-weight: 800;
+  color: var(--blue-deep);
+  font-weight: 900;
   font-size: 15px;
   padding: 15px 26px;
   border-radius: 999px;
-  box-shadow: 0 8px 24px rgba(255, 199, 44, 0.35);
+  box-shadow: 0 8px 22px rgba(240, 168, 0, 0.4);
   transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s;
 }
 
@@ -218,7 +247,7 @@ h3 {
 }
 
 .btn-primary:disabled {
-  opacity: 0.35;
+  opacity: 0.4;
   box-shadow: none;
   cursor: default;
 }
@@ -228,23 +257,25 @@ h3 {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  color: var(--ink-dim);
-  font-weight: 700;
+  color: inherit;
+  font-weight: 800;
   font-size: 14px;
   padding: 13px 22px;
   border-radius: 999px;
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border: 2px solid currentColor;
+  opacity: 0.85;
 }
 
 .btn-block {
   width: 100%;
 }
 
-/* ---------- Welcome ---------- */
+/* ---------- Welcome (blue hero, like the site) ---------- */
 
 .welcome {
   position: relative;
-  background: var(--navy);
+  background: linear-gradient(165deg, var(--blue-bright) 0%, var(--blue-deep) 90%);
+  color: #fff;
   padding-bottom: 0;
 }
 
@@ -259,15 +290,17 @@ h3 {
   height: 300px;
   right: -130px;
   top: -90px;
-  background: #b05557;
+  background: var(--green);
+  opacity: 0.85;
 }
 
 .welcome-deco.b {
-  width: 200px;
-  height: 200px;
-  right: -60px;
-  top: 170px;
-  background: #a3823c;
+  width: 190px;
+  height: 190px;
+  right: -50px;
+  top: 180px;
+  background: var(--yellow);
+  opacity: 0.9;
 }
 
 .welcome-body {
@@ -282,8 +315,8 @@ h3 {
 
 .welcome-kicker {
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
+  font-weight: 800;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--yellow);
   margin-bottom: 18px;
@@ -291,14 +324,14 @@ h3 {
 
 .welcome-title {
   font-size: 44px;
-  line-height: 1.05;
+  line-height: 1.04;
   margin-bottom: 18px;
 }
 
 .welcome-sub {
   font-size: 14.5px;
   line-height: 1.6;
-  color: var(--ink-dim);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 300px;
 }
 
@@ -311,11 +344,12 @@ h3 {
 
 .welcome-bullets span {
   font-size: 11.5px;
-  font-weight: 700;
+  font-weight: 800;
   padding: 7px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 199, 44, 0.5);
-  color: var(--yellow);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
 }
 
 .welcome-footer {
@@ -324,11 +358,15 @@ h3 {
   z-index: 1;
 }
 
+.welcome-footer .btn-ghost {
+  color: #fff;
+}
+
 .welcome-optout {
   margin-top: 12px;
   text-align: center;
   font-size: 11.5px;
-  color: var(--ink-faint);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .welcome-pad {
@@ -360,11 +398,13 @@ h3 {
   align-items: center;
   gap: 14px;
   text-align: left;
-  background: var(--navy-panel);
-  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  background: #fff;
+  color: var(--ink);
+  border: 2.5px solid transparent;
   border-radius: var(--radius);
-  padding: 16px;
-  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+  padding: 15px;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.15s, transform 0.15s;
 }
 
 .track-card:active {
@@ -372,9 +412,8 @@ h3 {
 }
 
 .track-card.active {
-  border-color: var(--yellow);
-  background: var(--navy-soft);
-  box-shadow: 0 0 0 1px var(--yellow), 0 10px 30px rgba(0, 0, 0, 0.35);
+  border-color: var(--green);
+  box-shadow: 0 10px 30px rgba(74, 158, 51, 0.3);
 }
 
 .track-icon {
@@ -384,13 +423,13 @@ h3 {
   width: 44px;
   height: 44px;
   border-radius: 14px;
-  background: rgba(255, 199, 44, 0.14);
+  background: #e8efff;
   flex-shrink: 0;
   transition: background 0.15s;
 }
 
 .track-card.active .track-icon {
-  background: var(--yellow);
+  background: var(--green);
 }
 
 .track-text {
@@ -401,6 +440,7 @@ h3 {
 
 .track-text strong {
   font-size: 15.5px;
+  color: var(--blue);
 }
 
 .track-text small {
@@ -412,7 +452,8 @@ h3 {
 /* ---------- Missão do Dia ---------- */
 
 .mission-header {
-  background: linear-gradient(120deg, var(--coral) 0%, var(--orange) 100%);
+  background: linear-gradient(120deg, var(--blue-bright) 0%, var(--blue-deep) 100%);
+  color: #fff;
   padding: 54px 22px 22px;
   border-radius: 0 0 26px 26px;
 }
@@ -422,11 +463,12 @@ h3 {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
+  padding-left: 40px; /* clear the home button */
 }
 
 .app-brand {
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.3em;
   text-transform: uppercase;
 }
@@ -436,8 +478,9 @@ h3 {
   align-items: center;
   gap: 6px;
   font-size: 13px;
-  font-weight: 800;
-  background: rgba(27, 27, 71, 0.35);
+  font-weight: 900;
+  background: var(--yellow);
+  color: var(--blue-deep);
   padding: 6px 12px;
   border-radius: 999px;
 }
@@ -457,10 +500,10 @@ h3 {
   display: flex;
   align-items: center;
   gap: 13px;
-  background: var(--navy-panel);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #fff;
   border-radius: var(--radius);
   padding: 14px 16px;
+  box-shadow: var(--shadow-card);
 }
 
 .mission-track-icon {
@@ -477,6 +520,7 @@ h3 {
 .mission-track-card strong {
   display: block;
   font-size: 15.5px;
+  color: var(--blue);
 }
 
 .mission-track-card small {
@@ -489,19 +533,20 @@ h3 {
   justify-content: space-between;
   align-items: baseline;
   font-size: 13px;
+  font-weight: 700;
   color: var(--ink-dim);
   margin-bottom: 8px;
 }
 
 .mission-progress-label strong {
-  color: var(--coral);
+  color: var(--green-deep);
   font-size: 15px;
 }
 
 .progress-bar {
   height: 12px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(18, 36, 86, 0.1);
   overflow: hidden;
 }
 
@@ -513,7 +558,7 @@ h3 {
 .progress-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--coral), var(--orange));
+  background: linear-gradient(90deg, var(--green), #8ed44f);
   transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -528,10 +573,10 @@ h3 {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: var(--navy-panel);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #fff;
   border-radius: 14px;
   padding: 12px 14px;
+  box-shadow: var(--shadow-card);
 }
 
 .check-circle {
@@ -541,7 +586,7 @@ h3 {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(18, 36, 86, 0.1);
   flex-shrink: 0;
   transition: background 0.2s;
 }
@@ -553,17 +598,18 @@ h3 {
 .check-name {
   flex: 1;
   font-size: 14.5px;
-  font-weight: 600;
+  font-weight: 800;
+  color: var(--blue);
 }
 
 .mission-checklist li.done .check-name {
-  color: var(--ink-dim);
+  color: var(--ink-faint);
 }
 
 .check-points {
   font-size: 12.5px;
-  font-weight: 800;
-  color: var(--yellow);
+  font-weight: 900;
+  color: var(--green-deep);
 }
 
 .btn-cta {
@@ -575,16 +621,16 @@ h3 {
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  font-weight: 700;
-  color: var(--green);
-  background: rgba(45, 190, 126, 0.12);
-  border: 1px solid rgba(45, 190, 126, 0.4);
+  font-weight: 800;
+  color: var(--green-deep);
+  background: rgba(98, 187, 70, 0.14);
+  border: 1.5px solid rgba(98, 187, 70, 0.5);
   border-radius: 14px;
   padding: 13px 16px;
 }
 
 .xp-hint {
-  background: rgba(255, 255, 255, 0.05);
+  background: #e8efff;
   border-radius: var(--radius);
   padding: 14px 16px;
   margin-bottom: 8px;
@@ -593,8 +639,8 @@ h3 {
 .xp-hint-title {
   display: block;
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink-faint);
   margin-bottom: 10px;
@@ -605,11 +651,12 @@ h3 {
   grid-template-columns: 1fr auto;
   gap: 7px 12px;
   font-size: 12.5px;
+  font-weight: 600;
   color: var(--ink-dim);
 }
 
 .xp-rows strong {
-  color: var(--yellow);
+  color: var(--blue);
 }
 
 /* ---------- Caça ao Tesouro ---------- */
@@ -618,15 +665,16 @@ h3 {
   margin-top: 14px;
   display: inline-block;
   font-size: 13px;
+  font-weight: 700;
   color: var(--ink-dim);
-  background: var(--navy-panel);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #fff;
+  box-shadow: var(--shadow-card);
   padding: 8px 14px;
   border-radius: 999px;
 }
 
 .hunt-counter strong {
-  color: var(--yellow);
+  color: var(--green-deep);
   font-size: 15px;
 }
 
@@ -644,21 +692,23 @@ h3 {
   align-items: center;
   gap: 12px;
   text-align: left;
-  background: var(--navy-panel);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #fff;
+  border: 2px solid transparent;
   border-radius: var(--radius);
   padding: 14px;
+  box-shadow: var(--shadow-card);
   transition: transform 0.15s, border-color 0.15s;
 }
 
 .checkpoint:not(.found):active {
   transform: scale(0.98);
-  border-color: var(--yellow);
+  border-color: var(--green);
 }
 
 .checkpoint.found {
-  opacity: 0.82;
+  opacity: 0.85;
   cursor: default;
+  background: #f4fbf0;
 }
 
 .zone-dot {
@@ -677,6 +727,7 @@ h3 {
 
 .checkpoint-text strong {
   font-size: 15px;
+  color: var(--blue);
 }
 
 .checkpoint-text small {
@@ -696,7 +747,7 @@ h3 {
   width: 36px;
   height: 36px;
   border-radius: 12px;
-  background: rgba(255, 199, 44, 0.12);
+  background: #e8efff;
   flex-shrink: 0;
 }
 
@@ -712,7 +763,7 @@ h3 {
   gap: 12px;
   margin-top: 14px;
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--ink-dim);
 }
 
@@ -724,19 +775,19 @@ h3 {
   margin: 0 22px 14px;
   text-align: left;
   background: linear-gradient(120deg, var(--yellow), var(--yellow-deep));
-  color: var(--navy);
+  color: var(--blue-deep);
   border-radius: var(--radius);
   padding: 14px 16px;
-  box-shadow: 0 10px 30px rgba(255, 199, 44, 0.35);
+  box-shadow: 0 10px 28px rgba(240, 168, 0, 0.45);
   animation: pulse-glow 1.8s ease-in-out infinite;
 }
 
 .album-reward-banner.claimed {
-  background: var(--navy-panel);
+  background: #fff;
   color: var(--ink);
-  box-shadow: none;
+  box-shadow: var(--shadow-card);
   animation: none;
-  border: 1px solid rgba(255, 199, 44, 0.45);
+  border: 1.5px solid rgba(98, 187, 70, 0.5);
 }
 
 .album-reward-banner span {
@@ -757,10 +808,10 @@ h3 {
 @keyframes pulse-glow {
   0%,
   100% {
-    box-shadow: 0 10px 30px rgba(255, 199, 44, 0.3);
+    box-shadow: 0 10px 26px rgba(240, 168, 0, 0.35);
   }
   50% {
-    box-shadow: 0 10px 42px rgba(255, 199, 44, 0.6);
+    box-shadow: 0 10px 40px rgba(240, 168, 0, 0.65);
   }
 }
 
@@ -777,8 +828,8 @@ h3 {
   flex-direction: column;
   border-radius: 16px;
   overflow: hidden;
-  background: var(--navy-panel);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #fff;
+  box-shadow: var(--shadow-card);
   text-align: left;
   transition: transform 0.15s;
 }
@@ -792,24 +843,23 @@ h3 {
   justify-content: center;
   gap: 6px;
   min-height: 168px;
-  border-style: dashed;
-  border-color: rgba(255, 255, 255, 0.18);
   background:
     repeating-linear-gradient(
       45deg,
-      rgba(255, 255, 255, 0.02) 0 10px,
+      rgba(18, 36, 86, 0.025) 0 10px,
       transparent 10px 20px
     ),
-    var(--navy-panel);
+    #f6f8ff;
+  border: 1.5px dashed rgba(28, 62, 184, 0.3);
+  box-shadow: none;
   cursor: default;
   padding: 12px;
   text-align: center;
 }
 
 .locked-name {
-  font-family: var(--serif);
   font-size: 19px;
-  font-weight: 700;
+  font-weight: 900;
   color: var(--ink-faint);
 }
 
@@ -821,10 +871,10 @@ h3 {
 
 .mini-banner {
   font-size: 9px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.22em;
   text-align: center;
-  color: var(--navy);
+  color: var(--blue-deep);
   padding: 4px 0;
 }
 
@@ -841,12 +891,13 @@ h3 {
 
 .mini-meta strong {
   font-size: 12.5px;
+  color: var(--blue);
 }
 
 .mini-meta small {
   font-size: 10.5px;
-  font-weight: 800;
-  color: var(--yellow);
+  font-weight: 900;
+  color: var(--green-deep);
 }
 
 .album-card-view {
@@ -858,6 +909,10 @@ h3 {
   max-width: 290px;
 }
 
+.album-card-view .btn-ghost {
+  color: #fff;
+}
+
 /* ---------- Collectible card ---------- */
 
 .big-card {
@@ -865,18 +920,18 @@ h3 {
   max-width: 290px;
   border-radius: 20px;
   overflow: hidden;
-  background: linear-gradient(180deg, #2b2b68, #1e1e50);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px rgba(10, 20, 60, 0.45);
 }
 
 .big-card[data-rarity="LENDÁRIA"] {
-  border-color: rgba(199, 125, 255, 0.6);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 36px rgba(155, 80, 220, 0.35);
+  border-color: rgba(155, 80, 220, 0.55);
+  box-shadow: 0 24px 60px rgba(10, 20, 60, 0.45), 0 0 36px rgba(155, 80, 220, 0.4);
 }
 
 .big-card[data-rarity="RARA"] {
-  border-color: rgba(255, 199, 44, 0.5);
+  border-color: rgba(240, 168, 0, 0.6);
 }
 
 .big-card-banner {
@@ -885,9 +940,9 @@ h3 {
   justify-content: space-between;
   padding: 8px 14px;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.3em;
-  color: var(--navy);
+  color: var(--blue-deep);
 }
 
 .big-card-stars {
@@ -920,10 +975,10 @@ h3 {
 }
 
 .card-art-name {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #fff;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
 }
 
@@ -936,7 +991,7 @@ h3 {
 
 .zone-chip {
   font-size: 9.5px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #fff;
@@ -949,7 +1004,7 @@ h3 {
   display: grid;
   grid-template-columns: 1.3fr 0.9fr 0.9fr;
   gap: 10px;
-  background: rgba(0, 0, 0, 0.22);
+  background: #eef3ff;
   border-radius: 12px;
   padding: 11px 12px;
 }
@@ -962,31 +1017,32 @@ h3 {
 
 .stat-label {
   font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.16em;
+  font-weight: 900;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-faint);
 }
 
 .stat-value {
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 900;
+  color: var(--blue);
 }
 
 .stat-value small {
   font-size: 11px;
   color: var(--ink-faint);
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .stat-value.accent {
-  color: var(--yellow);
+  color: var(--green-deep);
 }
 
 .stat-bar {
   height: 5px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(18, 36, 86, 0.12);
   overflow: hidden;
 }
 
@@ -994,12 +1050,12 @@ h3 {
   display: block;
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--coral), var(--yellow));
+  background: linear-gradient(90deg, var(--green), var(--yellow));
 }
 
 .big-card-challenge {
-  background: rgba(255, 199, 44, 0.1);
-  border: 1px solid rgba(255, 199, 44, 0.3);
+  background: rgba(255, 199, 44, 0.16);
+  border: 1.5px solid rgba(240, 168, 0, 0.45);
   border-radius: 12px;
   padding: 11px 12px;
 }
@@ -1007,10 +1063,10 @@ h3 {
 .challenge-label {
   display: block;
   font-size: 9px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--yellow);
+  color: var(--yellow-deep);
   margin-bottom: 5px;
 }
 
@@ -1018,6 +1074,7 @@ h3 {
   font-size: 12px;
   line-height: 1.5;
   color: var(--ink-dim);
+  font-weight: 600;
 }
 
 /* card back */
@@ -1031,11 +1088,11 @@ h3 {
   justify-content: center;
   gap: 18px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 199, 44, 0.4);
+  border: 1px solid rgba(255, 199, 44, 0.5);
   background:
-    radial-gradient(220px 220px at 50% 38%, rgba(255, 199, 44, 0.14), transparent 70%),
-    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0 14px, transparent 14px 28px),
-    linear-gradient(180deg, #26265e, #15153a);
+    radial-gradient(220px 220px at 50% 38%, rgba(255, 199, 44, 0.2), transparent 70%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0 14px, transparent 14px 28px),
+    linear-gradient(180deg, var(--blue-bright), var(--blue-deep));
 }
 
 .card-back-ring {
@@ -1045,22 +1102,21 @@ h3 {
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  border: 2.5px solid var(--yellow);
-  box-shadow: 0 0 0 7px rgba(255, 199, 44, 0.15);
+  border: 3px solid var(--yellow);
+  box-shadow: 0 0 0 7px rgba(255, 199, 44, 0.2);
 }
 
 .card-back-ring span {
-  font-family: var(--serif);
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 900;
   color: var(--yellow);
 }
 
 .card-back-text {
   font-size: 9.5px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.3em;
-  color: var(--ink-faint);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* ---------- Overlays ---------- */
@@ -1074,7 +1130,7 @@ h3 {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: rgba(10, 10, 30, 0.88);
+  background: rgba(10, 18, 50, 0.86);
   backdrop-filter: blur(8px);
   animation: fade-in 0.25s ease;
 }
@@ -1089,8 +1145,8 @@ h3 {
 
 .scan-hint {
   font-size: 14px;
-  font-weight: 700;
-  color: var(--ink-dim);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 26px;
 }
 
@@ -1165,9 +1221,9 @@ h3 {
   gap: 9px;
   margin-top: 26px;
   font-size: 13px;
-  font-weight: 700;
-  color: var(--ink-dim);
-  background: rgba(255, 255, 255, 0.07);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
   padding: 9px 16px;
   border-radius: 999px;
 }
@@ -1195,11 +1251,12 @@ h3 {
   align-items: center;
   text-align: center;
   gap: 14px;
-  background: var(--navy-panel);
-  border: 1px solid rgba(255, 199, 44, 0.35);
+  background: #fff;
+  color: var(--ink);
   border-radius: 22px;
   padding: 28px 22px;
   max-width: 300px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
 }
 
 .story-kicker {
@@ -1207,18 +1264,18 @@ h3 {
   align-items: center;
   gap: 7px;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--yellow);
+  color: var(--green-deep);
 }
 
 .story-panel h2 {
   font-size: 27px;
+  color: var(--blue);
 }
 
 .story-text {
-  font-family: var(--serif);
   font-style: italic;
   font-size: 14.5px;
   line-height: 1.65;
@@ -1262,10 +1319,14 @@ h3 {
 .flip-face .big-card {
   max-width: none;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .flip-face .big-card .card-art {
-  height: 132px;
+  flex: 1;
+  height: auto;
+  min-height: 132px;
 }
 
 .flip-front {
@@ -1289,16 +1350,15 @@ h3 {
 }
 
 .reveal-unlocked {
-  font-family: var(--serif);
-  font-size: 21px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 900;
   color: var(--yellow);
 }
 
 .reveal-points {
   font-size: 13px;
   font-weight: 800;
-  color: var(--ink-dim);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .reveal-actions {
@@ -1313,6 +1373,10 @@ h3 {
   padding: 12px 18px;
 }
 
+.reveal-actions .btn-ghost {
+  color: #fff;
+}
+
 /* reward */
 
 .reward-panel {
@@ -1321,11 +1385,12 @@ h3 {
   align-items: center;
   text-align: center;
   gap: 13px;
-  background: var(--navy-panel);
-  border: 1px solid rgba(255, 199, 44, 0.45);
+  background: #fff;
+  color: var(--ink);
   border-radius: 22px;
   padding: 26px 22px;
   max-width: 300px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
   z-index: 2;
 }
 
@@ -1337,12 +1402,13 @@ h3 {
   height: 64px;
   border-radius: 50%;
   background: linear-gradient(180deg, var(--yellow), var(--yellow-deep));
-  box-shadow: 0 0 0 9px rgba(255, 199, 44, 0.16);
+  box-shadow: 0 0 0 9px rgba(255, 199, 44, 0.25);
 }
 
 .reward-panel h2 {
   font-size: 23px;
   line-height: 1.2;
+  color: var(--blue);
 }
 
 .reward-lines {
@@ -1351,12 +1417,13 @@ h3 {
   flex-direction: column;
   gap: 7px;
   font-size: 13px;
+  font-weight: 600;
   color: var(--ink-dim);
 }
 
 .reward-lines li::before {
   content: "✦ ";
-  color: var(--yellow);
+  color: var(--green-deep);
 }
 
 .reward-code {
@@ -1364,15 +1431,15 @@ h3 {
   flex-direction: column;
   gap: 3px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1.5px dashed rgba(255, 199, 44, 0.5);
+  background: #eef3ff;
+  border: 1.5px dashed rgba(28, 62, 184, 0.45);
   border-radius: 12px;
   padding: 11px;
 }
 
 .reward-code span {
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-faint);
@@ -1381,7 +1448,7 @@ h3 {
 .reward-code strong {
   font-size: 17px;
   letter-spacing: 0.12em;
-  color: var(--yellow);
+  color: var(--blue);
 }
 
 /* confetti */
@@ -1415,8 +1482,8 @@ h3 {
   height: 296px;
   border-radius: 20px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1.5px dashed rgba(255, 255, 255, 0.22);
+  background: #e8efff;
+  border: 2px dashed rgba(28, 62, 184, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1448,6 +1515,7 @@ h3 {
   align-items: center;
   gap: 10px;
   font-size: 12.5px;
+  font-weight: 600;
   color: var(--ink-faint);
 }
 
@@ -1466,12 +1534,12 @@ h3 {
   align-items: center;
   gap: 7px;
   background: var(--yellow);
-  color: var(--navy);
+  color: var(--blue-deep);
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 900;
   padding: 8px 13px;
   border-radius: 999px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
   animation: pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -1482,11 +1550,15 @@ h3 {
   padding: 18px 22px 0;
 }
 
+.photo-actions .btn-ghost {
+  color: var(--blue);
+}
+
 .photo-submitted {
   display: flex;
   gap: 12px;
-  background: rgba(45, 190, 126, 0.1);
-  border: 1px solid rgba(45, 190, 126, 0.4);
+  background: rgba(98, 187, 70, 0.13);
+  border: 1.5px solid rgba(98, 187, 70, 0.5);
   border-radius: var(--radius);
   padding: 14px 16px;
 }
@@ -1506,6 +1578,7 @@ h3 {
   display: block;
   font-size: 13.5px;
   margin-bottom: 4px;
+  color: var(--green-deep);
 }
 
 .photo-submitted small {
@@ -1522,9 +1595,9 @@ h3 {
   right: 0;
   bottom: 0;
   display: flex;
-  background: rgba(14, 14, 38, 0.92);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  border-top: 1px solid var(--line);
   padding: 9px 8px 18px;
   z-index: 30;
 }
@@ -1536,7 +1609,7 @@ h3 {
   align-items: center;
   gap: 4px;
   font-size: 10.5px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--ink-faint);
   padding: 6px 0;
   border-radius: 12px;
@@ -1544,7 +1617,15 @@ h3 {
 }
 
 .bottom-nav button.active {
-  color: var(--yellow);
+  color: var(--blue);
+}
+
+.bottom-nav button.active::after {
+  content: "";
+  width: 16px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--green);
 }
 
 /* ---------- Demo controls ---------- */
@@ -1559,13 +1640,15 @@ h3 {
 
 .tour-caption {
   font-size: 12.5px;
+  font-weight: 600;
   line-height: 1.5;
   color: var(--ink-dim);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 199, 44, 0.35);
+  background: #fff;
+  border: 1.5px solid rgba(98, 187, 70, 0.55);
   border-radius: 12px;
   padding: 9px 14px;
   text-align: center;
+  box-shadow: var(--shadow-card);
   animation: fade-in 0.25s ease;
 }
 
@@ -1579,23 +1662,23 @@ h3 {
 
 .demo-bar button {
   font-size: 11.5px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--ink-dim);
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #fff;
+  border: 1.5px solid var(--line);
   padding: 7px 13px;
   border-radius: 999px;
+  box-shadow: var(--shadow-card);
   transition: background 0.15s, color 0.15s;
 }
 
 .demo-bar button:hover {
-  background: rgba(255, 255, 255, 0.14);
-  color: var(--ink);
+  color: var(--blue);
 }
 
 .demo-tour-btn {
-  border-color: rgba(255, 199, 44, 0.5) !important;
-  color: var(--yellow) !important;
+  border-color: rgba(98, 187, 70, 0.6) !important;
+  color: var(--green-deep) !important;
 }
 
 .demo-presets {
@@ -1606,6 +1689,6 @@ h3 {
 }
 
 .demo-reset {
-  border-color: rgba(244, 96, 76, 0.55) !important;
-  color: var(--coral) !important;
+  border-color: rgba(232, 75, 60, 0.55) !important;
+  color: var(--red) !important;
 }

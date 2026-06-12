@@ -12,7 +12,7 @@ const TRACK_ICONS = {
 export function Welcome() {
   const game = useGame();
   const [step, setStep] = useState<"intro" | "track">("intro");
-  const [picked, setPicked] = useState<TrackId | null>(null);
+  const [picked, setPicked] = useState<TrackId | null>(game.track);
 
   if (step === "intro") {
     return (
@@ -37,9 +37,24 @@ export function Welcome() {
           </div>
         </div>
         <div className="welcome-footer">
-          <button className="btn-primary btn-block" onClick={() => setStep("track")}>
-            Quero jogar
-          </button>
+          {game.track ? (
+            <>
+              <button className="btn-primary btn-block" onClick={game.start}>
+                Continuar a jogar
+              </button>
+              <button
+                className="btn-ghost btn-block"
+                style={{ marginTop: 10 }}
+                onClick={() => setStep("track")}
+              >
+                Mudar perfil
+              </button>
+            </>
+          ) : (
+            <button className="btn-primary btn-block" onClick={() => setStep("track")}>
+              Quero jogar
+            </button>
+          )}
           <p className="welcome-optout">Só vim pelas atrações? Sem problema — o jogo é opcional.</p>
           <div className="welcome-pad">
             <PadIcon size={26} color="rgba(255,255,255,0.4)" />
@@ -65,7 +80,7 @@ export function Welcome() {
                 onClick={() => setPicked(t.id)}
               >
                 <span className="track-icon">
-                  <Icon size={22} color={active ? "#1B1B47" : "#FFC72C"} />
+                  <Icon size={22} color={active ? "#fff" : "#1C3EB8"} />
                 </span>
                 <span className="track-text">
                   <strong>{t.name}</strong>
