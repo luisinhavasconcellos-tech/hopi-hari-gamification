@@ -46,8 +46,21 @@ const TOUR: TourStep[] = [
     run: (g) => g.setTab("missao"),
   },
   {
-    caption: "8 · Desafio fotográfico — a foto roda nos ecrãs do parque. Fim da demo!",
+    caption: "8 · Desafio fotográfico — a foto roda nos ecrãs do parque.",
     run: (g) => g.setTab("foto"),
+  },
+  {
+    caption:
+      "9 · Edição Hora do Horror: dois jogos sazonais novos. Entra no separador Horror.",
+    run: (g) => {
+      g.applyPreset("horror");
+      g.setTab("horror");
+    },
+  },
+  {
+    caption:
+      "10 · Caça aos Monstros (estilo Pokémon Go): mapa GPS, direções e captura. Fim da demo!",
+    run: (g) => g.setTab("horror"),
   },
 ];
 
@@ -56,6 +69,7 @@ const PRESETS: { id: DemoPreset; label: string }[] = [
   { id: "meio", label: "Meio (2/4)" },
   { id: "quase", label: "Quase (5/6)" },
   { id: "completo", label: "Completo" },
+  { id: "horror", label: "Hora do Horror" },
 ];
 
 export function DemoControls() {

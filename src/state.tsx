@@ -9,16 +9,19 @@ import {
 import {
   ATTRACTIONS,
   ATTRACTION_BY_ID,
+  COIN_BY_ID,
   MISSION_REWARD_COINS,
+  MONSTER_BY_ID,
   PHOTO_POINTS,
   STARTING_COINS,
   TRACK_BY_ID,
+  coinValue,
   type TrackId,
 } from "./data";
 
-export type Tab = "missao" | "tesouro" | "album" | "foto";
+export type Tab = "missao" | "tesouro" | "album" | "foto" | "horror";
 
-export type DemoPreset = "inicio" | "meio" | "quase" | "completo";
+export type DemoPreset = "inicio" | "meio" | "quase" | "completo" | "horror";
 
 interface GameState {
   started: boolean;
@@ -29,6 +32,8 @@ interface GameState {
   photoSubmitted: boolean;
   missionRewardClaimed: boolean;
   albumRewardClaimed: boolean;
+  caughtMonsters: string[];
+  collectedCoins: string[];
 }
 
 interface GameApi extends GameState {
@@ -47,6 +52,8 @@ interface GameApi extends GameState {
   submitPhoto: () => void;
   claimMissionReward: () => void;
   claimAlbumReward: () => void;
+  catchMonster: (id: string) => void;
+  collectCoin: (id: string) => void;
   reset: () => void;
   applyPreset: (preset: DemoPreset) => void;
 }
@@ -60,6 +67,8 @@ const initialState: GameState = {
   photoSubmitted: false,
   missionRewardClaimed: false,
   albumRewardClaimed: false,
+  caughtMonsters: [],
+  collectedCoins: [],
 };
 
 const PRESETS: Record<DemoPreset, GameState> = {
@@ -77,6 +86,8 @@ const PRESETS: Record<DemoPreset, GameState> = {
     photoSubmitted: false,
     missionRewardClaimed: false,
     albumRewardClaimed: false,
+    caughtMonsters: [],
+    collectedCoins: [],
   },
   quase: {
     started: true,
@@ -93,6 +104,8 @@ const PRESETS: Record<DemoPreset, GameState> = {
     photoSubmitted: false,
     missionRewardClaimed: true,
     albumRewardClaimed: false,
+    caughtMonsters: [],
+    collectedCoins: [],
   },
   completo: {
     started: true,
@@ -107,6 +120,21 @@ const PRESETS: Record<DemoPreset, GameState> = {
     photoSubmitted: true,
     missionRewardClaimed: true,
     albumRewardClaimed: false,
+    caughtMonsters: [],
+    collectedCoins: [],
+  },
+  // Hora do Horror em curso: 5 monstros já capturados, 8 moedas colecionadas
+  horror: {
+    started: true,
+    tab: "horror",
+    track: "explorador",
+    unlocked: ["katapul", "montezum", "vurang"],
+    coins: STARTING_COINS + 2400,
+    photoSubmitted: false,
+    missionRewardClaimed: false,
+    albumRewardClaimed: false,
+    caughtMonsters: ["retalho", "noiva", "visceral"],
+    collectedCoins: ["c02", "c04", "c06", "c09", "c12", "c13", "c16", "c18"],
   },
 };
 
@@ -183,6 +211,28 @@ export function GameProvider({ children }: { children: ReactNode }) {
     setState((s) => ({ ...s, albumRewardClaimed: true }));
   }, []);
 
+  const catchMonster = useCallback((id: string) => {
+    setState((s) => {
+      if (s.caughtMonsters.includes(id)) return s;
+      return {
+        ...s,
+        caughtMonsters: [...s.caughtMonsters, id],
+        coins: s.coins + MONSTER_BY_ID[id].points,
+      };
+    });
+  }, []);
+
+  const collectCoin = useCallback((id: string) => {
+    setState((s) => {
+      if (s.collectedCoins.includes(id)) return s;
+      return {
+        ...s,
+        collectedCoins: [...s.collectedCoins, id],
+        coins: s.coins + coinValue(COIN_BY_ID[id]),
+      };
+    });
+  }, []);
+
   const reset = useCallback(() => {
     setScanTarget(null);
     setRevealTarget(null);
@@ -222,6 +272,8 @@ export function GameProvider({ children }: { children: ReactNode }) {
       submitPhoto,
       claimMissionReward,
       claimAlbumReward,
+      catchMonster,
+      collectCoin,
       reset,
       applyPreset,
     };
@@ -240,6 +292,8 @@ export function GameProvider({ children }: { children: ReactNode }) {
     submitPhoto,
     claimMissionReward,
     claimAlbumReward,
+    catchMonster,
+    collectCoin,
     reset,
     applyPreset,
   ]);

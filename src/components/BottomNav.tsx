@@ -1,10 +1,17 @@
 import { useGame, type Tab } from "../state";
-import { CameraIcon, CardsIcon, MapIcon, TrophyIcon } from "../components/Icons";
+import {
+  CameraIcon,
+  CardsIcon,
+  GhostIcon,
+  MapIcon,
+  TrophyIcon,
+} from "../components/Icons";
 
 const TABS: { id: Tab; label: string; Icon: typeof MapIcon }[] = [
   { id: "missao", label: "Missão", Icon: TrophyIcon },
-  { id: "tesouro", label: "Tesouro", Icon: MapIcon },
+  { id: "tesouro", label: "Mapa", Icon: MapIcon },
   { id: "album", label: "Álbum", Icon: CardsIcon },
+  { id: "horror", label: "Horror", Icon: GhostIcon },
   { id: "foto", label: "Foto", Icon: CameraIcon },
 ];
 

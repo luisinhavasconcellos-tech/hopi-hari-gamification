@@ -10,6 +10,7 @@ import { MissionDay } from "./screens/MissionDay";
 import { TreasureHunt } from "./screens/TreasureHunt";
 import { Album } from "./screens/Album";
 import { PhotoChallenge } from "./screens/PhotoChallenge";
+import { Horror } from "./screens/Horror";
 
 function Phone() {
   const game = useGame();
@@ -22,16 +23,19 @@ function Phone() {
           <Welcome />
         ) : (
           <>
-            <button
-              className="home-btn"
-              onClick={game.goHome}
-              aria-label="Voltar ao início"
-            >
-              <HomeIcon size={17} />
-            </button>
+            {game.tab !== "horror" && (
+              <button
+                className="home-btn"
+                onClick={game.goHome}
+                aria-label="Voltar ao início"
+              >
+                <HomeIcon size={17} />
+              </button>
+            )}
             {game.tab === "missao" && <MissionDay />}
             {game.tab === "tesouro" && <TreasureHunt />}
             {game.tab === "album" && <Album />}
+            {game.tab === "horror" && <Horror />}
             {game.tab === "foto" && <PhotoChallenge />}
             <BottomNav />
           </>

@@ -18,6 +18,16 @@ de QR codes. Tudo funciona offline e instantaneamente.
    raridade, desafio). Álbum a 100% = recompensa real (Fast Pass + desconto).
 5. **Desafio Fotográfico** — "tirar foto" usa uma ilustração placeholder e mostra
    o estado "em destaque nos ecrãs do parque".
+6. **Hora do Horror** (edição especial sazonal) — separador com dois jogos novos:
+   - **Caça aos Monstros** (estilo Pokémon Go): mapa GPS real do parque com a
+     localização do visitante, pinos dos monstros da Hora do Horror, direções
+     (distância + minutos a pé + rota traçada) e captura com a "Hari Orb".
+   - **As 25 Moedas**: uma moeda por cada ano de Hora do Horror. Escaneia a
+     moeda, joga o mini-jogo "Quebra a Maldição" e desbloqueia a história do
+     tema dessa edição. Completar as 25 dá recompensas VIP.
+
+O separador **Mapa** (antiga Caça ao Tesouro) também passou a ser um mapa GPS
+do parque com direções até cada brinquedo e scan do totem no local.
 
 ## Controlos de apresentação
 

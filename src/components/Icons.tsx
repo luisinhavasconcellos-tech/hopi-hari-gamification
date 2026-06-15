@@ -137,3 +137,37 @@ export function PadIcon({ size = 22, color = "currentColor" }: IconProps) {
     </svg>
   );
 }
+
+export function GhostIcon({ size = 20, color = "currentColor" }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill={color}>
+      <path d="M12 2a8 8 0 0 0-8 8v11l3-2 2.5 2 2.5-2 2.5 2 2.5-2 3 2V10a8 8 0 0 0-8-8Zm-2.5 8A1.5 1.5 0 1 1 8 11.5 1.5 1.5 0 0 1 9.5 10Zm5 0A1.5 1.5 0 1 1 13 11.5 1.5 1.5 0 0 1 14.5 10Z" />
+    </svg>
+  );
+}
+
+export function SkullIcon({ size = 20, color = "currentColor" }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill={color}>
+      <path d="M12 2a9 9 0 0 0-5 16.5V21a1 1 0 0 0 1 1h2v-2h4v2h2a1 1 0 0 0 1-1v-2.5A9 9 0 0 0 12 2ZM8.5 10A1.8 1.8 0 1 1 6.7 11.8 1.8 1.8 0 0 1 8.5 10Zm7 0a1.8 1.8 0 1 1-1.8 1.8A1.8 1.8 0 0 1 15.5 10ZM12 14l1.2 2.5h-2.4L12 14Z" />
+    </svg>
+  );
+}
+
+export function MoonIcon({ size = 20, color = "currentColor" }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill={color}>
+      <path d="M14 2a9 9 0 1 0 8 13.5A7 7 0 0 1 14 2Z" />
+    </svg>
+  );
+}
+
+export function CrosshairIcon({ size = 22, color = "currentColor" }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2">
+      <circle cx="12" cy="12" r="8" />
+      <path d="M12 1v4M12 19v4M1 12h4M19 12h4" strokeLinecap="round" />
+      <circle cx="12" cy="12" r="2.2" fill={color} stroke="none" />
+    </svg>
+  );
+}
