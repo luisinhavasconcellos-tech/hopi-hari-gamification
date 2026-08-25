@@ -1,0 +1,610 @@
+<title>Gestão à Vista · Vendas Hopi Hari</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  /* ── Broadcast dark theme (committed single-theme, every color explicit) ── */
+  :root{
+    --bg:#060A12; --bg-glow:#0A1120;
+    --panel:#0C1322; --panel-2:#101A2E; --panel-cyan:#0B1826;
+    --line:#1C2B45; --hairline:#142238;
+    --ink:#EAF1FB; --sub:#93A7C4; --mute:#5C7191;
+    --amber:#FFB627; --cyan:#33C6FF; --green:#2FD97B; --red:#FF5A66;
+    --amber-dim:rgba(255,182,39,.14); --cyan-dim:rgba(51,198,255,.13);
+    --green-dim:rgba(47,217,123,.13); --red-dim:rgba(255,90,102,.13);
+    --f-disp:'Barlow Condensed',Arial Narrow,sans-serif;
+    --f-body:'Archivo',Helvetica,Arial,sans-serif;
+    --f-mono:'IBM Plex Mono',Consolas,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{color-scheme:dark}
+  body{
+    background:radial-gradient(1200px 500px at 50% -10%, var(--bg-glow), var(--bg) 60%) var(--bg);
+    color:var(--ink); font-family:var(--f-body); font-size:15px; line-height:1.45;
+    min-height:100vh; padding:0 0 48px;
+  }
+  .num{font-variant-numeric:tabular-nums}
+  .up{color:var(--green)} .down{color:var(--red)}
+
+  /* ── Top bar ── */
+  .topbar{
+    display:flex; align-items:center; gap:20px;
+    padding:14px 28px; border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,#0B1424,#081020);
+  }
+  .brand{display:flex; align-items:baseline; gap:12px}
+  .brand .mark{
+    font-family:var(--f-disp); font-weight:700; font-size:24px; letter-spacing:.06em;
+    color:var(--amber); text-transform:uppercase;
+  }
+  .brand .div{width:1px; height:22px; background:var(--line); align-self:center}
+  .brand .title{
+    font-family:var(--f-disp); font-weight:600; font-size:24px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--ink);
+  }
+  .topbar .spacer{flex:1}
+  .stamp{display:flex; align-items:center; gap:16px; font-family:var(--f-mono); font-size:13px; color:var(--sub)}
+  .stamp .live{display:flex; align-items:center; gap:7px; color:var(--green); font-weight:600; letter-spacing:.08em}
+  .stamp .dot{width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 8px var(--green)}
+  @media (prefers-reduced-motion:no-preference){ .stamp .dot{animation:pulse 2s infinite} }
+  @keyframes pulse{50%{opacity:.35}}
+  #clock{min-width:72px; text-align:right; color:var(--ink); font-weight:600}
+
+  /* ── Ticker ── */
+  .ticker{
+    overflow:hidden; white-space:nowrap; border-bottom:1px solid var(--line);
+    background:#070D18; padding:9px 0; position:relative;
+  }
+  .ticker-track{display:inline-block; padding-left:100%}
+  @media (prefers-reduced-motion:no-preference){
+    .ticker-track{animation:tick 70s linear infinite}
+    .ticker:hover .ticker-track{animation-play-state:paused}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .ticker{overflow-x:auto} .ticker-track{padding-left:12px}
+  }
+  @keyframes tick{to{transform:translateX(-100%)}}
+  .tk{font-family:var(--f-mono); font-size:13px; letter-spacing:.02em; margin-right:38px; color:var(--sub)}
+  .tk b{color:var(--ink); font-weight:600; margin-right:8px}
+  .tk .v{font-weight:600}
+
+  .wrap{max-width:1440px; margin:0 auto; padding:26px 28px}
+
+  .kicker{
+    font-family:var(--f-disp); text-transform:uppercase; letter-spacing:.22em;
+    font-size:14px; font-weight:600; color:var(--mute); margin-bottom:14px;
+  }
+  .panel{
+    background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line); border-radius:10px; padding:22px 24px;
+  }
+
+  /* ── Hero: realizado + race track ── */
+  .hero{display:grid; grid-template-columns:400px 1fr; gap:24px; margin-bottom:24px}
+  @media (max-width:980px){.hero{grid-template-columns:1fr}}
+  .hero-num .lbl{font-family:var(--f-disp); text-transform:uppercase; letter-spacing:.2em; font-size:14px; font-weight:600; color:var(--sub)}
+  .hero-num .big{
+    font-family:var(--f-disp); font-weight:700; font-size:clamp(42px,4.2vw,64px); line-height:1.02;
+    letter-spacing:.01em; margin:6px 0 4px; color:var(--ink); white-space:nowrap;
+    text-shadow:0 0 34px rgba(51,198,255,.18);
+  }
+  .hero-num .big small{font-size:.55em; color:var(--sub); font-weight:600}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+  .chip{
+    display:inline-flex; align-items:center; gap:6px; padding:5px 10px; border-radius:5px;
+    font-family:var(--f-mono); font-size:12.5px; font-weight:600; border:1px solid var(--line); color:var(--sub);
+  }
+  .chip.gr{background:var(--green-dim); color:var(--green); border-color:rgba(47,217,123,.3)}
+  .chip.cy{background:var(--cyan-dim); color:var(--cyan); border-color:rgba(51,198,255,.3)}
+  .chip.am{background:var(--amber-dim); color:var(--amber); border-color:rgba(255,182,39,.3)}
+
+  .track-panel{display:flex; flex-direction:column; justify-content:center}
+  .track-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px}
+  .track-head .kicker{margin:0}
+  .track-head .pct{font-family:var(--f-mono); font-size:13px; color:var(--sub)}
+  .track{position:relative; height:58px; margin:52px 8px 0}
+  .track-rail{
+    position:absolute; inset:0; border-radius:6px; background:#0A1626;
+    border:1px solid var(--hairline);
+  }
+  .track-fill{
+    position:absolute; top:5px; bottom:5px; left:5px; border-radius:4px; max-width:calc(100% - 10px);
+    background:linear-gradient(90deg,#1E9CD7,var(--cyan));
+    box-shadow:0 0 22px rgba(51,198,255,.35);
+  }
+  @media (prefers-reduced-motion:no-preference){ .track-fill{transition:width .9s cubic-bezier(.2,.8,.2,1)} }
+  .track-fill::after{ /* live edge */
+    content:''; position:absolute; right:0; top:-3px; bottom:-3px; width:3px; border-radius:2px;
+    background:#CFF1FF; box-shadow:0 0 10px #7FDCFF;
+  }
+  .goal{position:absolute; top:-30px; bottom:0; width:0; border-left:2px dashed var(--amber)}
+  .goal.site{border-color:var(--cyan)}
+  .goal .tag{
+    position:absolute; top:-4px; transform:translate(-50%,-100%); white-space:nowrap;
+    font-family:var(--f-disp); font-weight:600; text-transform:uppercase; letter-spacing:.1em; font-size:14px;
+    padding:3px 9px; border-radius:4px; border:1px solid var(--amber); color:var(--amber); background:#0B1424;
+  }
+  .goal.site .tag{border-color:var(--cyan); color:var(--cyan)}
+  .goal.site.beaten .tag{background:rgba(47,217,123,.12); border-color:var(--green); color:var(--green)}
+  .goal:last-child .tag{transform:translate(-94%,-100%)}
+  .scale{display:flex; justify-content:space-between; margin:10px 8px 0; font-family:var(--f-mono); font-size:11.5px; color:var(--mute)}
+  .track-note{margin-top:16px; font-size:13.5px; color:var(--sub)}
+  .track-note b{color:var(--ink)}
+
+  /* ── Gauges ── */
+  .gauges{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:24px}
+  @media (max-width:980px){.gauges{grid-template-columns:1fr}}
+  .gauge{text-align:center; position:relative}
+  .gauge .g-title{
+    font-family:var(--f-disp); text-transform:uppercase; letter-spacing:.18em; font-weight:600;
+    font-size:16px; color:var(--sub); display:flex; justify-content:center; gap:10px; align-items:center;
+  }
+  .gauge svg{width:100%; max-width:320px; height:auto; margin:6px auto 0; display:block}
+  .g-actual{font-family:var(--f-disp); font-weight:700; font-size:46px; line-height:1; margin-top:-8px}
+  .g-caption{font-family:var(--f-mono); font-size:12.5px; color:var(--sub); margin-top:8px}
+  .status-flag{
+    display:inline-flex; align-items:center; gap:6px; margin-top:10px; padding:5px 12px; border-radius:5px;
+    font-family:var(--f-disp); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:14px;
+  }
+  .status-flag.win{background:var(--green-dim); color:var(--green); border:1px solid rgba(47,217,123,.35)}
+  .status-flag.chase{background:var(--amber-dim); color:var(--amber); border:1px solid rgba(255,182,39,.3)}
+  .status-flag.behind{background:var(--red-dim); color:var(--red); border:1px solid rgba(255,90,102,.3)}
+
+  /* ── Marketing spotlight ── */
+  .spot{
+    border-color:rgba(51,198,255,.45); background:linear-gradient(180deg,#0D1B2C,var(--panel-cyan));
+    box-shadow:0 0 40px rgba(51,198,255,.07) inset; margin-bottom:24px;
+  }
+  .spot-grid{display:grid; grid-template-columns:1fr 1.4fr; gap:28px; align-items:center}
+  @media (max-width:980px){.spot-grid{grid-template-columns:1fr}}
+  .spot .kicker{color:var(--cyan)}
+  .spot .big{font-family:var(--f-disp); font-weight:700; font-size:52px; line-height:1; color:var(--ink); margin:4px 0 2px}
+  .spot .sub-lbl{font-size:13.5px; color:var(--sub)}
+  .mini-track{position:relative; height:30px; margin:26px 4px 6px}
+  .mini-rail{position:absolute; inset:0; background:#0A1626; border:1px solid var(--hairline); border-radius:5px}
+  .mini-fill{position:absolute; top:4px; bottom:4px; left:4px; border-radius:3px; max-width:calc(100% - 8px);
+    background:linear-gradient(90deg,#1E9CD7,var(--cyan))}
+  .mini-goal{position:absolute; top:-8px; bottom:-8px; border-left:2px dashed var(--cyan)}
+  .mini-goal .t{position:absolute; top:-6px; transform:translate(-95%,-100%); font-family:var(--f-mono); font-size:11.5px; color:var(--cyan); white-space:nowrap}
+  .mini-meta{display:flex; justify-content:space-between; font-family:var(--f-mono); font-size:12px; color:var(--mute); margin:6px 4px 0}
+  .spot-stats{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+  @media (max-width:1180px){.spot-stats{grid-template-columns:repeat(2,1fr)}}
+  .sstat{border:1px solid var(--line); border-radius:8px; padding:14px 14px 12px; background:rgba(6,12,22,.5)}
+  .sstat .k{font-family:var(--f-disp); text-transform:uppercase; letter-spacing:.14em; font-size:12.5px; font-weight:600; color:var(--mute)}
+  .sstat .v{font-family:var(--f-disp); font-weight:700; font-size:34px; line-height:1.1; margin-top:4px}
+  .sstat .d{font-family:var(--f-mono); font-size:11.5px; color:var(--sub); margin-top:3px}
+
+  /* ── Movers board ── */
+  .board{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px}
+  @media (max-width:980px){.board{grid-template-columns:1fr}}
+  .rows{display:flex; flex-direction:column}
+  .row{
+    display:grid; grid-template-columns:1.35fr 1fr 86px 96px; gap:12px; align-items:center;
+    padding:9px 4px; border-bottom:1px solid var(--hairline); font-size:14px;
+  }
+  .row:last-child{border-bottom:none}
+  .row .name{font-weight:600; letter-spacing:.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .row .name .yoyof{font-family:var(--f-mono); font-size:11px; color:var(--mute); font-weight:400}
+  .row .bar{height:8px; background:#0A1626; border-radius:4px; overflow:hidden; border:1px solid var(--hairline)}
+  .row .bar i{display:block; height:100%; border-radius:3px}
+  .row .amt{font-family:var(--f-mono); font-size:12.5px; color:var(--sub); text-align:right}
+  .row .yoy{font-family:var(--f-mono); font-size:13px; font-weight:600; text-align:right}
+  .board-head{
+    display:grid; grid-template-columns:1.35fr 1fr 86px 96px; gap:12px; padding:0 4px 8px;
+    font-family:var(--f-disp); text-transform:uppercase; letter-spacing:.14em; font-size:12px; color:var(--mute); font-weight:600;
+  }
+  .board-head span:nth-child(3),.board-head span:nth-child(4){text-align:right}
+
+  /* ── Insights ── */
+  .insights{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:24px}
+  @media (max-width:980px){.insights{grid-template-columns:1fr}}
+  .insight{border-left:3px solid var(--cyan); padding:18px 20px}
+  .insight:nth-child(2){border-left-color:var(--amber)}
+  .insight:nth-child(3){border-left-color:var(--green)}
+  .insight .t{font-family:var(--f-disp); text-transform:uppercase; letter-spacing:.14em; font-weight:700; font-size:15px; margin-bottom:6px}
+  .insight p{font-size:13.5px; color:var(--sub)}
+  .insight p b{color:var(--ink)}
+
+  /* ── Update drawer (Carla) ── */
+  .gear{
+    position:fixed; right:22px; bottom:22px; z-index:30;
+    font-family:var(--f-disp); text-transform:uppercase; letter-spacing:.12em; font-weight:600; font-size:14px;
+    background:var(--panel-2); color:var(--sub); border:1px solid var(--line); border-radius:7px;
+    padding:10px 16px; cursor:pointer;
+  }
+  .gear:hover,.gear:focus-visible{color:var(--ink); border-color:var(--cyan); outline:none}
+  .drawer{
+    position:fixed; right:0; top:0; bottom:0; width:min(400px,100vw); z-index:40;
+    background:#0A1120; border-left:1px solid var(--line); padding:26px 24px; overflow-y:auto;
+    transform:translateX(102%); box-shadow:-20px 0 60px rgba(0,0,0,.5);
+  }
+  @media (prefers-reduced-motion:no-preference){ .drawer{transition:transform .3s ease} }
+  .drawer.open{transform:none}
+  .drawer h2{font-family:var(--f-disp); text-transform:uppercase; letter-spacing:.16em; font-size:20px; font-weight:700; margin-bottom:4px}
+  .drawer .hint{font-size:13px; color:var(--sub); margin-bottom:18px}
+  .field{margin-bottom:14px}
+  .field label{display:block; font-family:var(--f-disp); text-transform:uppercase; letter-spacing:.12em; font-size:12.5px; font-weight:600; color:var(--sub); margin-bottom:5px}
+  .field input{
+    width:100%; padding:9px 12px; border-radius:6px; border:1px solid var(--line);
+    background:#060C16; color:var(--ink); font-family:var(--f-mono); font-size:14px;
+  }
+  .field input:focus{outline:none; border-color:var(--cyan); box-shadow:0 0 0 3px rgba(51,198,255,.15)}
+  .drawer .sec{font-family:var(--f-disp); text-transform:uppercase; letter-spacing:.16em; font-size:13px; font-weight:700; color:var(--cyan); margin:20px 0 10px; padding-top:14px; border-top:1px solid var(--hairline)}
+  .drawer .btns{display:flex; gap:10px; margin-top:20px}
+  .btn{
+    flex:1; padding:11px; border-radius:7px; border:1px solid var(--line); cursor:pointer;
+    font-family:var(--f-disp); text-transform:uppercase; letter-spacing:.12em; font-weight:700; font-size:14px;
+  }
+  .btn.primary{background:var(--cyan); border-color:var(--cyan); color:#04202F}
+  .btn.ghost{background:none; color:var(--sub)}
+  .btn:focus-visible{outline:2px solid var(--cyan); outline-offset:2px}
+  .foot{max-width:1440px; margin:0 auto; padding:0 28px; font-family:var(--f-mono); font-size:11.5px; color:var(--mute)}
+</style>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="mark">Hopi Hari</span><span class="div"></span>
+    <span class="title">Gestão à Vista · Vendas</span>
+  </div>
+  <div class="spacer"></div>
+  <div class="stamp">
+    <span class="live"><span class="dot"></span>AO VIVO</span>
+    <span id="refstamp">AGO/26 · DADOS ATÉ 24/08</span>
+    <span id="clock">--:--</span>
+  </div>
+</header>
+
+<div class="ticker" aria-label="Variação anual por canal"><div class="ticker-track" id="ticker"></div></div>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="panel hero-num">
+      <div class="lbl">Realizado acumulado</div>
+      <div class="big num" id="heroValue">—</div>
+      <div class="chips">
+        <span class="chip" id="heroYoy"></span>
+        <span class="chip" id="heroPace"></span>
+      </div>
+    </div>
+    <div class="panel track-panel">
+      <div class="track-head">
+        <div class="kicker">Corrida da meta — onde estamos</div>
+        <div class="pct num" id="trackPct"></div>
+      </div>
+      <div class="track">
+        <div class="track-rail"></div>
+        <div class="track-fill" id="trackFill"></div>
+        <div class="goal site" id="goalSite">
+          <span class="tag num" id="goalSiteTag">Meta Site</span>
+        </div>
+        <div class="goal" id="goalGeral">
+          <span class="tag num" id="goalGeralTag">Meta Geral</span>
+        </div>
+      </div>
+      <div class="scale" id="trackScale"></div>
+      <p class="track-note" id="trackNote"></p>
+    </div>
+  </section>
+
+  <!-- GAUGES -->
+  <section class="gauges">
+    <div class="panel gauge" id="gaugeSite"></div>
+    <div class="panel gauge" id="gaugeGeral"></div>
+    <div class="panel gauge" id="gaugeRitmo"></div>
+  </section>
+
+  <!-- MARKETING SPOTLIGHT -->
+  <section class="panel spot">
+    <div class="spot-grid">
+      <div>
+        <div class="kicker">Entrega do Marketing · Canal Site</div>
+        <div class="big num" id="siteValue">—</div>
+        <div class="sub-lbl">vendas pelo site no período</div>
+        <div class="mini-track">
+          <div class="mini-rail"></div>
+          <div class="mini-fill" id="siteFill"></div>
+          <div class="mini-goal" style="left:96%"><span class="t" id="siteGoalT"></span></div>
+        </div>
+        <div class="mini-meta"><span>R$ 0</span><span id="siteMetaPct"></span></div>
+      </div>
+      <div class="spot-stats" id="spotStats"></div>
+    </div>
+  </section>
+
+  <!-- MOVERS -->
+  <section class="board">
+    <div class="panel">
+      <div class="kicker up">▲ Maiores altas · crescimento vs 25</div>
+      <div class="board-head"><span>Canal</span><span>Alcance da meta</span><span>Realizado</span><span>YoY</span></div>
+      <div class="rows" id="gainers"></div>
+    </div>
+    <div class="panel">
+      <div class="kicker down">▼ Pontos de atenção · queda vs 25</div>
+      <div class="board-head"><span>Canal</span><span>Alcance da meta</span><span>Realizado</span><span>YoY</span></div>
+      <div class="rows" id="losers"></div>
+    </div>
+  </section>
+
+  <!-- BI INSIGHTS -->
+  <section>
+    <div class="kicker">Leitura de BI · comportamento do visitante</div>
+    <div class="insights">
+      <div class="panel insight">
+        <div class="t" style="color:var(--cyan)">O visitante compra digital</div>
+        <p>O site cresce <b>+53% vs 25</b> e já responde por <b id="insShare">—</b> de todas as vendas externas — a principal porta de entrada do parque. A demanda gerada pelo Marketing sustenta o funil enquanto canais tradicionais encolhem.</p>
+      </div>
+      <div class="panel insight">
+        <div class="t" style="color:var(--amber)">Celebração puxa receita</div>
+        <p><b>Eventos/Hopi Niver: +107% YoY</b> e a única linha do parque acima de 100% da parcial. O consumidor HH busca ocasião e experiência — mesmo padrão dos perfis Família Aventureira e Conquistador Radical do programa de gamificação.</p>
+      </div>
+      <div class="panel insight">
+        <div class="t" style="color:var(--green)">Migração de canal em curso</div>
+        <p>Bilheteria <b>−47%</b>, telemarketing <b>−24%</b>, turismo <b>−53%</b>: a compra migrou para o digital e para a antecipação. Cada real que sai do balcão precisa ser recapturado no site — e está sendo.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<p class="foot">Fonte: acompanhamento de canais · atualizado diariamente por Carla · valores em R$ · YoY = vs mesmo período de 25 · ritmo = realizado ÷ parcial esperada até a data (80% da meta do mês)</p>
+
+<button class="gear" id="gearBtn" aria-expanded="false" aria-controls="drawer">⚙ Atualizar números</button>
+
+<aside class="drawer" id="drawer" aria-label="Atualização diária de dados">
+  <h2>Atualização diária</h2>
+  <p class="hint">Só preencher e salvar — o painel recalcula tudo sozinho. Os dados ficam guardados neste navegador.</p>
+  <div class="field"><label for="inRefDate">Dados até (ex.: 24/08)</label><input id="inRefDate" type="text"></div>
+  <div class="sec">Total do parque</div>
+  <div class="field"><label for="inRealizado">Realizado acumulado (R$)</label><input id="inRealizado" type="number" step="1"></div>
+  <div class="field"><label for="inMetaGeral">Meta Geral do mês (R$)</label><input id="inMetaGeral" type="number" step="1"></div>
+  <div class="field"><label for="inRealizado25">Realizado mesmo período 25 (R$)</label><input id="inRealizado25" type="number" step="1"></div>
+  <div class="sec">Canal Site (Marketing)</div>
+  <div class="field"><label for="inSite">Realizado site (R$)</label><input id="inSite" type="number" step="1"></div>
+  <div class="field"><label for="inMetaSite">Meta Site (R$)</label><input id="inMetaSite" type="number" step="1"></div>
+  <div class="field"><label for="inSite25">Site mesmo período 25 (R$)</label><input id="inSite25" type="number" step="1"></div>
+  <div class="sec">Ritmo</div>
+  <div class="field"><label for="inParcial">Parcial esperada até a data — % da meta</label><input id="inParcial" type="number" step="1" min="1" max="100"></div>
+  <div class="btns">
+    <button class="btn primary" id="saveBtn">Salvar</button>
+    <button class="btn ghost" id="resetBtn">Restaurar padrão</button>
+  </div>
+</aside>
+
+<script>
+'use strict';
+/* ───────────────────────── DATA ─────────────────────────
+   Carla: tudo que muda no dia a dia vive neste objeto (ou no
+   painel "⚙ Atualizar números"). O resto é calculado.        */
+const DEFAULTS = {
+  refDate:'24/08', period:'AGO/26',
+  realizado:19725556, metaGeral:31486781, realizado25:16755868,
+  site:5283016, metaSite:7314446, site25:3457202,
+  parcialPct:80,
+  canais:[ // nome, realizado 26, meta, %cresc YoY
+    {n:'Parceiros',        r:26176,   m:34866,   yoy:404},
+    {n:'AGVT',             r:151685,  m:94138,   yoy:234},
+    {n:'Escola Particular',r:292487,  m:690345,  yoy:166},
+    {n:'Eventos/Hopi Niver',r:859105, m:536498,  yoy:107},
+    {n:'Site',             r:5283016, m:7314446, yoy:53},
+    {n:'Estacionamento',   r:1282270, m:1813756, yoy:47},
+    {n:'Mercadorias',      r:922511,  m:1362309, yoy:26},
+    {n:'A&B',              r:6328121, m:10110111,yoy:17},
+    {n:'Serviços',         r:1983711, m:3087388, yoy:-8},
+    {n:'Escola Pública',   r:726296,  m:1408583, yoy:-20},
+    {n:'Telemarketing',    r:841739,  m:1503058, yoy:-24},
+    {n:'Bilheteria',       r:487465,  m:1040374, yoy:-47},
+    {n:'Turismo',          r:250474,  m:955326,  yoy:-53},
+  ],
+  externo:9208944, externoYoy:22, internoYoy:14,
+};
+const LS_KEY='hh-gestao-vista-v2';
+let S;
+try{ S = Object.assign({}, DEFAULTS, JSON.parse(localStorage.getItem(LS_KEY)||'{}')); }
+catch(e){ S = Object.assign({}, DEFAULTS); }
+
+/* ─────────────────────── FORMATTERS ─────────────────────── */
+const brl = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+const brlM = v => {
+  const m = v/1e6;
+  return 'R$ ' + (Math.abs(m)>=10 ? m.toFixed(1) : m.toFixed(2)).replace('.',',') + ' mi';
+};
+const pct = v => Math.round(v) + '%';
+const sign = v => (v>0?'+':'') + Math.round(v) + '%';
+
+/* ─────────────────────── GAUGE (SVG) ───────────────────────
+   Semicírculo 220°, zonas coloridas, tick de alvo e ponteiro. */
+function gauge(el, opt){
+  const {title, value, min, max, target, zones, actual, caption, flag, color} = opt;
+  const W=364, H=185, cx=W/2, cy=152, R=112, thick=20;
+  const a0=-200, a1=20; // graus (0° = leste), varre 220°
+  const ang = v => a0 + (Math.min(Math.max(v,min),max)-min)/(max-min)*(a1-a0);
+  const rad = a => a*Math.PI/180;
+  const pt = (a,r) => [cx + r*Math.cos(rad(a)), cy + r*Math.sin(rad(a))];
+  function arc(from,to,r,w,col,opac){
+    const [x1,y1]=pt(from,r), [x2,y2]=pt(to,r);
+    const large = (to-from)>180 ? 1 : 0;
+    return `<path d="M ${x1} ${y1} A ${r} ${r} 0 ${large} 1 ${x2} ${y2}" fill="none" stroke="${col}" stroke-width="${w}" stroke-linecap="butt" opacity="${opac||1}"/>`;
+  }
+  let svg = arc(a0, a1, R, thick, '#13233C');
+  zones.forEach(z=> svg += arc(ang(z.from), ang(z.to), R, thick, z.c, .9));
+  // tick do alvo
+  const ta=ang(target), [tx1,ty1]=pt(ta,R-thick/2-6), [tx2,ty2]=pt(ta,R+thick/2+8);
+  svg += `<line x1="${tx1}" y1="${ty1}" x2="${tx2}" y2="${ty2}" stroke="#EAF1FB" stroke-width="2.5" stroke-dasharray="4 3"/>`;
+  let [tlx,tly]=pt(ta,R+27);
+  const tcos=Math.cos(rad(ta));
+  const tanchor = tcos>0.35 ? 'start' : (tcos<-0.35 ? 'end' : 'middle');
+  if(tanchor==='start') tlx=Math.min(tlx, W-64);
+  if(tanchor==='end')   tlx=Math.max(tlx, 64);
+  svg += `<text x="${tlx}" y="${tly}" fill="#93A7C4" font-size="11" font-family="IBM Plex Mono,monospace" text-anchor="${tanchor}">alvo ${opt.targetLabel}</text>`;
+  // ponteiro
+  const na=ang(value), [nx,ny]=pt(na,R-thick/2-10);
+  const [bx1,by1]=pt(na+90,7), [bx2,by2]=pt(na-90,7);
+  svg += `<polygon points="${nx},${ny} ${bx1},${by1} ${bx2},${by2}" fill="#EAF1FB"/>`;
+  svg += `<circle cx="${cx}" cy="${cy}" r="10" fill="#EAF1FB"/><circle cx="${cx}" cy="${cy}" r="4.5" fill="#0C1322"/>`;
+  // extremos
+  const [e1x,e1y]=pt(a0,R+24), [e2x,e2y]=pt(a1,R+24);
+  svg += `<text x="${e1x}" y="${e1y}" fill="#5C7191" font-size="11" font-family="IBM Plex Mono,monospace" text-anchor="middle">${opt.minLabel}</text>`;
+  svg += `<text x="${e2x}" y="${e2y}" fill="#5C7191" font-size="11" font-family="IBM Plex Mono,monospace" text-anchor="middle">${opt.maxLabel}</text>`;
+  el.innerHTML =
+    `<div class="g-title">${title}</div>
+     <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${title}: ${actual}">${svg}</svg>
+     <div class="g-actual num" style="color:${color}">${actual}</div>
+     <div class="g-caption num">${caption}</div>
+     ${flag ? `<div class="status-flag ${flag.cls}">${flag.txt}</div>` : ''}`;
+}
+
+/* ─────────────────────── RENDER ─────────────────────── */
+function render(){
+  const st=S;
+  const pctSite  = st.realizado/st.metaSite*100;          // leitura do briefing: realizado total vs meta site
+  const pctGeral = st.realizado/st.metaGeral*100;
+  const faltaGeral = Math.max(0, st.metaGeral-st.realizado);
+  const yoyTotal = (st.realizado/st.realizado25-1)*100;
+  const parcial  = st.metaGeral*st.parcialPct/100;
+  const ritmo    = st.realizado/parcial*100;
+  const pctCanalSite = st.site/st.metaSite*100;
+  const yoySite  = (st.site/st.site25-1)*100;
+  const shareTotal   = st.site/st.realizado*100;
+  const shareExterno = st.site/st.externo*100;
+  const ritmoSite = st.site/(st.metaSite*st.parcialPct/100)*100;
+
+  document.getElementById('refstamp').textContent = st.period + ' · DADOS ATÉ ' + st.refDate;
+
+  /* hero */
+  document.getElementById('heroValue').innerHTML = brl(st.realizado).replace('R$ ','<small>R$</small> ');
+  const yEl=document.getElementById('heroYoy');
+  yEl.textContent=(yoyTotal>=0?'▲ ':'▼ ')+sign(yoyTotal)+' vs 25 ('+brlM(st.realizado-st.realizado25)+')';
+  yEl.className='chip '+(yoyTotal>=0?'gr':'');
+  yEl.style.color = yoyTotal>=0 ? '' : 'var(--red)';
+  document.getElementById('heroPace').textContent='ritmo '+pct(ritmo)+' do esperado até '+st.refDate;
+  document.getElementById('heroPace').className='chip '+(ritmo>=100?'gr':'am');
+
+  /* corrida da meta */
+  const span = st.metaGeral*1.04; // 4% de respiro à direita
+  const px = v => Math.min(100, v/span*100);
+  document.getElementById('trackFill').style.width = px(st.realizado)+'%';
+  document.getElementById('goalSite').style.left = px(st.metaSite)+'%';
+  document.getElementById('goalGeral').style.left = px(st.metaGeral)+'%';
+  document.getElementById('goalGeralTag').textContent = 'Meta Geral · '+brlM(st.metaGeral);
+  const beaten = st.realizado>=st.metaSite;
+  document.getElementById('goalSite').classList.toggle('beaten', beaten);
+  document.getElementById('goalSiteTag').textContent = (beaten ? '✓ ' : '') + 'Meta Site · '+brlM(st.metaSite);
+  document.getElementById('trackPct').textContent = pct(pctSite)+' da Meta Site · '+pct(pctGeral)+' da Meta Geral';
+  document.getElementById('trackNote').innerHTML = beaten
+    ? `Realizado já passou a Meta Site em <b>${brlM(st.realizado-st.metaSite)}</b>. Faltam <b>${brlM(faltaGeral)}</b> para a Meta Geral.`
+    : `Faltam <b>${brlM(st.metaSite-st.realizado)}</b> para a Meta Site e <b>${brlM(faltaGeral)}</b> para a Meta Geral.`;
+  const scale=document.getElementById('trackScale');
+  scale.innerHTML='';
+  for(let i=0;i<=4;i++){
+    const v=span*i/4, s=document.createElement('span');
+    s.textContent = i===0?'R$ 0':brlM(v); scale.appendChild(s);
+  }
+
+  /* gauges */
+  gauge(document.getElementById('gaugeSite'),{
+    title:'Meta Site', value:Math.min(pctSite,300), min:0, max:300, target:100,
+    targetLabel:'100%', minLabel:'0%', maxLabel:'300%',
+    zones:[{from:0,to:60,c:'#FF5A66'},{from:60,to:100,c:'#FFB627'},{from:100,to:300,c:'#2FD97B'}],
+    actual:pct(pctSite), color:'#2FD97B',
+    caption:'realizado '+brlM(st.realizado)+' vs meta '+brlM(st.metaSite),
+    flag: pctSite>=100 ? {cls:'win',txt:'✓ Superada em '+brlM(st.realizado-st.metaSite)} : {cls:'chase',txt:'Faltam '+brlM(st.metaSite-st.realizado)}
+  });
+  gauge(document.getElementById('gaugeGeral'),{
+    title:'Meta Geral', value:pctGeral, min:0, max:100, target:st.parcialPct,
+    targetLabel:st.parcialPct+'%', minLabel:'0%', maxLabel:'100%',
+    zones:[{from:0,to:50,c:'#FF5A66'},{from:50,to:st.parcialPct,c:'#FFB627'},{from:st.parcialPct,to:100,c:'#2FD97B'}],
+    actual:pct(pctGeral), color: pctGeral>=100?'#2FD97B':'#FFB627',
+    caption:'realizado '+brlM(st.realizado)+' vs meta '+brlM(st.metaGeral),
+    flag: pctGeral>=100 ? {cls:'win',txt:'✓ Meta atingida'} : {cls:'chase',txt:'Faltam '+brlM(faltaGeral)}
+  });
+  gauge(document.getElementById('gaugeRitmo'),{
+    title:'Ritmo do mês', value:ritmo, min:0, max:120, target:100,
+    targetLabel:'100%', minLabel:'0%', maxLabel:'120%',
+    zones:[{from:0,to:75,c:'#FF5A66'},{from:75,to:100,c:'#FFB627'},{from:100,to:120,c:'#2FD97B'}],
+    actual:pct(ritmo), color: ritmo>=100?'#2FD97B':(ritmo>=75?'#FFB627':'#FF5A66'),
+    caption:'vs parcial esperada de '+brlM(parcial)+' até '+st.refDate,
+    flag: ritmo>=100 ? {cls:'win',txt:'✓ No ritmo'} : {cls: ritmo>=75?'chase':'behind', txt:'Gap de '+brlM(parcial-st.realizado)+' vs o esperado'}
+  });
+
+  /* spotlight marketing */
+  document.getElementById('siteValue').textContent = brl(st.site);
+  document.getElementById('siteFill').style.width = Math.min(96, pctCanalSite/100*96)+'%';
+  document.getElementById('siteGoalT').textContent = 'meta do canal '+brlM(st.metaSite);
+  document.getElementById('siteMetaPct').textContent = pct(pctCanalSite)+' da meta do canal';
+  document.getElementById('spotStats').innerHTML = [
+    {k:'Crescimento vs 25', v:sign(yoySite), d:'+'+brlM(st.site-st.site25)+' · maior alta entre os grandes canais', c: yoySite>=0?'var(--green)':'var(--red)'},
+    {k:'Peso nas vendas externas', v:pct(shareExterno), d:'de tudo que é vendido fora do parque', c:'var(--cyan)'},
+    {k:'Peso no realizado total', v:pct(shareTotal), d:'de toda a receita do período', c:'var(--cyan)'},
+    {k:'Ritmo do canal', v:pct(ritmoSite), d:'vs parcial · média do parque: '+pct(ritmo), c: ritmoSite>=100?'var(--green)':'var(--amber)'},
+  ].map(s=>`<div class="sstat"><div class="k">${s.k}</div><div class="v num" style="color:${s.c}">${s.v}</div><div class="d">${s.d}</div></div>`).join('');
+
+  /* movers */
+  const gainers = st.canais.filter(c=>c.yoy>=0).sort((a,b)=>b.yoy-a.yoy).slice(0,6);
+  const losers  = st.canais.filter(c=>c.yoy<0).sort((a,b)=>a.yoy-b.yoy).slice(0,6);
+  const rowHTML = c => {
+    const alc = Math.min(100, c.r/c.m*100);
+    const col = c.r>=c.m ? 'var(--green)' : (c.n==='Site' ? 'var(--cyan)' : 'var(--amber)');
+    const hl  = c.n==='Site' ? ' style="color:var(--cyan)"' : '';
+    return `<div class="row">
+      <span class="name num"${hl}>${c.n} <span class="yoyof">${pct(alc)}</span></span>
+      <span class="bar"><i style="width:${alc}%;background:${col}"></i></span>
+      <span class="amt num">${brlM(c.r)}</span>
+      <span class="yoy num ${c.yoy>=0?'up':'down'}">${c.yoy>=0?'▲':'▼'} ${sign(c.yoy)}</span>
+    </div>`;
+  };
+  document.getElementById('gainers').innerHTML = gainers.map(rowHTML).join('');
+  document.getElementById('losers').innerHTML  = losers.map(rowHTML).join('');
+
+  /* ticker */
+  const tks = [
+    {n:'TOTAL PARQUE', v:yoyTotal},{n:'EXTERNO', v:st.externoYoy},{n:'INTERNO', v:st.internoYoy},
+    ...st.canais.map(c=>({n:c.n.toUpperCase(), v:c.yoy}))
+  ];
+  document.getElementById('ticker').innerHTML = tks.map(t=>
+    `<span class="tk"><b>${t.n}</b><span class="v ${t.v>=0?'up':'down'}">${t.v>=0?'▲':'▼'} ${sign(t.v)}</span></span>`
+  ).join('') ;
+
+  /* insights dinâmicos */
+  document.getElementById('insShare').textContent = pct(shareExterno);
+}
+
+/* ─────────────────────── CLOCK ─────────────────────── */
+function tickClock(){
+  const d=new Date();
+  document.getElementById('clock').textContent =
+    String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+}
+tickClock(); setInterval(tickClock, 15000);
+
+/* ─────────────────────── DRAWER ─────────────────────── */
+const drawer=document.getElementById('drawer'), gearBtn=document.getElementById('gearBtn');
+const FIELDS={inRefDate:'refDate',inRealizado:'realizado',inMetaGeral:'metaGeral',inRealizado25:'realizado25',
+  inSite:'site',inMetaSite:'metaSite',inSite25:'site25',inParcial:'parcialPct'};
+function fillForm(){ for(const [id,k] of Object.entries(FIELDS)) document.getElementById(id).value=S[k]; }
+gearBtn.addEventListener('click',()=>{
+  const open=drawer.classList.toggle('open');
+  gearBtn.setAttribute('aria-expanded',open);
+  if(open) fillForm();
+});
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){drawer.classList.remove('open'); gearBtn.setAttribute('aria-expanded','false');} });
+document.getElementById('saveBtn').addEventListener('click',()=>{
+  for(const [id,k] of Object.entries(FIELDS)){
+    const el=document.getElementById(id);
+    S[k] = el.type==='number' ? (parseFloat(el.value)||S[k]) : (el.value||S[k]);
+  }
+  // mantém a linha "Site" dos canais em sincronia
+  const siteRow=S.canais.find(c=>c.n==='Site');
+  if(siteRow){ siteRow.r=S.site; siteRow.m=S.metaSite; siteRow.yoy=Math.round((S.site/S.site25-1)*100); }
+  try{ localStorage.setItem(LS_KEY, JSON.stringify(S)); }catch(e){}
+  drawer.classList.remove('open'); gearBtn.setAttribute('aria-expanded','false');
+  render();
+});
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  S=JSON.parse(JSON.stringify(DEFAULTS));
+  try{ localStorage.removeItem(LS_KEY); }catch(e){}
+  fillForm(); render();
+});
+
+render();
+</script>
