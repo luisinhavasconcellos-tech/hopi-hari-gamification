@@ -1,5 +1,10 @@
 # Gestão à Vista · Vendas — pacote para o Lovable
 
+> Também incluso: **kit de identidade visual do Hopi Hari** — veja
+> [`BRAND.md`](./BRAND.md) (`src/styles/hopi-brand.css`,
+> `src/lib/hopiBrand.ts` e a página de referência
+> `src/pages/BrandShowcase.tsx`).
+
 Dashboard broadcast (estilo financial TV) de acompanhamento de vendas do
 Hopi Hari, com destaque para a entrega do Marketing no canal site.
 Convertido para React + TypeScript no formato padrão dos projetos Lovable

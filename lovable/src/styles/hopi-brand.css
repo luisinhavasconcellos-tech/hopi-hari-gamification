@@ -1,0 +1,191 @@
+/* ============================================================
+   HOPI HARI · Identidade visual (kit de implementação)
+   Look & feel de hopihari.com.br: azul royal + verde Hopi,
+   CTAs em pílula amarela, superfícies brancas brilhantes,
+   tipografia bold arredondada, cantos generosos.
+
+   Como usar: importe este arquivo uma vez e aplique a classe
+   `hh-brand` no container raiz da página (ou no <body>).
+   Todas as classes de componente funcionam dentro dele.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap');
+
+.hh-brand {
+  /* ── Cores primárias ── */
+  --hh-blue: #1c3eb8;          /* azul royal — cor principal da marca */
+  --hh-blue-bright: #2b57e0;   /* azul vivo — hovers, links, gradientes */
+  --hh-blue-deep: #122a80;     /* azul profundo — texto sobre amarelo, fundos */
+  --hh-green: #62bb46;         /* verde Hopi — sucesso, progresso, natureza */
+  --hh-green-deep: #4a9e33;    /* verde profundo — texto/ícones em verde */
+  --hh-yellow: #ffc72c;        /* amarelo Hopi — CTAs, moedas, destaque */
+  --hh-yellow-deep: #f0a800;   /* amarelo profundo — gradiente/sombra de CTA */
+  --hh-red: #e84b3c;           /* vermelho — alertas, erros, urgência */
+
+  /* ── Tinta (texto) ── */
+  --hh-ink: #122456;                       /* texto principal (azul-marinho) */
+  --hh-ink-dim: rgba(18, 36, 86, 0.66);    /* texto secundário */
+  --hh-ink-faint: rgba(18, 36, 86, 0.42);  /* texto terciário / placeholders */
+
+  /* ── Superfícies ── */
+  --hh-bg: #f2f6ff;            /* fundo de página (azul gelo) */
+  --hh-card: #ffffff;          /* cartões */
+  --hh-line: rgba(18, 36, 86, 0.1); /* bordas e divisores */
+
+  /* ── Hora do Horror (variante sazonal escura) ── */
+  --hh-horror-bg: #140c24;
+  --hh-horror-bg-deep: #0f0a1e;
+  --hh-horror-panel: #241634;
+  --hh-horror-purple: #c77dff;
+  --hh-horror-gold: #ffd86b;
+  --hh-horror-orange: #ff8a1e;
+
+  /* ── Forma e profundidade ── */
+  --hh-radius: 18px;                                  /* cartões */
+  --hh-radius-pill: 999px;                            /* botões e chips */
+  --hh-shadow: 0 18px 50px rgba(18, 42, 128, 0.18);   /* destaque/modal */
+  --hh-shadow-card: 0 6px 22px rgba(18, 42, 128, 0.1);
+  --hh-shadow-cta: 0 8px 22px rgba(240, 168, 0, 0.4); /* brilho do CTA amarelo */
+
+  /* ── Tipografia ── */
+  --hh-sans: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Trebuchet MS', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  font-family: var(--hh-sans);
+  background: linear-gradient(180deg, #e8efff 0%, #f6f9ff 60%, #eaf6e4 100%);
+  color: var(--hh-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Títulos: sempre pesados, tracking levemente fechado */
+.hh-brand h1, .hh-brand h2, .hh-brand h3 {
+  font-weight: 900;
+  letter-spacing: -0.015em;
+}
+.hh-brand h1 { color: var(--hh-blue); }
+
+/* Kicker de seção (rótulo curto acima do título) */
+.hh-kicker {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--hh-green-deep);
+}
+
+/* ── Botões ── */
+.hh-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(180deg, var(--hh-yellow), var(--hh-yellow-deep));
+  color: var(--hh-blue-deep);
+  font-family: inherit;
+  font-weight: 900;
+  font-size: 15px;
+  padding: 15px 26px;
+  border: none;
+  border-radius: var(--hh-radius-pill);
+  box-shadow: var(--hh-shadow-cta);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s;
+}
+.hh-btn-primary:active { transform: scale(0.97); }
+.hh-btn-primary:disabled { opacity: 0.4; box-shadow: none; cursor: default; }
+.hh-btn-primary:focus-visible { outline: 3px solid var(--hh-blue-bright); outline-offset: 2px; }
+
+.hh-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--hh-blue);
+  color: #fff;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 15px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: var(--hh-radius-pill);
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.hh-btn-secondary:hover { background: var(--hh-blue-bright); }
+.hh-btn-secondary:active { transform: scale(0.97); }
+.hh-btn-secondary:focus-visible { outline: 3px solid var(--hh-yellow); outline-offset: 2px; }
+
+.hh-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ── Cartão ── */
+.hh-card {
+  background: var(--hh-card);
+  border-radius: var(--hh-radius);
+  box-shadow: var(--hh-shadow-card);
+  padding: 20px;
+}
+
+/* ── Chips ── */
+.hh-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 900;
+  background: var(--hh-yellow);
+  color: var(--hh-blue-deep);
+  padding: 6px 12px;
+  border-radius: var(--hh-radius-pill);
+}
+.hh-chip.green { background: var(--hh-green); color: #fff; }
+.hh-chip.blue  { background: var(--hh-blue);  color: #fff; }
+.hh-chip.soft  { background: rgba(28, 62, 184, 0.08); color: var(--hh-blue); }
+
+/* ── Barra de progresso ── */
+.hh-progress {
+  height: 12px;
+  border-radius: var(--hh-radius-pill);
+  background: rgba(18, 36, 86, 0.1);
+  overflow: hidden;
+}
+.hh-progress.slim { height: 8px; }
+.hh-progress-fill {
+  height: 100%;
+  border-radius: var(--hh-radius-pill);
+  background: linear-gradient(90deg, var(--hh-green), #8ed44f);
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hh-progress-fill.yellow { background: linear-gradient(90deg, var(--hh-yellow), var(--hh-yellow-deep)); }
+.hh-progress-fill.blue   { background: linear-gradient(90deg, var(--hh-blue-bright), var(--hh-blue)); }
+
+/* ── Faixa/hero azul (cabeçalhos de página) ── */
+.hh-hero {
+  background: linear-gradient(160deg, var(--hh-blue-bright), var(--hh-blue-deep));
+  color: #fff;
+  border-radius: var(--hh-radius);
+  padding: 28px 24px;
+  box-shadow: var(--hh-shadow);
+}
+.hh-hero .hh-kicker { color: var(--hh-yellow); }
+
+/* ── Variante Hora do Horror ──
+   Aplique .hh-horror junto com .hh-brand para a pele sazonal. */
+.hh-brand.hh-horror {
+  background: linear-gradient(180deg, var(--hh-horror-bg-deep), var(--hh-horror-bg));
+  color: #f3eeff;
+}
+.hh-brand.hh-horror .hh-card { background: var(--hh-horror-panel); box-shadow: none; color: #f3eeff; }
+.hh-brand.hh-horror h1 { color: var(--hh-horror-gold); }
+.hh-brand.hh-horror .hh-kicker { color: var(--hh-horror-purple); }
