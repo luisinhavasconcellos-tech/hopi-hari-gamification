@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Hopi Hari · Sistema de Design da Marca (identidade 2025)
+   Verde Hopi #006B59 · Creme #F3EEE0 · Dourado #D9A02B
+   Terracota #C0442C — bandeira, arabescos art nouveau
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* Superfície creme da marca */
+    --background: 44 40% 92%;
+    --foreground: 168 30% 13%;
+
+    --card: 45 50% 96%;
+    --card-foreground: 168 30% 13%;
+
+    --popover: 45 50% 97%;
+    --popover-foreground: 168 30% 13%;
+
+    --primary: 170 100% 21%;           /* Verde Hopi */
+    --primary-foreground: 45 50% 96%;
+    --primary-glow: 168 55% 34%;
+
+    --secondary: 163 24% 86%;
+    --secondary-foreground: 168 30% 15%;
+
+    --muted: 44 28% 85%;
+    --muted-foreground: 167 14% 34%;
+
+    --accent: 41 70% 45%;              /* Dourado */
+    --accent-foreground: 45 50% 97%;
+
+    --destructive: 9 62% 44%;          /* Terracota */
+    --destructive-foreground: 45 50% 97%;
+
+    --success: 152 48% 30%;
+    --success-foreground: 45 50% 97%;
+
+    --warning: 41 85% 46%;
+    --warning-foreground: 168 30% 13%;
+
+    --info: 206 75% 38%;
+
+    --border: 45 20% 78%;
+    --input: 45 22% 74%;
+    --ring: 170 100% 26%;
+
+    --radius: 0.875rem;
+
+    /* Paleta de gráficos — marca */
+    --chart-1: 170 100% 24%;
+    --chart-2: 41 75% 44%;
+    --chart-3: 14 62% 46%;
+    --chart-4: 206 65% 42%;
+    --chart-5: 152 38% 45%;
+
+    /* Sidebar — creme levemente mais escuro que o fundo */
+    --sidebar-background: 44 36% 89%;
+    --sidebar-foreground: 167 16% 30%;
+    --sidebar-primary: 170 100% 22%;
+    --sidebar-primary-foreground: 45 50% 96%;
+    --sidebar-accent: 163 22% 84%;
+    --sidebar-accent-foreground: 168 30% 13%;
+    --sidebar-border: 45 20% 79%;
+    --sidebar-ring: 170 100% 26%;
+
+    /* Gradientes & sombras */
+    --gradient-primary: linear-gradient(135deg, hsl(170 100% 20%), hsl(160 55% 32%));
+    --gradient-brand: linear-gradient(90deg, hsl(170 100% 21%), hsl(152 48% 32%), hsl(41 75% 46%), hsl(14 62% 46%));
+    --gradient-aurora:
+      radial-gradient(60% 80% at 15% 0%, hsl(170 60% 35% / 0.10), transparent 60%),
+      radial-gradient(50% 70% at 95% 5%, hsl(41 80% 50% / 0.10), transparent 60%),
+      radial-gradient(45% 60% at 70% 100%, hsl(152 45% 40% / 0.08), transparent 60%);
+    --shadow-glow: 0 0 0 1px hsl(170 100% 21% / 0.10), 0 20px 60px -20px hsl(170 100% 21% / 0.30);
+    --shadow-card: 0 1px 0 hsl(45 60% 99% / 0.7) inset, 0 14px 34px -22px hsl(168 45% 18% / 0.35);
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv11", "ss01";
+    background-image: var(--gradient-aurora);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', 'Inter', system-ui, serif;
+    letter-spacing: -0.01em;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .glass {
+    background: linear-gradient(180deg, hsl(45 55% 97% / 0.85), hsl(45 45% 95% / 0.7));
+    border: 1px solid hsl(168 25% 25% / 0.10);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: var(--shadow-card);
+  }
+  .glass-strong {
+    background: linear-gradient(180deg, hsl(45 60% 98% / 0.92), hsl(45 45% 95% / 0.82));
+    border: 1px solid hsl(168 25% 25% / 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .ring-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(168 30% 20% / 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(168 30% 20% / 0.045) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .pulse-dot {
+    position: relative;
+  }
+  .pulse-dot::before {
+    content: "";
+    position: absolute; inset: -4px;
+    border-radius: 9999px;
+    background: hsl(var(--success));
+    opacity: 0.35;
+    animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .fade-up { animation: fade-up .5s ease-out both; }
+
+  /* Recorte de bandeira — remete à bandeira Hopi Hari */
+  .brand-flag {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 12% 50%);
+  }
+  .brand-rule {
+    height: 3px;
+    border-radius: 9999px;
+    background: var(--gradient-brand);
+  }
+  .brand-topline {
+    position: relative;
+  }
+  .brand-topline::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    border-radius: 9999px 9999px 0 0;
+    background: var(--gradient-brand);
+    opacity: 0.9;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .gradient-brand {
+    background: var(--gradient-brand);
+  }
+  .text-gradient-brand {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gradient-primary-bg {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.08), hsl(var(--accent) / 0.04));
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.5; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}

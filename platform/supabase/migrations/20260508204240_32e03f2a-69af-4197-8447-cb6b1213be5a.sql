@@ -1,0 +1,1 @@
+UPDATE public.facebook_posts SET scrape_status='pending', scraped_at=NULL WHERE post_url IN ('https://www.facebook.com/reel/907673022090192/','https://www.facebook.com/reel/956496850142877/','https://www.facebook.com/reel/812650735213690/');

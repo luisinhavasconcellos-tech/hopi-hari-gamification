@@ -1,0 +1,14 @@
+REVOKE EXECUTE ON FUNCTION public.build_audience_aggregates(integer) FROM anon, authenticated, public;
+REVOKE EXECUTE ON FUNCTION public.run_data_retention(text) FROM anon, authenticated, public;
+REVOKE EXECUTE ON FUNCTION public.audit_identity_consents() FROM anon, authenticated, public;
+REVOKE EXECUTE ON FUNCTION public.audit_retention_policies() FROM anon, authenticated, public;
+REVOKE EXECUTE ON FUNCTION public.handle_new_user() FROM anon, authenticated, public;
+REVOKE EXECUTE ON FUNCTION public.protect_profile_approval() FROM anon, authenticated, public;
+REVOKE EXECUTE ON FUNCTION public.write_audit_log(text, text, text, jsonb) FROM anon, authenticated, public;
+REVOKE EXECUTE ON FUNCTION public.get_consent_summary() FROM anon;
+REVOKE EXECUTE ON FUNCTION public.get_behavior_by_segment(integer) FROM anon;
+REVOKE EXECUTE ON FUNCTION public.get_reputation_summary(integer) FROM anon;
+REVOKE EXECUTE ON FUNCTION public.get_audience_aggregates(integer, integer) FROM anon;
+REVOKE EXECUTE ON FUNCTION public.invalidate_audience_aggregates() FROM anon;
+REVOKE EXECUTE ON FUNCTION public.purge_expired_behavior_events() FROM anon;
+REVOKE EXECUTE ON FUNCTION public.get_my_access() FROM anon;

@@ -1,0 +1,1 @@
+DELETE FROM public.youtube_posts WHERE video_id IS NULL;

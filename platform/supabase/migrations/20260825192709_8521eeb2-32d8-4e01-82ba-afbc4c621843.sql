@@ -1,0 +1,23 @@
+delete from public.customer_demographics where dimension='gender_age';
+insert into public.customer_demographics (dimension,bucket_key,bucket_label,sort_order,customers,source) values
+('gender_age','F|Até 17','Feminino · Até 17',0,8508,'base_clientes_com_idade'),
+('gender_age','F|18-24','Feminino · 18-24',1,43578,'base_clientes_com_idade'),
+('gender_age','F|25-34','Feminino · 25-34',2,83548,'base_clientes_com_idade'),
+('gender_age','F|35-44','Feminino · 35-44',3,70899,'base_clientes_com_idade'),
+('gender_age','F|45-54','Feminino · 45-54',4,32521,'base_clientes_com_idade'),
+('gender_age','F|55-64','Feminino · 55-64',5,4629,'base_clientes_com_idade'),
+('gender_age','F|65+','Feminino · 65+',6,1054,'base_clientes_com_idade'),
+('gender_age','M|Até 17','Masculino · Até 17',10,2751,'base_clientes_com_idade'),
+('gender_age','M|18-24','Masculino · 18-24',11,30444,'base_clientes_com_idade'),
+('gender_age','M|25-34','Masculino · 25-34',12,64369,'base_clientes_com_idade'),
+('gender_age','M|35-44','Masculino · 35-44',13,48985,'base_clientes_com_idade'),
+('gender_age','M|45-54','Masculino · 45-54',14,26176,'base_clientes_com_idade'),
+('gender_age','M|55-64','Masculino · 55-64',15,4477,'base_clientes_com_idade'),
+('gender_age','M|65+','Masculino · 65+',16,924,'base_clientes_com_idade'),
+('gender_age','ND|Até 17','Não identificado · Até 17',20,1487,'base_clientes_com_idade'),
+('gender_age','ND|18-24','Não identificado · 18-24',21,10397,'base_clientes_com_idade'),
+('gender_age','ND|25-34','Não identificado · 25-34',22,16837,'base_clientes_com_idade'),
+('gender_age','ND|35-44','Não identificado · 35-44',23,11901,'base_clientes_com_idade'),
+('gender_age','ND|45-54','Não identificado · 45-54',24,4679,'base_clientes_com_idade'),
+('gender_age','ND|55-64','Não identificado · 55-64',25,830,'base_clientes_com_idade'),
+('gender_age','ND|65+','Não identificado · 65+',26,174,'base_clientes_com_idade');

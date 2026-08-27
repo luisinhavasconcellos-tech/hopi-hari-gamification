@@ -1,0 +1,1 @@
+GRANT INSERT, UPDATE ON public.youtube_posts TO sandbox_exec;

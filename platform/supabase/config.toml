@@ -1,0 +1,4 @@
+project_id = "ylduczowjvbtxixvakxx"
+
+[functions.marketing-content-plan]
+verify_jwt = false

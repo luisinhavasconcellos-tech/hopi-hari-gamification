@@ -1,0 +1,1 @@
+UPDATE public.instagram_posts SET share_count = 667 WHERE id = '9ae48d02-a0d7-4438-97b1-4735af6d7b8a';

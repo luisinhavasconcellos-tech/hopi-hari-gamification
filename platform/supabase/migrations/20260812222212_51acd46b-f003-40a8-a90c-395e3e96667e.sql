@@ -1,0 +1,1 @@
+UPDATE public.profiles SET status='approved', approved_at=now() WHERE status='pending';

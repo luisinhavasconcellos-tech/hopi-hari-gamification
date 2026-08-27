@@ -1,0 +1,1 @@
+UPDATE public.facebook_posts SET scrape_status='pending', raw_data=NULL, scraped_at=NULL WHERE scrape_status='scraped' AND like_count=0 AND comments_count=0 AND (view_count IS NULL OR view_count=0) AND thumbnail_url IS NULL;

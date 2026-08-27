@@ -1,68 +1,79 @@
-# Hopi Hari · O Parque como Videojogo — Protótipo de Demonstração
+# Hopi Hari · Plataforma Digital
 
-Protótipo **demo** da proposta de gamificação do Hopi Hari (Fase 1 · Quick wins),
-para apresentação à direção. Não é um produto de produção: todos os dados são
-fictícios/semeados, não há backend, base de dados, autenticação nem leitura real
-de QR codes. Tudo funciona offline e instantaneamente.
+Monorepo com os dois produtos digitais do Hopi Hari, organizados em pastas
+independentes (cada uma com seu próprio `package.json`, build e testes):
 
-## O que a demo mostra
+```
+├── platform/   Plataforma de Inteligência (BI) — produto principal
+└── demo/       Protótipo de gamificação "O Parque como Videojogo"
+```
 
-1. **Entrada** — opt-in do visitante e escolha de perfil (Conquistador Radical,
-   Explorador de Mistério, Família Aventureira).
-2. **Missão do Dia** — barra de progresso, checklist das atrações, saldo de Hari
-   Coins e resgate de recompensa.
-3. **Caça ao Tesouro** — 6 totens pelas 5 zonas; tocar num totem simula o scan
-   do QR e revela a lenda Hari.
-4. **Cartas Colecionáveis** — álbum com cartas bloqueadas/desbloqueadas, animação
-   de flip na revelação (banner de raridade, arte, intensidade / pontos /
-   raridade, desafio). Álbum a 100% = recompensa real (Fast Pass + desconto).
-5. **Desafio Fotográfico** — "tirar foto" usa uma ilustração placeholder e mostra
-   o estado "em destaque nos ecrãs do parque".
-6. **Hora do Horror** (edição especial sazonal) — separador com dois jogos novos:
-   - **Caça aos Monstros** (estilo Pokémon Go): mapa GPS real do parque com a
-     localização do visitante, pinos dos monstros da Hora do Horror, direções
-     (distância + minutos a pé + rota traçada) e captura com a "Hari Orb".
-   - **As 25 Moedas**: uma moeda por cada ano de Hora do Horror. Escaneia a
-     moeda, joga o mini-jogo "Quebra a Maldição" e desbloqueia a história do
-     tema dessa edição. Completar as 25 dá recompensas VIP.
+---
 
-O separador **Mapa** (antiga Caça ao Tesouro) também passou a ser um mapa GPS
-do parque com direções até cada brinquedo e scan do totem no local.
+## `platform/` — Plataforma de Inteligência
 
-## Controlos de apresentação
+Plataforma unificada de inteligência de audiência e crescimento social:
+dashboards de redes sociais (Instagram, TikTok, LinkedIn, Facebook, YouTube, X),
+inteligência de audiência e vendas (distribuidores, funil, visitantes, CRM,
+mapas de leads no Brasil), benchmarks, reputação, influenciadores e mais.
 
-Por baixo do telemóvel há uma barra discreta para o apresentador:
+**Stack:** React 18 + TypeScript + Vite · Tailwind + shadcn/ui · Supabase
+(autenticação, banco e RPCs) · TanStack Query · Recharts.
 
-- **▶ Tour guiado** — percorre toda a história em 8 toques no botão "Próximo";
-  cada passo mostra uma legenda do que está a acontecer.
-- **⚙ Demo** — abre atalhos de estado: `Início`, `Meio (2/4)` (o ecrã da Missão
-  do Dia igual ao do deck), `Quase (5/6)`, `Completo`, e **↺ Reset** para
-  recomeçar sem dar refresh.
+### Acesso e login
 
-Todo o estado vive em memória React — um refresh também repõe tudo.
+A plataforma é protegida por login (portal em `/auth`):
 
-## Como correr
+- Qualquer rota acessada sem sessão redireciona para o portal, preservando o
+  destino (`/auth?next=…`) — depois do login você cai exatamente onde queria ir.
+- O portal tem **Entrar**, **Criar Conta**, **Esqueci minha senha** e reenvio de
+  link de confirmação de e-mail.
+- Contas novas nascem **pendentes**: um administrador aprova o acesso na página
+  `/users` (a tela de "aguardando aprovação" orienta o usuário nesse meio-tempo).
+- Papéis: `admin` (gerencia usuários) e `viewer`.
 
-Requisitos: Node 18+.
+### Como rodar
 
 ```bash
+cd platform
 npm install
-npm run dev        # abre em http://localhost:5173
+npm run dev        # http://localhost:8080 (porta do Vite)
+npm test           # vitest — inclui o teste de que TODAS as rotas exigem login
+npm run build      # build de produção em platform/dist
 ```
 
-## Build / deploy
+O `.env` versionado contém apenas a URL do projeto Supabase e a chave
+**publishable** (anônima) — que é pública por design; os dados são protegidos
+por RLS no Supabase. As migrações e functions estão em `platform/supabase/`.
+
+### Identidade visual
+
+Tema claro com a identidade 2025 do parque: verde Hopi `#006B59`, creme
+`#F3EEE0`, dourado `#D9A02B` e terracota `#C0442C`, tipografia display
+Fraunces e a bandeira/arabescos da marca. Os tokens vivem em
+`platform/src/index.css` (CSS variables consumidas pelo Tailwind).
+
+---
+
+## `demo/` — Protótipo de gamificação
+
+Demo offline da proposta "O Parque como Videojogo" (missões, caça ao tesouro,
+cartas colecionáveis, Hora do Horror com caça aos monstros por GPS e as 25
+moedas). Todos os dados são fictícios; não há backend.
 
 ```bash
-npm run build      # gera ./dist (estático, base relativa)
-npm run preview    # serve o build localmente
+cd demo
+npm install
+npm run dev        # http://localhost:5173
+npm run build      # gera demo/dist (100% estático e self-contained)
 ```
 
-A pasta `dist/` é 100% estática e self-contained (sem fontes ou serviços
-externos): pode ser arrastada para Netlify/Vercel, servida do GitHub Pages, ou
-aberta a partir de qualquer servidor de ficheiros. Para a reunião, basta
-`npm run dev` num portátil — funciona sem internet.
+O arquivo `demo/hopi-hari-demo.html` é o build single-file para compartilhar
+(funciona aberto direto do disco, sem internet). Detalhes no `demo/README.md`
+— controles de apresentação, tour guiado e atalhos de estado.
 
-## Stack
+### Deploy da demo
 
-React 18 + TypeScript + Vite. Sem mais dependências: animações em CSS,
-ilustrações em SVG inline, estado em React.
+O workflow `.github/workflows/deploy.yml` publica `demo/dist` no GitHub Pages
+a cada push na `main` que toque em `demo/` (ou manualmente via *workflow
+dispatch*).

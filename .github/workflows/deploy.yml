@@ -1,8 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy demo to GitHub Pages
 
 on:
   push:
-    branches: [main, claude/gracious-fermi-73ed8b]
+    branches: [main]
+    paths: ["demo/**", ".github/workflows/deploy.yml"]
   workflow_dispatch:
 
 permissions:
@@ -17,20 +18,24 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: demo
     steps:
       - uses: actions/checkout@v4
-      
+
       - uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
-      
-      - run: npm install
+          cache-dependency-path: demo/package-lock.json
+
+      - run: npm ci
       - run: npm run build
-      
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'
+          path: 'demo/dist'
 
   deploy:
     needs: build
