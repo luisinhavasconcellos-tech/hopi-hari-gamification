@@ -1,0 +1,291 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * HopiPlay · sistema de design "picotado de bilhete de feira"
+ * Navy do parque, dourado de ficha, papel de bilhete. Tudo em oklch.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 3px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-display: "Phudu", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+:root {
+  --radius: 0.35rem;
+
+  /* Navy do parque */
+  --primary: oklch(0.4 0.07 220);
+  --primary-foreground: oklch(0.98 0.012 90);
+  /* Dourado de ficha */
+  --accent: oklch(0.82 0.155 95);
+  --accent-foreground: oklch(0.24 0.03 240);
+
+  /* Amarelo oficial Hopi Hari */
+  --background: oklch(0.855 0.168 96);
+  --foreground: oklch(0.22 0.018 240);
+  --paper: oklch(0.99 0.008 90);
+  --ink: oklch(0.18 0.015 240);
+
+  --card: oklch(0.99 0.008 90);
+  --card-foreground: oklch(0.22 0.018 240);
+  --popover: oklch(0.99 0.008 90);
+  --popover-foreground: oklch(0.22 0.018 240);
+
+  --secondary: oklch(0.93 0.016 90);
+  --secondary-foreground: oklch(0.3 0.03 230);
+  --muted: oklch(0.94 0.012 90);
+  --muted-foreground: oklch(0.5 0.02 235);
+
+  --destructive: oklch(0.56 0.18 33);
+  --destructive-foreground: oklch(0.98 0.012 90);
+  --success: oklch(0.55 0.13 155);
+  --success-foreground: oklch(0.98 0.012 90);
+  --warning: oklch(0.75 0.15 70);
+  --warning-foreground: oklch(0.22 0.018 240);
+
+  --border: oklch(0.86 0.02 90);
+  --input: oklch(0.88 0.018 90);
+  --ring: oklch(0.82 0.155 95);
+
+  --chart-1: oklch(0.4 0.07 220);
+  --chart-2: oklch(0.82 0.155 95);
+  --chart-3: oklch(0.56 0.18 33);
+  --chart-4: oklch(0.55 0.13 155);
+  --chart-5: oklch(0.5 0.02 235);
+
+  --gradient-navy: linear-gradient(
+    155deg,
+    oklch(0.32 0.06 225) 0%,
+    oklch(0.42 0.075 218) 55%,
+    oklch(0.36 0.065 210) 100%
+  );
+  --gradient-ficha: linear-gradient(
+    120deg,
+    oklch(0.86 0.14 100) 0%,
+    oklch(0.82 0.155 95) 45%,
+    oklch(0.74 0.15 78) 100%
+  );
+  --shadow-bilhete: 0 1px 0 oklch(0.86 0.02 90), 0 10px 24px -16px oklch(0.4 0.07 220 / 45%);
+  --shadow-alto: 0 24px 60px -28px oklch(0.4 0.07 220 / 55%);
+}
+
+.dark {
+  --background: oklch(0.19 0.028 232);
+  --foreground: oklch(0.96 0.01 90);
+  --paper: oklch(0.24 0.032 230);
+  --ink: oklch(0.96 0.01 90);
+  --card: oklch(0.24 0.032 230);
+  --card-foreground: oklch(0.96 0.01 90);
+  --popover: oklch(0.24 0.032 230);
+  --popover-foreground: oklch(0.96 0.01 90);
+  --primary: oklch(0.72 0.09 215);
+  --primary-foreground: oklch(0.17 0.026 232);
+  --secondary: oklch(0.3 0.035 230);
+  --secondary-foreground: oklch(0.96 0.01 90);
+  --muted: oklch(0.29 0.032 230);
+  --muted-foreground: oklch(0.72 0.02 230);
+  --accent: oklch(0.82 0.155 95);
+  --accent-foreground: oklch(0.19 0.028 232);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.82 0.155 95);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+/* ---------------- utilidades do sistema ---------------- */
+
+@utility surface-navy {
+  background-image: var(--gradient-navy);
+  color: oklch(0.97 0.012 90);
+}
+
+@utility surface-ficha {
+  background-image: var(--gradient-ficha);
+  color: oklch(0.24 0.03 240);
+}
+
+@utility shadow-bilhete {
+  box-shadow: var(--shadow-bilhete);
+}
+
+@utility shadow-alto {
+  box-shadow: var(--shadow-alto);
+}
+
+/* Bilhete: cantos picotados nas laterais */
+@utility bilhete {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-bilhete);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 1.15rem;
+    height: 1.15rem;
+    border: 1px solid var(--border);
+    border-radius: 9999px;
+    background: var(--background);
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    left: -0.6rem;
+  }
+
+  &::after {
+    right: -0.6rem;
+  }
+}
+
+/* Linha picotada de destaque */
+@utility picotado {
+  border-top: 2px dashed color-mix(in oklab, var(--primary) 32%, transparent);
+}
+
+@utility picotado-vertical {
+  border-left: 2px dashed color-mix(in oklab, var(--primary) 28%, transparent);
+}
+
+@utility codigo-mono {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  font-variant-ligatures: none;
+}
+
+@utility etiqueta {
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@utility grade-tecnica {
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--primary) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--primary) 6%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+@keyframes hp-picar {
+  0% {
+    transform: scale(0.94) rotate(-1.5deg);
+    opacity: 0;
+  }
+  55% {
+    transform: scale(1.02) rotate(0.4deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes hp-selo {
+  0% {
+    transform: scale(1.6) rotate(-9deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(0.96) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(-3deg);
+    opacity: 1;
+  }
+}
+
+@keyframes hp-pulsar {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@utility animar-picar {
+  animation: hp-picar 420ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+}
+
+@utility animar-selo {
+  animation: hp-selo 480ms cubic-bezier(0.25, 1.4, 0.4, 1) both;
+}
+
+@utility animar-pulsar {
+  animation: hp-pulsar 1.6s ease-in-out infinite;
+}
