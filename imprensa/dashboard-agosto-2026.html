@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{margin:0}</style>
+</head>
+<body>
+<title>Hopi Hari Imprensa Agosto 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@87.5,400;87.5,500;100,400;100,500;100,600;112,700;112,800&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#F3F5FA; --surface:#FFFFFF; --surface-2:#F7F8FC;
+  --ink:#101A3A; --ink-2:#4A5473; --muted:#8A93AD; --line:#DEE3EF; --line-2:#EEF1F7;
+  --accent:#2B57E0; --accent-ink:#1C3EB8; --accent-soft:#E6ECFF;
+  --hh:#C98500; --hh-soft:#FFF1D6; --hh-ink:#7A4E00;
+  --good:#1E7F4F; --good-soft:#E1F3E9;
+  --warn:#9A5B00; --warn-soft:#FFF1D6;
+  --shadow:0 1px 2px rgba(16,26,58,.05), 0 6px 20px rgba(16,26,58,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0D1226; --surface:#151B33; --surface-2:#1B2240;
+    --ink:#EDF0FA; --ink-2:#B7BED4; --muted:#7E88A8; --line:#2A3352; --line-2:#222A47;
+    --accent:#5B86FF; --accent-ink:#8FAAFF; --accent-soft:#1E2A57;
+    --hh:#E0A030; --hh-soft:#3A2B10; --hh-ink:#F2C879;
+    --good:#4CC080; --good-soft:#153726;
+    --warn:#E0A030; --warn-soft:#3A2B10;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0D1226; --surface:#151B33; --surface-2:#1B2240;
+  --ink:#EDF0FA; --ink-2:#B7BED4; --muted:#7E88A8; --line:#2A3352; --line-2:#222A47;
+  --accent:#5B86FF; --accent-ink:#8FAAFF; --accent-soft:#1E2A57;
+  --hh:#E0A030; --hh-soft:#3A2B10; --hh-ink:#F2C879;
+  --good:#4CC080; --good-soft:#153726;
+  --warn:#E0A030; --warn-soft:#3A2B10;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:13px;line-height:1.45;-webkit-font-smoothing:antialiased}
+.page{max-width:1320px;margin:0 auto;padding:28px 28px 40px;display:flex;flex-direction:column;gap:16px}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+
+/* masthead */
+.mast{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);font-weight:600}
+.mast h1{font-size:34px;line-height:1;font-weight:800;font-stretch:112%;letter-spacing:-.01em;margin-top:6px}
+.mast h1 span{color:var(--accent-ink)}
+.mast .meta{text-align:right;color:var(--ink-2);font-size:12px;line-height:1.5}
+.mast .meta strong{color:var(--ink)}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.02em;white-space:nowrap}
+.chip-good{background:var(--good-soft);color:var(--good)}
+.chip-hh{background:var(--hh-soft);color:var(--hh-ink)}
+.chip-accent{background:var(--accent-soft);color:var(--accent-ink)}
+.chip-warn{background:var(--warn-soft);color:var(--warn)}
+.chip-muted{background:var(--line-2);color:var(--ink-2)}
+.chip i{width:6px;height:6px;border-radius:50%;background:currentColor;display:inline-block}
+
+/* kpis */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px 12px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:4px;min-height:106px}
+.kpi .label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);font-weight:600}
+.kpi .value{font-size:30px;font-weight:800;font-stretch:112%;line-height:1.05;letter-spacing:-.01em;margin-top:2px}
+.kpi .value small{font-size:16px;font-weight:600;color:var(--ink-2);margin-right:4px;font-stretch:100%}
+.kpi .sub{font-size:12px;color:var(--ink-2);margin-top:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.kpi.hero{border-color:var(--accent);background:linear-gradient(180deg,var(--accent-soft),var(--surface) 70%)}
+.meter{height:6px;border-radius:3px;background:var(--line-2);overflow:hidden;margin-top:6px}
+.meter b{display:block;height:100%;background:var(--hh);border-radius:3px}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;min-width:0}
+.card h2{font-size:14px;font-weight:700;font-stretch:112%;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.card h2 small{font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.02em;text-transform:none;font-stretch:100%}
+.span-4{grid-column:span 4}.span-5{grid-column:span 5}.span-6{grid-column:span 6}.span-7{grid-column:span 7}.span-8{grid-column:span 8}.span-12{grid-column:span 12}
+.lede{grid-column:span 12;background:transparent;border:0;box-shadow:none;padding:0 0 4px;gap:8px}
+.lede .cols{columns:2;column-gap:32px;font-size:13px;color:var(--ink-2);max-width:none}
+.lede .cols p{margin-bottom:8px;break-inside:avoid}
+.lede .cols p strong{color:var(--ink);font-weight:600}
+
+/* charts */
+.chart{position:relative;width:100%}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.legend{display:flex;gap:14px;font-size:11px;color:var(--ink-2);flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:11px;line-height:1.4;padding:6px 9px;border-radius:6px;white-space:nowrap;transform:translate(-50%,calc(-100% - 10px));opacity:0;transition:opacity .12s;z-index:5;box-shadow:var(--shadow)}
+.tip.on{opacity:1}
+.tip b{font-weight:700}
+.axis text{fill:var(--muted);font-size:10px;font-family:inherit}
+.grid-line{stroke:var(--line-2);stroke-width:1}
+.baseline{stroke:var(--line);stroke-width:1}
+.bar-hh{fill:var(--hh)}
+.bar-other{fill:var(--accent)}
+.bar-hit{fill:transparent}
+.bar-hit:hover ~ .bar-hh, .bar-hit:hover ~ .bar-other{opacity:.85}
+.col-lbl{fill:var(--ink-2);font-size:10px;font-weight:600;font-family:inherit}
+.annot text{fill:var(--ink);font-size:10.5px;font-weight:600;font-family:inherit}
+.annot line{stroke:var(--muted);stroke-width:1}
+
+/* horizontal bars */
+.hbars{display:grid;grid-template-columns:auto 1fr auto;gap:6px 10px;align-items:center;font-size:12px}
+.hbars .name{color:var(--ink);font-weight:500;white-space:nowrap}
+.hbars .name small{color:var(--muted);font-weight:400;margin-left:4px}
+.hbars .track{height:16px;background:var(--line-2);border-radius:0 4px 4px 0;overflow:hidden;position:relative}
+.hbars .track b{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:0 4px 4px 0}
+.hbars .track b.hh{background:var(--hh)}
+.hbars .val{color:var(--ink);font-weight:600;white-space:nowrap;text-align:right}
+.hbars .val small{color:var(--muted);font-weight:500;margin-left:5px}
+
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;text-align:left;padding:0 0 6px;border-bottom:1px solid var(--line)}
+td{padding:6px 0;border-bottom:1px solid var(--line-2);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;white-space:nowrap}
+td .veh{font-weight:600;color:var(--ink);display:block}
+td .ttl{color:var(--ink-2);display:block;line-height:1.35}
+.rank{display:inline-block;width:18px;color:var(--muted);font-weight:600}
+
+/* activity lists */
+.acts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.act h3{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);font-weight:700;padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:6px;display:flex;justify-content:space-between}
+.act h3 span{color:var(--muted);font-weight:500;letter-spacing:0;text-transform:none}
+.act ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
+.act li{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;font-size:12px;line-height:1.35}
+.act li .t{color:var(--ink)}
+.act li .t small{display:block;color:var(--muted);font-size:11px}
+.act li .chip{flex:none;font-size:10px;padding:2px 7px;margin-top:1px}
+
+.callout{border-left:3px solid var(--warn);background:var(--warn-soft);border-radius:0 8px 8px 0;padding:10px 12px;font-size:12px;color:var(--ink)}
+.callout .eyebrow{color:var(--warn);margin-bottom:3px}
+.note{font-size:11px;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;gap:16px;font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;flex-wrap:wrap}
+
+@media (max-width:980px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .span-4,.span-5,.span-6,.span-7,.span-8{grid-column:span 12}
+  .acts{grid-template-columns:repeat(2,1fr)}
+  .lede .cols{columns:1}
+  .mast{flex-direction:column;align-items:flex-start}
+  .mast .meta{text-align:left}
+}
+@media (max-width:560px){.kpis,.acts{grid-template-columns:1fr}.mast h1{font-size:26px}}
+@media print{
+  @page{size:A3 portrait;margin:10mm}
+  body{background:#fff;font-size:11px}
+  .page{padding:0;gap:10px;max-width:none}
+  .card,.kpi{box-shadow:none;break-inside:avoid}
+  .kpi .value{font-size:24px}
+  .tip{display:none}
+}
+@media (prefers-reduced-motion:reduce){.tip{transition:none}}
+</style>
+
+<div class="page">
+
+  <header class="mast">
+    <div>
+      <div class="eyebrow">Assessoria de imprensa · Relatório mensal para a diretoria</div>
+      <h1>Hopi Hari <span>— Agosto/2026</span></h1>
+    </div>
+    <div class="meta">
+      <div><strong>201 notícias</strong> · 100% positivas · <strong>92 veículos</strong></div>
+      <div>Clipagem consolidada de 01 a 31/08/2026 · valoração em VEP (Valor Equivalente Publicitário)</div>
+    </div>
+  </header>
+
+  <section class="kpis" aria-label="Principais indicadores">
+    <div class="kpi">
+      <div class="label">Total de clippings</div>
+      <div class="value num">201 <small>notícias</small></div>
+      <div class="sub">100% online · 92 veículos distintos</div>
+    </div>
+    <div class="kpi hero">
+      <div class="label">Valoração (VEP)</div>
+      <div class="value num"><small>R$</small>4.715.770,97</div>
+      <div class="sub">Média de <span class="num">R$ 23.461</span> por notícia</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Impacto</div>
+      <div class="value num">201 <small>positivas</small></div>
+      <div class="sub"><span class="chip chip-good"><i></i>Nenhuma neutra ou negativa</span></div>
+    </div>
+    <div class="kpi">
+      <div class="label">Hora do Horror no VEP</div>
+      <div class="value num">64%</div>
+      <div class="meter"><b style="width:64.1%"></b></div>
+      <div class="sub"><span class="num">R$ 3.021.277</span> em 58 notícias · principal ativo do mês</div>
+    </div>
+  </section>
+
+  <section class="grid">
+
+    <div class="card lede">
+      <h2>Análise de exposição</h2>
+      <div class="cols">
+        <p>Durante agosto, a comunicação do Hopi Hari teve como principal eixo a <strong>Hora do Horror 2026</strong>, com a intensificação do relacionamento com a imprensa a partir da Spoiler Night, do coquetel e da estreia da atração. O mês também foi marcado pela prospecção de novas oportunidades em veículos e programas de grande alcance, ampliando as possibilidades de exposição do parque.</p>
+        <p>Entre as principais ações, foram divulgados o release sobre advogados, o conteúdo pós-Spoiler Night e o release sobre a parceria com o CULTSP Pro. A assessoria também atuou no acompanhamento e suporte à imprensa durante os eventos, na organização de convites e confirmações e na negociação de pautas com veículos como Cazé TV, Exame, Panrotas, Domingo Legal, Ana Maria Braga e Achismos TV.</p>
+        <p>A estratégia da Hora do Horror também avançou com a preparação de conteúdos para diferentes regiões, pontos-chave para utilização dos porta-vozes, relacionamento com veículos especializados e alinhamento de visitas e participações em programas. Paralelamente, houve atuação de contenção de crise e relacionamento com a imprensa após o incidente envolvendo um jornalista durante a atração.</p>
+        <p>Como resultado, o Hopi Hari registrou <strong>201 notícias</strong> em agosto, todas positivas, alcançando <strong>VEP de R$ 4.715.770,97</strong>. Apresentou forte concentração da exposição na Hora do Horror, com mais de R$ 3 milhões em VEP, consolidando o evento como o principal ativo de comunicação do parque no período.</p>
+      </div>
+    </div>
+
+    <div class="card span-7">
+      <h2>VEP por dia de publicação <small>R$ mil · barras empilhadas por tema · rótulo = nº de notícias no dia</small></h2>
+      <div class="legend"><span><i style="background:var(--hh)"></i>Hora do Horror</span><span><i style="background:var(--accent)"></i>Demais temas</span></div>
+      <div class="chart" id="daily"></div>
+      <p class="note">Picos de 03/08 (release advogados + blitz da Hora do Horror no iG), 13–14/08 (pré-estreia e estreia da Hora do Horror) e 18/08 (32 notícias sobre a estreia e os 25 anos da atração).</p>
+    </div>
+
+    <div class="card span-5">
+      <h2>VEP por tema <small>agrupamento por assunto da notícia</small></h2>
+      <div class="hbars" id="themes"></div>
+      <h2 style="margin-top:6px">Veículos com maior VEP <small>top 6 de 92</small></h2>
+      <table>
+        <thead><tr><th>Veículo</th><th class="r">Notícias</th><th class="r">VEP</th></tr></thead>
+        <tbody>
+          <tr><td>iG</td><td class="r num">11</td><td class="r num">R$ 3.065.028</td></tr>
+          <tr><td>Melhores Destinos</td><td class="r num">8</td><td class="r num">R$ 1.050.000</td></tr>
+          <tr><td>A Cidade On</td><td class="r num">3</td><td class="r num">R$ 154.000</td></tr>
+          <tr><td>Brazil Journal</td><td class="r num">1</td><td class="r num">R$ 61.750</td></tr>
+          <tr><td>Info Jobs <span class="note">(anúncios de vagas)</span></td><td class="r num">63</td><td class="r num">R$ 30.800</td></tr>
+          <tr><td>Sala da Notícia</td><td class="r num">1</td><td class="r num">R$ 25.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card span-7">
+      <h2>Principais clippings <small>destaques do mês</small></h2>
+      <table>
+        <thead><tr><th>#</th><th>Veículo · Título</th><th class="r">VEP</th></tr></thead>
+        <tbody>
+          <tr><td><span class="rank num">1</span></td><td><span class="veh">iG <span class="chip chip-hh">Hora do Horror</span></span><span class="ttl">“Hora do Horror 2026 estreia nesta semana no Hopi Hari”</span></td><td class="r num">R$ 455.612,30</td></tr>
+          <tr><td><span class="rank num">2</span></td><td><span class="veh">Melhores Destinos <span class="chip chip-accent">Promoção</span></span><span class="ttl">“Aniversariante no Hopi Hari: o que você ganha e como funciona a promoção”</span></td><td class="r num">R$ 364.000,00</td></tr>
+          <tr><td><span class="rank num">3</span></td><td><span class="veh">A Cidade On <span class="chip chip-accent">Advogados</span></span><span class="ttl">“Advogados têm entrada gratuita no Hopi Hari durante todo o mês de agosto; veja como garantir a cortesia”</span></td><td class="r num">R$ 66.000,00</td></tr>
+          <tr><td><span class="rank num">4</span></td><td><span class="veh">Sala da Notícia <span class="chip chip-hh">Hora do Horror</span></span><span class="ttl">“Hora do Horror completa 25 anos com maior edição da história do Hopi Hari”</span></td><td class="r num">R$ 25.000,00</td></tr>
+          <tr><td><span class="rank num">5</span></td><td><span class="veh">Último Segundo <span class="chip chip-hh">Hora do Horror</span></span><span class="ttl">“Hopi Hari leva IA à campanha da Hora do Horror”</span></td><td class="r num">R$ 18.937,20</td></tr>
+          <tr><td><span class="rank num">6</span></td><td><span class="veh">Jornal da Região <span class="chip chip-hh">Hora do Horror</span></span><span class="ttl">“Hopi Hari investe na formação de artistas para a Hora do Horror”</span></td><td class="r num">R$ 12.000,00</td></tr>
+          <tr><td><span class="rank num">7</span></td><td><span class="veh">Diário do Litoral <span class="chip chip-hh">Hora do Horror</span></span><span class="ttl">“Hopi Hari estreia 25ª Hora do Horror em SP com cenografia realista, monstros pavorosos e atrações de forte impacto”</span></td><td class="r num">R$ 9.200,00</td></tr>
+          <tr><td><span class="rank num">8</span></td><td><span class="veh">Migalhas <span class="chip chip-accent">Advogados</span></span><span class="ttl">“Hopi Hari oferece entrada gratuita a advogados em agosto”</span></td><td class="r num">R$ 9.000,00</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card span-5">
+      <h2>Relacionamento com imprensa <small>pautas e agendas em andamento</small></h2>
+      <div class="act">
+        <ul>
+          <li><span class="t">Cazé TV</span><span class="chip chip-warn">Em negociação</span></li>
+          <li><span class="t">Broadway é Aqui <small>Pauta sobre férias / novo espetáculo</small></span><span class="chip chip-warn">Em negociação</span></li>
+          <li><span class="t">Exame <small>Pauta enviada · entrevista 02/09</small></span><span class="chip chip-good">Agendada</span></li>
+          <li><span class="t">Panrotas <small>Entrevista exclusiva com Fernando</small></span><span class="chip chip-good">Alinhada</span></li>
+          <li><span class="t">Achismos TV <small>Episódio “Três Continentes”</small></span><span class="chip chip-good">Participação fechada</span></li>
+          <li><span class="t">Domingo Legal <small>Ida ao palco</small></span><span class="chip chip-accent">Em alinhamento</span></li>
+          <li><span class="t">Ana Maria Braga <small>Gravação do quadro Jogo de Panelas no parque</small></span><span class="chip chip-accent">Em alinhamento</span></li>
+          <li><span class="t">Rede Família Mais <small>Entrevista</small></span><span class="chip chip-accent">Em alinhamento</span></li>
+          <li><span class="t">Canal Achismos / Três Continentes <small>Visita ao parque</small></span><span class="chip chip-good">Alinhada</span></li>
+          <li><span class="t">Portal Boca do Inferno <small>Visita ao parque</small></span><span class="chip chip-good">Alinhada</span></li>
+          <li><span class="t">PH+ Conexão Negócios / Record <small>Contato e alinhamento de informações</small></span><span class="chip chip-accent">Em alinhamento</span></li>
+          <li><span class="t">GLP <small>Cortesias para cobertura de dia de parque</small></span><span class="chip chip-muted">Cortesias</span></li>
+          <li><span class="t">BreakTudo <small>Cortesias para cobertura</small></span><span class="chip chip-muted">Cortesias</span></li>
+        </ul>
+      </div>
+      <div class="callout">
+        <div class="eyebrow">Gestão de imagem</div>
+        Incidente com jornalista do Diário do Litoral durante a Hora do Horror — contenção de crise e relacionamento com a imprensa. Sem registro de notícias negativas no período.
+      </div>
+    </div>
+
+    <div class="card span-12">
+      <h2>Resumo das atividades <small>agosto/2026</small></h2>
+      <div class="acts">
+        <div class="act">
+          <h3>Divulgado na imprensa <span>3</span></h3>
+          <ul>
+            <li><span class="t">Release advogados</span><span class="chip chip-good">Divulgado</span></li>
+            <li><span class="t">Release pós-Spoiler Night</span><span class="chip chip-good">Divulgado</span></li>
+            <li><span class="t">Release CULTSP Pro</span><span class="chip chip-good">Divulgado</span></li>
+          </ul>
+        </div>
+        <div class="act">
+          <h3>Hora do Horror <span>8</span></h3>
+          <ul>
+            <li><span class="t">Release para imprensa – Spoiler Night e coquetel</span><span class="chip chip-good">Divulgado</span></li>
+            <li><span class="t">Spoiler Night <small>Acompanhamento e suporte à imprensa</small></span><span class="chip chip-good">Realizado</span></li>
+            <li><span class="t">Coquetel Hora do Horror <small>Acompanhamento e suporte à imprensa</small></span><span class="chip chip-good">Realizado</span></li>
+            <li><span class="t">Release pós-Spoiler Night</span><span class="chip chip-good">Divulgado</span></li>
+            <li><span class="t">Release estreia Hora do Horror</span><span class="chip chip-warn">Em aprovação</span></li>
+            <li><span class="t">Pontos-chave Hora do Horror <small>Enviados para Oliver utilizar em podcast</small></span><span class="chip chip-good">Enviado</span></li>
+            <li><span class="t">Lista Spoiler Night <small>Convites e confirmações</small></span><span class="chip chip-good">Concluída</span></li>
+            <li><span class="t">Lista Hora do Horror <small>Convites e confirmações</small></span><span class="chip chip-good">Concluída</span></li>
+          </ul>
+        </div>
+        <div class="act">
+          <h3>Conteúdos e estratégia <span>10</span></h3>
+          <ul>
+            <li><span class="t">Release turismo – outros estados</span><span class="chip chip-warn">Em aprovação</span></li>
+            <li><span class="t">Release RJ</span><span class="chip chip-warn">Em aprovação</span></li>
+            <li><span class="t">Release MG</span><span class="chip chip-warn">Em aprovação</span></li>
+            <li><span class="t">Release Centro-Oeste</span><span class="chip chip-warn">Em aprovação</span></li>
+            <li><span class="t">Sugestão de pauta Exame</span><span class="chip chip-warn">Em aprovação</span></li>
+            <li><span class="t">Sugestão de pauta <small>Estratégia e experiência do consumidor</small></span><span class="chip chip-warn">Em aprovação</span></li>
+            <li><span class="t">Relatório de Social Listening <small>Analisado; sugestões de pautas enviadas</small></span><span class="chip chip-good">Enviado</span></li>
+            <li><span class="t">Relatório parcial</span><span class="chip chip-good">Enviado</span></li>
+            <li><span class="t">Clipagem Coca-Cola/FEMSA</span><span class="chip chip-good">Enviada</span></li>
+            <li><span class="t">Informações para suporte à entrevista com Oliver</span><span class="chip chip-good">Enviadas</span></li>
+          </ul>
+        </div>
+        <div class="act">
+          <h3>Leitura da diretoria <span>síntese</span></h3>
+          <ul>
+            <li><span class="t">Hora do Horror concentra 64% do VEP e 29% das notícias: cada matéria do tema vale, em média, R$ 52 mil.</span></li>
+            <li><span class="t">iG e Melhores Destinos respondem por 87% da valoração do mês (19 notícias). Diversificar veículos de alto VEP reduz a dependência.</span></li>
+            <li><span class="t">Release advogados rendeu 15 notícias e R$ 419 mil, com A Cidade On e Migalhas como principais portas de saída.</span></li>
+            <li><span class="t">Sete releases e sugestões de pauta aguardam aprovação interna: o gargalo do mês está na aprovação, não na produção.</span></li>
+            <li><span class="t">Agenda de setembro já tem Exame (02/09), Panrotas, Domingo Legal, Ana Maria Braga e Achismos TV em curso.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="foot">
+    <span>Fonte: planilha de clipagem Hopi Hari agosto/2026 (201 registros) e relatório mensal da assessoria de imprensa.</span>
+    <span>Temas atribuídos pelo título da notícia. “Vagas” reúne anúncios de recrutamento republicados pelo Info Jobs.</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var days=[[1,3,11466.35,0],[2,1,66000,0],[3,13,692912.27,331354.4],[4,8,24338,0],[5,10,483173.7,305096.5],[6,6,8000,0],[7,4,3770,0],[8,3,10338.48,0],[9,0,0,0],[10,6,19396.65,0],[11,9,461322.39,458122.39],[12,2,2000,1200],[13,8,541155.49,538950.9],[14,5,633031.6,633031.6],[15,5,38600,38600],[16,3,3932.86,1200],[17,5,2800,0],[18,32,155958.1,113383.42],[19,10,372336.85,3200],[20,4,219996.5,207096.5],[21,17,432276.88,41837.2],[22,1,2800,0],[23,3,15050,14050],[24,7,12150.89,0],[25,16,12910.65,0],[26,5,394601.18,331354.4],[27,2,1829.12,0],[28,6,46400,2800],[29,3,2100,0],[30,3,44323,0],[31,1,800,0]];
+  var brl=function(v){return 'R$ '+Math.round(v).toLocaleString('pt-BR');};
+
+  /* ---- daily stacked columns ---- */
+  var W=760,H=300,padL=44,padR=10,padT=22,padB=26;
+  var iw=W-padL-padR, ih=H-padT-padB;
+  var max=700000, step=100000;
+  var n=days.length, slot=iw/n, bw=Math.min(18,slot-4);
+  var y=function(v){return padT+ih-(v/max)*ih;};
+  var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="VEP por dia de publicação em agosto de 2026, empilhado entre Hora do Horror e demais temas">';
+  s+='<g class="axis">';
+  for(var v=0;v<=max;v+=step){
+    s+='<line class="'+(v===0?'baseline':'grid-line')+'" x1="'+padL+'" x2="'+(W-padR)+'" y1="'+y(v)+'" y2="'+y(v)+'"/>';
+    if(v%200000===0) s+='<text x="'+(padL-6)+'" y="'+(y(v)+3.5)+'" text-anchor="end">'+(v/1000)+'</text>';
+  }
+  s+='</g>';
+  days.forEach(function(d,i){
+    var cx=padL+slot*i+slot/2, x=cx-bw/2;
+    var hh=d[3], other=d[2]-d[3];
+    var yTop=y(d[2]);
+    s+='<g data-i="'+i+'">';
+    s+='<rect class="bar-hit" x="'+(cx-slot/2)+'" y="'+padT+'" width="'+slot+'" height="'+ih+'"/>';
+    if(other>0){var ho=y(0)-y(other); s+='<rect class="bar-other" x="'+x+'" y="'+y(other)+'" width="'+bw+'" height="'+ho+'" rx="'+(hh>0?0:3)+'"/>';}
+    if(hh>0){var yh=y(other+hh), hhh=y(other)-yh-(other>0?2:0); s+='<rect class="bar-hh" x="'+x+'" y="'+yh+'" width="'+bw+'" height="'+Math.max(hhh,1)+'" rx="3"/>';}
+    if(d[1]>=8) s+='<text class="col-lbl" x="'+cx+'" y="'+(yTop-5)+'" text-anchor="middle">'+d[1]+'</text>';
+    s+='<text class="axis" x="'+cx+'" y="'+(H-8)+'" text-anchor="middle" style="fill:var(--muted);font-size:10px">'+(i%2===0?d[0]:'')+'</text>';
+    s+='</g>';
+  });
+  s+='<text x="'+padL+'" y="12" style="fill:var(--muted);font-size:10px">R$ mil</text>';
+  s+='</svg><div class="tip" id="dtip"></div>';
+  var el=document.getElementById('daily'); el.innerHTML=s;
+  var tip=document.getElementById('dtip'), svg=el.querySelector('svg');
+  el.addEventListener('mousemove',function(e){
+    var g=e.target.closest('g[data-i]'); if(!g){tip.classList.remove('on');return;}
+    var d=days[+g.dataset.i]; var r=el.getBoundingClientRect(); var sr=svg.getBoundingClientRect();
+    var cx=(padL+slot*(+g.dataset.i)+slot/2)/W*sr.width;
+    tip.innerHTML='<b>'+String(d[0]).padStart(2,'0')+'/08</b> · '+d[1]+' notícia'+(d[1]===1?'':'s')+'<br>Total '+brl(d[2])+'<br>Hora do Horror '+brl(d[3])+' · Demais '+brl(d[2]-d[3]);
+    tip.style.left=cx+'px'; tip.style.top=(y(d[2])/H*sr.height)+'px'; tip.classList.add('on');
+  });
+  el.addEventListener('mouseleave',function(){tip.classList.remove('on');});
+
+  /* ---- themes ---- */
+  var themes=[['Hora do Horror',58,3021277.31,true],['Promoções e ingressos',13,1035707.83],['Release advogados',15,418822.04],['Menções diversas',51,207734.66],['Vagas (Info Jobs)',64,32229.12]];
+  var tmax=themes[0][2], total=4715770.97, t='';
+  themes.forEach(function(x){
+    var pct=Math.round(x[2]/total*100);
+    t+='<div class="name">'+x[0]+'<small class="num">'+x[1]+' not.</small></div>';
+    t+='<div class="track" title="'+x[0]+': '+brl(x[2])+'"><b class="'+(x[3]?'hh':'')+'" style="width:'+(x[2]/tmax*100)+'%"></b></div>';
+    t+='<div class="val num">'+brl(x[2])+'<small>'+pct+'%</small></div>';
+  });
+  document.getElementById('themes').innerHTML=t;
+})();
+</script>
+
+</body>
+</html>
