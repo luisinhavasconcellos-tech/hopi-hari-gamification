@@ -12,3 +12,6 @@ android/local.properties
 android/.idea/
 android/*.iml
 android/app/*.iml
+
+# o APK do Giralata é um artefacto entregue (o padrão dist/ acima não se aplica aqui)
+!android/dist/
