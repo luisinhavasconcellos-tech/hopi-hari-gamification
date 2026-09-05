@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Lata-bumper: baixa e larga, amarelo com faixas turquesa, ferragem creme e mola azul. Sem rosto, sem texto. -->
+  <ellipse cx="32" cy="56" rx="24" ry="6" fill="#14204A" opacity="0.18"/>
+  <g stroke="#14204A" stroke-width="2">
+    <path d="M10 28 v20 a22 7 0 0 0 44 0 v-20 z" fill="#FFD23F"/>
+    <rect x="10" y="34" width="44" height="5" fill="#3FD3E4"/>
+    <ellipse cx="32" cy="28" rx="22" ry="7" fill="#F5B400"/>
+    <path d="M20 12 v14 a12 4 0 0 0 24 0 v-14 z" fill="#3FD3E4"/>
+    <ellipse cx="32" cy="12" rx="12" ry="4" fill="#FFF3D6"/>
+  </g>
+  <path d="M26 18 q6 -6 12 0 q-6 6 -12 0" fill="none" stroke="#2F7BEA" stroke-width="2.5"/>
+  <circle cx="14" cy="42" r="2.2" fill="#FFF3D6" stroke="#14204A" stroke-width="1.2"/>
+  <circle cx="50" cy="42" r="2.2" fill="#FFF3D6" stroke="#14204A" stroke-width="1.2"/>
+</svg>

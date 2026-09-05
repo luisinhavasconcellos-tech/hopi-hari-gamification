@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 120" width="640" height="120" preserveAspectRatio="xMidYMid slice">
+  <!-- Panorama de parque fantástico em dia claro: paisagismo em miniatura, postes listrados e bandeirolas -->
+  <rect width="640" height="120" fill="#22B8E8"/>
+  <ellipse cx="320" cy="150" rx="420" ry="70" fill="#8CD46B"/>
+  <ellipse cx="320" cy="160" rx="300" ry="48" fill="#EBD9AE"/>
+  <g stroke="#14204A" stroke-width="2">
+    <circle cx="80" cy="70" r="22" fill="#4FA84A"/><rect x="76" y="86" width="8" height="18" fill="#9A6B3F"/>
+    <polygon points="150,44 174,96 126,96" fill="#4FA84A"/><rect x="146" y="94" width="8" height="12" fill="#9A6B3F"/>
+    <circle cx="560" cy="66" r="24" fill="#6CC24A"/><rect x="556" y="86" width="8" height="18" fill="#9A6B3F"/>
+    <polygon points="488,40 512,96 464,96" fill="#4FA84A"/><rect x="484" y="94" width="8" height="12" fill="#9A6B3F"/>
+    <rect x="30" y="78" width="40" height="26" fill="#E8453C"/><circle cx="50" cy="66" r="14" fill="#2F7BEA"/>
+    <rect x="570" y="78" width="40" height="26" fill="#2F7BEA"/><circle cx="590" cy="66" r="14" fill="#E8453C"/>
+  </g>
+  <g stroke="#14204A" stroke-width="1.5">
+    <rect x="218" y="40" width="6" height="66" fill="#fff"/><rect x="218" y="52" width="6" height="10" fill="#E8453C"/><rect x="218" y="74" width="6" height="10" fill="#E8453C"/>
+    <rect x="416" y="40" width="6" height="66" fill="#fff"/><rect x="416" y="52" width="6" height="10" fill="#E8453C"/><rect x="416" y="74" width="6" height="10" fill="#E8453C"/>
+  </g>
+  <path d="M221 42 Q320 78 419 42" fill="none" stroke="#14204A" stroke-width="2"/>
+  <g stroke="#14204A" stroke-width="1.2">
+    <polygon points="240,48 250,49 245,60" fill="#FFD23F"/><polygon points="265,55 275,56 270,67" fill="#FF6F61"/>
+    <polygon points="292,60 302,61 297,72" fill="#3FD3E4"/><polygon points="320,62 330,62 325,73" fill="#B8E63C"/>
+    <polygon points="347,60 357,59 352,71" fill="#FF9B2F"/><polygon points="374,55 384,54 379,66" fill="#D6B4F7"/>
+    <polygon points="400,48 410,47 405,59" fill="#FFD23F"/>
+  </g>
+  <g fill="#fff" opacity="0.9"><circle cx="110" cy="24" r="10"/><circle cx="124" cy="20" r="14"/><circle cx="140" cy="26" r="9"/><circle cx="500" cy="18" r="9"/><circle cx="514" cy="14" r="13"/><circle cx="530" cy="20" r="9"/></g>
+</svg>

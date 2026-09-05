@@ -26,6 +26,14 @@ de QR codes. Tudo funciona offline e instantaneamente.
      moeda, joga o mini-jogo "Quebra a Maldição" e desbloqueia a história do
      tema dessa edição. Completar as 25 dá recompensas VIP.
 
+7. **Giralata — Tampinhas em Órbita** (novo, rota isolada `/giralata` ou
+   `?game=giralata`) — minijogo 3D de mira e física com câmara isométrica fixa:
+   três anéis contrarrotativos, latas-bumper, seis portos coloridos e uma
+   tampinha lançada com um dedo (puxe · mire · solte). 60 segundos, seis entregas,
+   Rodopio, HopiCoins e Istampi. Estados de demo: `?demo=giralata` e
+   `?demo=giralata-complete`. Também empacotado como **APK Android**
+   (`android/dist/giralata-debug.apk`, ver `ANDROID_HANDOFF.md`).
+
 O separador **Mapa** (antiga Caça ao Tesouro) também passou a ser um mapa GPS
 do parque com direções até cada brinquedo e scan do totem no local.
 
@@ -48,7 +56,10 @@ Requisitos: Node 18+.
 ```bash
 npm install
 npm run dev        # abre em http://localhost:5173
+npm test           # testes unitários (vitest) — física e regras do Giralata
 ```
+
+Giralata: `http://localhost:5173/giralata` (ou `?game=giralata`).
 
 ## Build / deploy
 
@@ -62,7 +73,32 @@ externos): pode ser arrastada para Netlify/Vercel, servida do GitHub Pages, ou
 aberta a partir de qualquer servidor de ficheiros. Para a reunião, basta
 `npm run dev` num portátil — funciona sem internet.
 
+## APK Android (Giralata)
+
+```bash
+npm run apk        # gera android/app/src/main/assets/www e android/dist/giralata-debug.apk
+```
+
+`android/build-apk.sh` compila sem Android SDK (aapt2, dx e apksig vêm do Maven
+Central). A pasta `android/` é também um projeto Android Studio / Gradle normal.
+Detalhes e validação em `ANDROID_HANDOFF.md`.
+
 ## Stack
 
-React 18 + TypeScript + Vite. Sem mais dependências: animações em CSS,
-ilustrações em SVG inline, estado em React.
+React 18 + TypeScript + Vite. Babylon.js (`@babylonjs/core`) apenas na rota
+Giralata, com física própria determinística (sem plugin). Restante da demo:
+animações em CSS, ilustrações em SVG inline, estado em React.
+
+## Estrutura do Giralata (`src/giralata/`)
+
+| Ficheiro | Papel |
+|---|---|
+| `config.ts` | duração, raios, velocidades, força, amortecimento, recompensas |
+| `math.ts` | vetores XZ, reflexão, cruzamento swept, arrasto → lançamento |
+| `physics.ts` | passo fixo 1/120 s, anéis, latas, borda, moedas, portos |
+| `world.ts` | `GiralataWorld`: fases, timer, Rodopio, pontos, HopiCoins, snapshot |
+| `scene.ts` | engine Babylon, câmara fixa, luzes, malhas, sync por quadro |
+| `input.ts` | mouse, toque e teclado → mesmo estado de mira |
+| `Giralata.tsx` + `giralata.css` | HUD, intro, pausa, ajuda, resultado |
+| `assets/*.svg` | emblema, tampinha, lata-bumper, porto, moeda, arena |
+| `__tests__/giralata.test.ts` | testes vitest |
