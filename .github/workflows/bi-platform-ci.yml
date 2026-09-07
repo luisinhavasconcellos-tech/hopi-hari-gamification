@@ -1,0 +1,54 @@
+name: BI platform CI
+
+on:
+  push:
+    paths:
+      - "bi-platform/**"
+      - ".github/workflows/bi-platform-ci.yml"
+  pull_request:
+    paths:
+      - "bi-platform/**"
+      - ".github/workflows/bi-platform-ci.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bi-platform-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  secrets:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node bi-platform/scripts/check-secrets.mjs
+
+  verify:
+    name: Typecheck, tests, audit
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: bi-platform
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: bi-platform/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+      - run: pnpm lint
+      - run: pnpm test
+      - name: Production build
+        run: pnpm build
+      - name: Dependency audit (high+)
+        run: pnpm audit --prod --audit-level=high

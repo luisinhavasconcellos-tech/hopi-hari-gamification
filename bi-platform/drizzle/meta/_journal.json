@@ -1,0 +1,97 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1787867141351,
+      "tag": "0000_fat_dexter_bennett",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1787869292529,
+      "tag": "0001_majestic_sphinx",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1787924215284,
+      "tag": "0002_furry_scrambler",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1787927470759,
+      "tag": "0003_parallel_wallow",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1787937855045,
+      "tag": "0004_chemical_moonstone",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1787942915046,
+      "tag": "0005_yielding_exodus",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1788013338285,
+      "tag": "0006_skinny_war_machine",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1788014095693,
+      "tag": "0007_overjoyed_moonstone",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1788015202389,
+      "tag": "0008_low_lethal_legion",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1788189266727,
+      "tag": "0009_rainy_crystal",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1788197787243,
+      "tag": "0010_furry_adam_warlock",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "5",
+      "when": 1788209939958,
+      "tag": "0011_puzzling_star_brand",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "5",
+      "when": 1788749394768,
+      "tag": "0012_slippery_queen_noir",
+      "breakpoints": true
+    }
+  ]
+}

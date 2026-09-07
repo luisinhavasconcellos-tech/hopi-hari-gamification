@@ -1,0 +1,1 @@
+ALTER TABLE `revenue_snapshots` MODIFY COLUMN `internal_per_capita_cents` int;

@@ -1,0 +1,108 @@
+{
+  "sourceKey": "operational-message-2026-08-27",
+  "businessDate": "2026-08-27",
+  "timezone": "America/Sao_Paulo",
+  "revenue": [
+    {
+      "observedAt": "2026-08-27T18:00:00-03:00",
+      "internalRevenueCents": 32183099,
+      "externalRevenueCents": 54164861,
+      "grossRevenueCents": 86347960,
+      "internalPerCapitaCents": 6792,
+      "channels": {
+        "A & B": 21250494,
+        "MERC": 2364739,
+        "SERV": 8501866,
+        "E-COMMERCE": 16583382,
+        "TLMKT": 3690250,
+        "BILHETERIA": 1732940,
+        "ESCOLA PARTICULAR": 17520335,
+        "ESCOLA PUBLICA": 7184400,
+        "EVENTOS": 3310530,
+        "TURISMO": 3225994,
+        "AGVT": 624500,
+        "HOPI NIVER": 181930,
+        "EMPRESA": 82640,
+        "PLAKA": 66000,
+        "PARCEIROS": 27960
+      }
+    },
+    {
+      "observedAt": "2026-08-27T19:00:00-03:00",
+      "internalRevenueCents": 34092112,
+      "externalRevenueCents": 55781382,
+      "grossRevenueCents": 89873494,
+      "internalPerCapitaCents": 7157,
+      "channels": {
+        "A & B": 22598451,
+        "MERC": 2777303,
+        "SERV": 8650358,
+        "E-COMMERCE": 18199903,
+        "TLMKT": 3690250,
+        "BILHETERIA": 1732940,
+        "ESCOLA PARTICULAR": 17520335,
+        "ESCOLA PUBLICA": 7184400,
+        "EVENTOS": 3310530,
+        "TURISMO": 3225994,
+        "AGVT": 624500,
+        "HOPI NIVER": 181930,
+        "EMPRESA": 82640,
+        "PLAKA": 66000,
+        "PARCEIROS": 27960
+      }
+    },
+    {
+      "observedAt": "2026-08-27T20:00:00-03:00",
+      "internalRevenueCents": 36178298,
+      "externalRevenueCents": 57617537,
+      "grossRevenueCents": 93795835,
+      "internalPerCapitaCents": 7567,
+      "channels": {
+        "A & B": 24153045,
+        "MERC": 3235565,
+        "SERV": 8722188,
+        "E-COMMERCE": 20036058,
+        "TLMKT": 3690250,
+        "BILHETERIA": 1732940,
+        "ESCOLA PARTICULAR": 17520335,
+        "ESCOLA PUBLICA": 7184400,
+        "EVENTOS": 3310530,
+        "TURISMO": 3225994,
+        "AGVT": 624500,
+        "HOPI NIVER": 181930,
+        "EMPRESA": 82640,
+        "PLAKA": 67500,
+        "PARCEIROS": 27960
+      }
+    }
+  ],
+  "attendance": [
+    {
+      "observedAt": "2026-08-27T18:00:00-03:00",
+      "publicCount": 4729,
+      "payingCount": 4230,
+      "complimentaryCount": 499,
+      "entriesInterval": 1,
+      "exitsInterval": 68,
+      "currentlyInPark": 4583
+    },
+    {
+      "observedAt": "2026-08-27T19:00:00-03:00",
+      "publicCount": 4754,
+      "payingCount": 4230,
+      "complimentaryCount": 524,
+      "entriesInterval": 25,
+      "exitsInterval": 135,
+      "currentlyInPark": 4473
+    },
+    {
+      "observedAt": "2026-08-27T20:00:00-03:00",
+      "publicCount": 4772,
+      "payingCount": 4230,
+      "complimentaryCount": 542,
+      "entriesInterval": 18,
+      "exitsInterval": 722,
+      "currentlyInPark": 3769
+    }
+  ]
+}
