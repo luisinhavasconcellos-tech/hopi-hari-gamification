@@ -291,6 +291,41 @@ export const attendanceSnapshots = mysqlTable(
   ],
 );
 
+/** "FECHAMENTO DIÁRIO" summary sent with the last attendance message of the day. */
+export const attendanceDailyClosings = mysqlTable(
+  "attendance_daily_closings",
+  {
+    id: int("id").autoincrement().primaryKey(),
+    businessDate: varchar("business_date", { length: 10 }).notNull(),
+    observedAt: timestamp("observed_at").notNull(),
+    forecastCount: int("forecast_count").notNull(),
+    realizedCount: int("realized_count").notNull(),
+    variation: int("variation").notNull(),
+    sourceRunId: int("source_run_id").notNull(),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at").defaultNow().onUpdateNow().notNull(),
+  },
+  table => [uniqueIndex("attendance_daily_closings_date_unique").on(table.businessDate)],
+);
+
+/** Attendance forecast for a business date as issued at a moment in time ("Previsão de Público"). */
+export const attendanceForecasts = mysqlTable(
+  "attendance_forecasts",
+  {
+    id: int("id").autoincrement().primaryKey(),
+    businessDate: varchar("business_date", { length: 10 }).notNull(),
+    issuedAt: timestamp("issued_at").notNull(),
+    forecastCount: int("forecast_count").notNull(),
+    sourceRunId: int("source_run_id").notNull(),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at").defaultNow().onUpdateNow().notNull(),
+  },
+  table => [
+    uniqueIndex("attendance_forecasts_date_issued_unique").on(table.businessDate, table.issuedAt),
+    index("attendance_forecasts_date_idx").on(table.businessDate),
+  ],
+);
+
 export type OperationalSource = typeof operationalSources.$inferSelect;
 export type OperationalImportRun = typeof operationalImportRuns.$inferSelect;
 export type SocialFollowerSnapshot = typeof socialFollowerSnapshots.$inferSelect;

@@ -28,9 +28,18 @@ pnpm build && pnpm start  # build de produção
 node scripts/check-secrets.mjs   # varredura de segredos (também corre no CI)
 ```
 
+Importar um export do WhatsApp "Hopi Informe" (faturamento/público) sem
+duplicar observações já registadas:
+
+```bash
+pnpm tsx scripts/import-hopi-informe.mts "WhatsApp Chat - Hopi Informe.zip" --dry-run
+pnpm tsx scripts/import-hopi-informe.mts "WhatsApp Chat - Hopi Informe.zip"
+```
+
 Migrações: `pnpm db:generate` gera SQL em `drizzle/` a partir de
-`drizzle/schema.ts`; aplique a migração `0012_*` (colunas JSON para
-`MEDIUMTEXT`) antes de publicar esta versão.
+`drizzle/schema.ts`; aplique as migrações `0012_*` (colunas JSON para
+`MEDIUMTEXT`) e `0013_*` (fechamentos e previsões de público) antes de
+publicar esta versão.
 
 ## Segurança
 

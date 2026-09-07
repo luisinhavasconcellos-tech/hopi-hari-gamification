@@ -111,4 +111,47 @@ describe("operational source integrity", () => {
       expect(point.payingCount + point.complimentaryCount).toBe(point.publicCount);
     });
   });
+
+  it("reconciles the WhatsApp Hopi Informe dataset with no duplicated observations", () => {
+    const payload = JSON.parse(
+      fs.readFileSync(path.join(ROOT, "data", "operational", "whatsapp-hopi-informe-2026-08-27_2026-09-07.json"), "utf8"),
+    ) as {
+      dateRange: [string, string];
+      duplicatesCollapsed: Record<string, number>;
+      revenue: Array<{ observedAt: string; channels: Record<string, number>; internalRevenueCents: number; externalRevenueCents: number; grossRevenueCents: number }>;
+      attendance: Array<{ observedAt: string; businessDate: string; localHour: number; publicCount: number; payingCount: number; complimentaryCount: number }>;
+      closings: Array<{ businessDate: string; forecastCount: number; realizedCount: number; variation: number }>;
+      forecasts: Array<{ businessDate: string; issuedAt: string; forecastCount: number }>;
+    };
+    const internalChannels = new Set(["A & B", "MERC", "SERV", "PLAKA"]);
+    expect(payload.dateRange).toEqual(["2026-08-27", "2026-09-07"]);
+    expect(payload.revenue).toHaveLength(177);
+    expect(payload.attendance).toHaveLength(167);
+    expect(payload.closings).toHaveLength(9);
+    expect(payload.forecasts).toHaveLength(55);
+    expect(Object.values(payload.duplicatesCollapsed).every(value => value === 0)).toBe(true);
+
+    expect(new Set(payload.revenue.map(point => point.observedAt)).size).toBe(payload.revenue.length);
+    expect(new Set(payload.attendance.map(point => point.observedAt)).size).toBe(payload.attendance.length);
+    expect(new Set(payload.closings.map(point => point.businessDate)).size).toBe(payload.closings.length);
+    expect(new Set(payload.forecasts.map(point => `${point.businessDate}|${point.issuedAt}`)).size).toBe(payload.forecasts.length);
+
+    payload.revenue.forEach(point => {
+      const gross = Object.values(point.channels).reduce((sum, value) => sum + value, 0);
+      const internal = Object.entries(point.channels)
+        .filter(([channel]) => internalChannels.has(channel))
+        .reduce((sum, [, value]) => sum + value, 0);
+      expect(gross).toBe(point.grossRevenueCents);
+      expect(internal).toBe(point.internalRevenueCents);
+      expect(gross - internal).toBe(point.externalRevenueCents);
+    });
+    payload.attendance.forEach(point => {
+      expect(point.payingCount + point.complimentaryCount).toBe(point.publicCount);
+    });
+    payload.closings.forEach(closing => {
+      expect(closing.realizedCount - closing.forecastCount).toBe(closing.variation);
+      const finalReading = payload.attendance.filter(point => point.businessDate === closing.businessDate).at(-1);
+      expect(finalReading?.publicCount).toBe(closing.realizedCount);
+    });
+  });
 });
