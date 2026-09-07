@@ -55,10 +55,10 @@ function decimalOrNull(value: unknown) {
 
 /**
  * TikTok labels rows as "28 August" with no year. The export file name carries
- * the export date (e.g. `Overview_2026-01-13`), which is the *last* day the
- * data can cover. Roll the year forward whenever the month/day sequence wraps,
- * then shift the whole series back until it ends on or before the export
- * date, so a December → January export is not dated a year into the future.
+ * the START of the exported window (e.g. `Overview_2025-08-28_<unix ts>_<handle>`
+ * downloaded on 2026-08-27 covers 28 Aug 2025 → 27/28 Aug 2026), so the year
+ * from the file name applies to the first label and rolls forward whenever the
+ * month/day sequence wraps.
  */
 function parseDateSeries(labels: string[], anchor: { year: number; date: string | null }) {
   let year = anchor.year;
@@ -72,16 +72,13 @@ function parseDateSeries(labels: string[], anchor: { year: number; date: string 
     if (previousMonth && (month < previousMonth || (month === previousMonth && day < previousDay))) year += 1;
     previousMonth = month;
     previousDay = day;
-    return { year, month, day };
+    return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
   });
-  const format = (row: { year: number; month: number; day: number }, shift: number) =>
-    `${row.year - shift}-${String(row.month).padStart(2, "0")}-${String(row.day).padStart(2, "0")}`;
-  let shift = 0;
-  const last = parsed.at(-1);
-  if (anchor.date && last) {
-    while (format(last, shift) > anchor.date) shift += 1;
+  // Sanity check: the first row must not precede the window start named in the file.
+  if (anchor.date && parsed[0] && parsed[0] < anchor.date) {
+    throw new Error(`tiktok_date_before_export_window:${parsed[0]}<${anchor.date}`);
   }
-  return parsed.map(row => format(row, shift));
+  return parsed;
 }
 
 function csvRows(text: string) {
@@ -163,8 +160,10 @@ export function parseTiktokExport(input: {
   warnings?: string[];
 }) {
   const warnings = [...(input.warnings ?? [])];
-  const dailyOverview = parseOverviewCsv(input.overviewCsv, input.overviewName ?? "Overview");
-  const followerHistory = parseFollowersXlsx(input.followersXlsx, input.followersName ?? "Followers");
+  // Defaults keep the historical 2025-08-28 export importable; pass the real
+  // file names for any newer export so the year anchor is correct.
+  const dailyOverview = parseOverviewCsv(input.overviewCsv, input.overviewName ?? "Overview_2025-08-28");
+  const followerHistory = parseFollowersXlsx(input.followersXlsx, input.followersName ?? "Followers_2025-08-28");
   const followerByDate = new Map(followerHistory.map(row => [row.observedDate, row.followers]));
   const daily = dailyOverview.map(row => ({ ...row, followers: followerByDate.get(row.observedDate) ?? null }));
   if (daily.some(row => row.followers === null)) warnings.push("followers:missing_daily_value");

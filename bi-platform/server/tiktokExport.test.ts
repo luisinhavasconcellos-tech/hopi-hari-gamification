@@ -11,32 +11,25 @@ function workbookBuffer(sheets: Record<string, unknown[][]>) {
 }
 
 describe("TikTok exports", () => {
-  it("parses overview values for an export that ends on the export date", () => {
+  it("anchors the first row to the window start in the file name and rolls the year after December", () => {
     const csv = [
       '"Date","Video Views","Profile Views","Likes","Comments","Shares"',
-      '"26 August","139654","1107","12248","54","1242"',
-      '"27 August","1","2","3","4","5"',
-      '"28 August","6","7","8","9","10"',
+      '"28 August","139654","1107","12248","54","1242"',
+      '"31 December","1","2","3","4","5"',
+      '"1 January","6","7","8","9","10"',
     ].join("\n");
-    expect(parseOverviewCsv(csv, "Overview_2025-08-28")).toEqual([
-      { observedDate: "2025-08-26", videoViews: 139654, profileViews: 1107, likes: 12248, comments: 54, shares: 1242 },
-      { observedDate: "2025-08-27", videoViews: 1, profileViews: 2, likes: 3, comments: 4, shares: 5 },
-      { observedDate: "2025-08-28", videoViews: 6, profileViews: 7, likes: 8, comments: 9, shares: 10 },
+    // Real export: Overview_2025-08-28_1787841428_hopihari.zip (downloaded 2026-08-27)
+    // covers 28 Aug 2025 → Aug 2026, so the file date is the START of the window.
+    expect(parseOverviewCsv(csv, "Overview_2025-08-28_1787841428_hopihari")).toEqual([
+      { observedDate: "2025-08-28", videoViews: 139654, profileViews: 1107, likes: 12248, comments: 54, shares: 1242 },
+      { observedDate: "2025-12-31", videoViews: 1, profileViews: 2, likes: 3, comments: 4, shares: 5 },
+      { observedDate: "2026-01-01", videoViews: 6, profileViews: 7, likes: 8, comments: 9, shares: 10 },
     ]);
   });
 
-  it("anchors a December → January export to the export date instead of a year ahead", () => {
-    const csv = [
-      '"Date","Video Views","Profile Views","Likes","Comments","Shares"',
-      '"15 December","1","1","1","1","1"',
-      '"31 December","2","2","2","2","2"',
-      '"1 January","3","3","3","3","3"',
-    ].join("\n");
-    expect(parseOverviewCsv(csv, "Overview_2026-01-13").map(row => row.observedDate)).toEqual([
-      "2025-12-15",
-      "2025-12-31",
-      "2026-01-01",
-    ]);
+  it("rejects rows dated before the export window start", () => {
+    const csv = ['"Date","Video Views"', '"1 January","1"'].join("\n");
+    expect(() => parseOverviewCsv(csv, "Overview_2025-08-28")).toThrow(/tiktok_date_before_export_window/);
   });
 
   it("still rolls the year forward when no full export date is available", () => {
