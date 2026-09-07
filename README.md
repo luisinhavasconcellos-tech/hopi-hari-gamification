@@ -66,3 +66,18 @@ aberta a partir de qualquer servidor de ficheiros. Para a reunião, basta
 
 React 18 + TypeScript + Vite. Sem mais dependências: animações em CSS,
 ilustrações em SVG inline, estado em React.
+
+## Plataforma de BI (`bi-platform/`)
+
+A pasta [`bi-platform/`](./bi-platform) contém a **Plataforma de Inteligência
+do Hopi Hari** (dashboard executivo: audiência social, vendas, operação,
+campanhas, Hora do Horror, briefing diário e relatório 360). É um projeto
+separado desta demo, com o seu próprio `package.json` (pnpm), backend Express +
+tRPC e camada de segurança documentada em
+[`bi-platform/SECURITY.md`](./bi-platform/SECURITY.md).
+
+```bash
+cd bi-platform
+cp .env.example .env && pnpm install --frozen-lockfile
+pnpm dev
+```

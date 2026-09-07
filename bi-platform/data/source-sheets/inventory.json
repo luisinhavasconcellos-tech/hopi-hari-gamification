@@ -1,0 +1,2374 @@
+{
+  "social_listening": {
+    "file": "social-listening.xlsx",
+    "sheet_count": 6,
+    "sheets": [
+      {
+        "title": "Instagram",
+        "max_row": 206,
+        "max_column": 11,
+        "merged_ranges": [],
+        "formula_count": 0,
+        "sample_non_empty_rows": [
+          {
+            "row": 2,
+            "values": [
+              "post",
+              "link"
+            ]
+          },
+          {
+            "row": 3,
+            "values": [
+              "post 1 ",
+              "https://www.instagram.com/reel/DXMv7bJgCQZ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "post 2",
+              "https://www.instagram.com/reel/DXKBVheheJZ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              "2018-19"
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              "post 3",
+              "https://www.instagram.com/reel/DXHduXehdEW/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              "2023-2026"
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "post 4",
+              "https://www.instagram.com/p/DXFeEc7iWb3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "post 5",
+              "https://www.instagram.com/reel/DXCS6H2Refi/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "post 6",
+              "https://www.instagram.com/p/DW_uscZlT5j/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              "post 7",
+              "https://www.instagram.com/reel/DW9LCRqxkn3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "post 8",
+              "https://www.instagram.com/reel/DW6n_n8xlgT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              "post 9",
+              "https://www.instagram.com/p/DW4SjSsCYte/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              "post 10",
+              "https://www.instagram.com/reel/DW13v4tOkxb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              "post 11",
+              "https://www.instagram.com/reel/DW1ec8RxBjs/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              "post 12",
+              "https://www.instagram.com/reel/DWzgRHJDjRy/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              "post 13",
+              "https://www.instagram.com/reel/DWwDnCDusAV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              "post 14",
+              "https://www.instagram.com/reel/DWwDpAhO6SX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          },
+          {
+            "row": 17,
+            "values": [
+              "post 15",
+              "https://www.instagram.com/p/DWroFADDgZS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              "post 16",
+              "https://www.instagram.com/p/DWpPi0ZiSjl/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          },
+          {
+            "row": 19,
+            "values": [
+              "post 17",
+              "https://www.instagram.com/reel/DWheSvLCUEF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Tiktok",
+        "max_row": 105,
+        "max_column": 2,
+        "merged_ranges": [],
+        "formula_count": 0,
+        "sample_non_empty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "post 1",
+              "https://www.tiktok.com/@hopihari/video/7636170836050758913?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "post 2",
+              "https://www.tiktok.com/@hopihari/video/7634992802362952961?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 3,
+            "values": [
+              "post 3",
+              "https://www.tiktok.com/@hopihari/video/7632395138068729105?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "post 4",
+              "https://www.tiktok.com/@hopihari/video/7631343357788310791?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              "post 5",
+              "https://www.tiktok.com/@hopihari/photo/7630960987146833159?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "post 6",
+              "https://www.tiktok.com/@hopihari/video/7630596788906413332?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "post 7",
+              "https://www.tiktok.com/@hopihari/video/7630113969872686353?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "post 8",
+              "https://www.tiktok.com/@hopihari/video/7629492018925849877?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              "post 9",
+              "https://www.tiktok.com/@hopihari/video/7628693557095714065?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "post 10",
+              "https://www.tiktok.com/@hopihari/video/7628755722158755092?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              "post 11",
+              "https://www.tiktok.com/@hopihari/video/7627639238858771713?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              "post 12",
+              "https://www.tiktok.com/@hopihari/video/7627179465898052865?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              "post 13",
+              "https://www.tiktok.com/@hopihari/video/7626772692775062800?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              "post 14",
+              "https://www.tiktok.com/@hopihari/video/7626066092837932304?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              "post 15",
+              "https://www.tiktok.com/@hopihari/video/7626066092837932304?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              "post 16",
+              "https://www.tiktok.com/@hopihari/video/7625074393890295061?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 17,
+            "values": [
+              "post 17",
+              "https://www.tiktok.com/@hopihari/video/7624250075711114497?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              "post 18",
+              "https://www.tiktok.com/@hopihari/video/7623797253450370321?is_from_webapp=1&sender_device=pc&web_id=7623901389756810759"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Youtube",
+        "max_row": 74,
+        "max_column": 2,
+        "merged_ranges": [],
+        "formula_count": 0,
+        "sample_non_empty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "post 1 ",
+              "https://youtu.be/omb37xQ4eHc?si=OPpFfryrBIhh3wYE"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "post 2",
+              "https://youtu.be/If8-pd_nQZ0?si=qVbeZ-1oDiptqrMS"
+            ]
+          },
+          {
+            "row": 3,
+            "values": [
+              "post 3",
+              "https://youtu.be/8KTq-jfDXGs?si=6UVJdidu9Z7aRy8K"
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "post 4",
+              "https://youtu.be/58gMZvo0f48?si=BJGNPt2BCPSLOlI1"
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              "post 5",
+              "https://youtu.be/u-Bg32lbKm8?si=HfL4a-laLBYHyKE6"
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "post 6",
+              "https://youtu.be/hMCrb26x_Cg?si=FJM2GuwUrre2Xq8z"
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "post 7",
+              "https://youtu.be/XNhlXdHnTF8?si=j3ndk-Zs6zBjTWjr"
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "post 8",
+              "https://youtu.be/wcRjw-ORIPk?si=albtueQxjlgG2RfG"
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              "post 9",
+              "https://youtu.be/ZaS2CY-7pDY?si=iDZkh28ykjBr7Vh9"
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "post 10",
+              "https://youtu.be/uYWp6BikehU?si=pbQFs_c52Xv1-Hmn"
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              "post 11",
+              "https://youtu.be/xM8qR5PJSKY?si=kIbLsGoAwPXjZMJ5"
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              "post 12",
+              "https://youtu.be/hXydJwktCYQ?si=uyU2E_7s9ogmzlnO"
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              "post 13",
+              "https://youtu.be/p5yacI-0m8k?si=RSVl5p-C2fO9EOyO"
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              "post 14",
+              "https://youtu.be/FleWegzjCR4?si=sR4reUFoGsJwYBcG"
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              "post 15",
+              "https://youtu.be/ZnXJ9o4k7Lk?si=6cVLuYN1uyzckL3w"
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              "post 16",
+              "https://youtu.be/arywTVYm06w?si=keQR8ycgxfCym8-W"
+            ]
+          },
+          {
+            "row": 17,
+            "values": [
+              "post 17",
+              "https://youtu.be/iNtHUOs9Kmw?si=HU1BVFOCSjb74gh_"
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              "post 18",
+              "https://youtu.be/rzl8fNnC35M?si=gKpsenzpeMSVKe0u"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Facebook",
+        "max_row": 126,
+        "max_column": 2,
+        "merged_ranges": [],
+        "formula_count": 0,
+        "sample_non_empty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "post 1",
+              "https://www.facebook.com/share/r/18SZ99A4rx/"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "post 2",
+              "https://www.facebook.com/reel/1279261287223561"
+            ]
+          },
+          {
+            "row": 3,
+            "values": [
+              "post 3",
+              "https://www.facebook.com/reel/1625041618784990"
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "post 4",
+              "https://www.facebook.com/reel/2223877815104695"
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              "post 5",
+              "https://www.facebook.com/reel/942388168709008"
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "post 6",
+              "https://fb.watch/GZIk0r8G4s/"
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "post 7",
+              "https://www.facebook.com/reel/1228989162640364"
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "post 8",
+              "https://www.facebook.com/reel/1325992656060484"
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              "post 9",
+              "https://www.facebook.com/reel/978320274701410"
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "post 10",
+              "https://www.facebook.com/reel/4427663354219113"
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              "post 11",
+              "https://fb.watch/GZInPNwx24/"
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              "post 12",
+              "https://www.facebook.com/reel/814232778407017"
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              "post 13",
+              "https://www.facebook.com/reel/4274025489409600"
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              "post 14",
+              "https://fb.watch/GZINclN3Ql/"
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              "post 15",
+              "https://www.facebook.com/reel/938362642233404"
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              "post 16",
+              "https://www.facebook.com/reel/2698245003877203"
+            ]
+          },
+          {
+            "row": 17,
+            "values": [
+              "post 17",
+              "https://www.facebook.com/reel/1442663167056090"
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              "post 18",
+              "https://fb.watch/GZIQHmQtxt/"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Linkedin",
+        "max_row": 79,
+        "max_column": 2,
+        "merged_ranges": [],
+        "formula_count": 0,
+        "sample_non_empty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "post 1",
+              "https://www.linkedin.com/posts/hopihari_por-tr%C3%A1s-de-cada-entrega-conquista-e-de-activity-7456013917991981057-pRL1?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "post 2",
+              "https://www.linkedin.com/posts/hopihari_pilulasdebackstage-activity-7457149562642743297-gDT-?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 3,
+            "values": [
+              "post 3",
+              "https://www.linkedin.com/posts/hopihari_que-dia-moturi-maravilhoso-tivemos-aqui-activity-7455703405722836992-5cbg?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "post 4",
+              "https://www.linkedin.com/posts/hopihari_pilulasdebackstage-activity-7454942851760631808-HeEk?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              "post 5",
+              "https://www.linkedin.com/posts/hopihari_pilulasdebackstage-activity-7449441278603210752-HKhS?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "post 6",
+              "https://www.linkedin.com/posts/hopihari_aero-venturi-conhe%C3%A7a-os-bastidores-da-nova-activity-7447684874880139266-0nm1?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "post 7",
+              "https://www.linkedin.com/posts/hopihari_evento-corporativo-no-pa%C3%ADs-mais-divertido-activity-7439762495814184960-TxnZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "post 8",
+              "https://www.linkedin.com/posts/hopihari_no-dia-8-de-mar%C3%A7o-comemoramos-o-dia-internacional-activity-7436863403228446721-o_ke?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              "post 9",
+              "https://www.linkedin.com/posts/hopihari_por-tr%C3%A1s-de-uma-nova-atra%C3%A7%C3%A3o-existe-muito-activity-7447378436282671104-2CoR?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "post 10",
+              "https://www.linkedin.com/posts/hopihari_turismo-economia-hopihari-activity-7432401663472103424-wtJx?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              "post 11",
+              "https://www.linkedin.com/posts/hopihari_no-dia-16-de-mar%C3%A7o-o-hopi-hari-recebeu-uma-activity-7440462968825339904-kZBj?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              "post 12",
+              "https://www.linkedin.com/posts/hopihari_aconteceu-nesta-ter%C3%A7a-feira-3-o-hopi-activity-7434983344095850496-tXX-?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              "post 13",
+              "https://www.linkedin.com/posts/hopihari_aconteceu-ontem-15-em-nosso-territ%C3%B3rio-activity-7406682894020042752-izs0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              "post 14",
+              "https://www.linkedin.com/posts/hopihari_na-%C3%BAltima-quinta-feira-13-reunimos-nossos-activity-7396279680418512897-sY43?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              "post 15",
+              "https://www.linkedin.com/posts/hopihari_voc%C3%AA-que-tamb%C3%A9m-ama-adrenalina-j%C3%A1-ouviu-activity-7416540997943226368-QxxR?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              "post 16",
+              "https://www.linkedin.com/posts/hopihari_no-%C3%BAltimo-s%C3%A1bado-20-a-gela-boca-parceira-activity-7376722100033572864-_i79?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 17,
+            "values": [
+              "post 17",
+              "https://www.linkedin.com/posts/hopihari_na-%C3%BAltima-sexta-feira-19-tivemos-a-visita-activity-7376620225145884672-1ZZY?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              "post 18",
+              "https://www.linkedin.com/posts/hopihari_diretamente-do-mundo-dos-games-dia-1909-activity-7376012424610652160-5FGk?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlysEAB4i5CfI129W-2g-dRU8nOouz1FDY"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "X",
+        "max_row": 33,
+        "max_column": 1,
+        "merged_ranges": [],
+        "formula_count": 0,
+        "sample_non_empty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "https://x.com/hopihari/status/2015931873755566467?s=20"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "https://x.com/hopihari/status/2016118349084721458?s=20"
+            ]
+          },
+          {
+            "row": 3,
+            "values": [
+              "https://x.com/hopihari/status/2016177190795112830?s=20"
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "https://x.com/hopihari/status/2026264878013427868?s=20"
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              "https://x.com/hopihari/status/2026264878013427868?s=20"
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "https://x.com/hopihari/status/2027068865444770068?s=20"
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "https://x.com/hopihari/status/2027411229333934406?s=20"
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "https://x.com/hopihari/status/2028830243071373628?s=20"
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              " https://x.com/hopihari/status/2032462247205683497?s=20"
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "https://x.com/hopihari/status/2032462338947785084?s=20"
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              "https://x.com/hopihari/status/2032604236547063985?s=20"
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              "https://x.com/hopihari/status/2034671312669409394?s=20"
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              "https://x.com/hopihari/status/2039394577975583185?s=20"
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              "https://x.com/hopihari/status/2039780088309305586?s=20"
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              "https://x.com/hopihari/status/2048491899837706512?s=20"
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              "https://x.com/hopihari/status/2052872887258751244?s=20"
+            ]
+          },
+          {
+            "row": 17,
+            "values": [
+              "https://x.com/hopihari/status/2052872887258751244?s=20"
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              "https://x.com/hopihari/status/2057196314627059796?s=20"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "competitor_followers": {
+    "file": "competitor-followers.xlsx",
+    "sheet_count": 4,
+    "sheets": [
+      {
+        "title": "LEIA-ME",
+        "max_row": 31,
+        "max_column": 8,
+        "merged_ranges": [
+          "B23:G23",
+          "B8:G8",
+          "A1:H1",
+          "B19:G19",
+          "B10:G10",
+          "B28:G28",
+          "B9:G9",
+          "B6:G6",
+          "B20:G20",
+          "B5:G5",
+          "A2:H2",
+          "B4:G4",
+          "B26:G26",
+          "B7:G7",
+          "B25:G25",
+          "B16:G16",
+          "B22:G22",
+          "B31:G31",
+          "B27:G27",
+          "B12:G12",
+          "B18:G18",
+          "B21:G21"
+        ],
+        "formula_count": 0,
+        "sample_non_empty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "HOPI HARI  ·  TRACKER SEMANAL DE SEGUIDORES"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "Inteligência Competitiva  ·  7 parques  ·  5 plataformas  ·  fechamento toda terça-feira"
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              null,
+              "COMO PREENCHER (leva ~10 min por semana)"
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              null,
+              "1.  Abra a aba COLETA. Cada linha é um par parque + plataforma; cada coluna é uma terça-feira."
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              null,
+              "2.  Localize a coluna da terça-feira atual e preencha os 34 campos com o número de seguidores do dia."
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              null,
+              "3.  Digite apenas números inteiros, sem ponto, vírgula, 'mil' ou 'M'.  Ex.: 1250000  (não 1,25M)."
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              null,
+              "4.  Preencha a coluna PERFIL / URL uma única vez — ela fica fixa e serve de atalho na coleta."
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              null,
+              "5.  Vá ao DASHBOARD e selecione a semana no menu suspenso. Tudo recalcula sozinho."
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              null,
+              "6.  A aba EVOLUÇÃO mostra a série histórica completa e o gráfico de tendência."
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              null,
+              "EXEMPLO DE PREENCHIMENTO — formato esperado"
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              null,
+              "PARQUE",
+              "PLATAFORMA",
+              "PERFIL / URL",
+              "25/08/2026",
+              "01/09/2026"
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              null,
+              "Hopi Hari",
+              "Instagram",
+              "@hopihari",
+              1284500.0,
+              1291300.0
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              null,
+              "Beto Carrero World",
+              "TikTok",
+              "@betocarrerooficial",
+              892100.0,
+              895740.0
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              null,
+              "Células em amarelo claro = você digita.  Células escuras = calculadas, não editar."
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              null,
+              "CONVENÇÕES METODOLÓGICAS"
+            ]
+          },
+          {
+            "row": 19,
+            "values": [
+              null,
+              "•  Fechamento semanal na TERÇA-FEIRA, mesma janela de horário toda semana (recomendado: até 12h)."
+            ]
+          },
+          {
+            "row": 20,
+            "values": [
+              null,
+              "•  Metodologia ponto-a-ponto: comparação sempre entre a terça atual e a terça imediatamente anterior."
+            ]
+          },
+          {
+            "row": 21,
+            "values": [
+              null,
+              "•  Cacau Park · LinkedIn fica FORA do índice (perfil não elegível) — célula bloqueada em cinza."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "COLETA",
+        "max_row": 39,
+        "max_column": 30,
+        "merged_ranges": [
+          "A3:AD3",
+          "A2:AD2",
+          "A1:AD1"
+        ],
+        "formula_count": 0,
+        "sample_non_empty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "COLETA SEMANAL DE SEGUIDORES"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "Preencha uma coluna por semana · apenas números inteiros · fechamento terça-feira"
+            ]
+          },
+          {
+            "row": 3,
+            "values": [
+              "Células claras = preencher.  Cinza = fora do índice.  Não insira nem apague linhas: o DASHBOARD depende desta ordem."
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "PARQUE",
+              "PLATAFORMA",
+              "PERFIL / URL",
+              "2026-08-23 00:00:00",
+              "2026-08-29 00:00:00",
+              "2026-09-06 00:00:00",
+              "2026-09-13 00:00:00",
+              "2026-09-20 00:00:00",
+              "2026-09-27 00:00:00",
+              "2026-10-04 00:00:00",
+              "2026-10-11 00:00:00",
+              "2026-10-20 00:00:00",
+              "2026-10-27 00:00:00",
+              "2026-11-03 00:00:00",
+              "2026-11-10 00:00:00",
+              "2026-11-17 00:00:00",
+              "2026-11-24 00:00:00",
+              "2026-12-01 00:00:00",
+              "2026-12-08 00:00:00",
+              "2026-12-15 00:00:00",
+              "2026-12-22 00:00:00",
+              "2026-12-29 00:00:00",
+              "2027-01-05 00:00:00",
+              "2027-01-12 00:00:00",
+              "2027-01-19 00:00:00",
+              "2027-01-26 00:00:00",
+              "2027-02-02 00:00:00",
+              "2027-02-09 00:00:00",
+              "2027-02-16 00:00:00",
+              "2027-02-23 00:00:00"
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              "Hopi Hari",
+              "Instagram",
+              "https://www.instagram.com/hopihari/",
+              1538814.0
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "Hopi Hari",
+              "TikTok",
+              "https://www.tiktok.com/@hopihari",
+              408600.0
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "Hopi Hari",
+              "Facebook",
+              "https://www.facebook.com/HopiHari",
+              983823.0
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "Hopi Hari",
+              "YouTube",
+              "https://www.youtube.com/@HopiHariOficial",
+              58240.0
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              "Hopi Hari",
+              "LinkedIn",
+              "https://www.linkedin.com/company/hopihari/?viewAsMember=true",
+              17371.0
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "Beto Carrero World",
+              "Instagram",
+              "https://www.instagram.com/betocarrero/",
+              4900000.0
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              "Beto Carrero World",
+              "TikTok",
+              "https://www.tiktok.com/@betocarreroworld",
+              3800000.0
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              "Beto Carrero World",
+              "Facebook",
+              "https://www.facebook.com/betocarreroworld",
+              3700000.0
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              "Beto Carrero World",
+              "YouTube",
+              "https://www.youtube.com/@BetoCarreroWorldBR",
+              644000.0
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              "Beto Carrero World",
+              "LinkedIn",
+              "https://www.linkedin.com/company/beto-carrero-world/",
+              31000.0
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              "Beach Park",
+              "Instagram",
+              "https://www.instagram.com/beachpark/",
+              2300000.0
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              "Beach Park",
+              "TikTok",
+              "https://www.tiktok.com/@beachpark?lang=en-GB",
+              442100.0
+            ]
+          },
+          {
+            "row": 17,
+            "values": [
+              "Beach Park",
+              "Facebook",
+              "https://www.facebook.com/BeachParkBrasil",
+              2000000.0
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              "Beach Park",
+              "YouTube",
+              "https://www.youtube.com/@beachpark",
+              186000.0
+            ]
+          }
+        ]
+      },
+      {
+        "title": "DASHBOARD",
+        "max_row": 40,
+        "max_column": 8,
+        "merged_ranges": [
+          "A18:G18",
+          "A2:H2",
+          "A29:G29",
+          "A7:G7",
+          "A1:H1"
+        ],
+        "formula_count": 54,
+        "sample_non_empty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "DASHBOARD COMPETITIVO"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "Selecione a semana e todos os blocos recalculam automaticamente"
+            ]
+          },
+          {
+            "row": 3,
+            "values": [
+              "SEMANA (terça):",
+              "2026-08-23 00:00:00",
+              "◄ menu suspenso",
+              null,
+              null,
+              null,
+              null,
+              "índices →"
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              "=IFERROR(MATCH($B$3,COLETA!$D$4:$AD$4,0),1)"
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              "=IF($H$4>1,$H$4-1,\"\")"
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "RANKING GERAL  ·  TOTAL DE SEGUIDORES (5 PLATAFORMAS)"
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "PARQUE",
+              "SEMANA SELEC.",
+              "SEMANA ANTERIOR",
+              "Δ ABSOLUTO",
+              "Δ %",
+              "SHARE DO ÍNDICE",
+              "POSIÇÃO"
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              "Hopi Hari",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544ce5b80>",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544ce5d60>",
+              "=IF(OR($C9=\"\",$C9=0),\"\",$B9-$C9)",
+              "=IFERROR($D9/$C9,\"\")",
+              "=IFERROR($B9/$B$16,\"\")",
+              "=IF($B9=0,\"\",RANK($B9,$B$9:$B$15))"
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "Beto Carrero World",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544ce5550>",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544ce56d0>",
+              "=IF(OR($C10=\"\",$C10=0),\"\",$B10-$C10)",
+              "=IFERROR($D10/$C10,\"\")",
+              "=IFERROR($B10/$B$16,\"\")",
+              "=IF($B10=0,\"\",RANK($B10,$B$9:$B$15))"
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              "Beach Park",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb546428f50>",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544ce50a0>",
+              "=IF(OR($C11=\"\",$C11=0),\"\",$B11-$C11)",
+              "=IFERROR($D11/$C11,\"\")",
+              "=IFERROR($B11/$B$16,\"\")",
+              "=IF($B11=0,\"\",RANK($B11,$B$9:$B$15))"
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              "Hot Park",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544ce4a40>",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544ce4b60>",
+              "=IF(OR($C12=\"\",$C12=0),\"\",$B12-$C12)",
+              "=IFERROR($D12/$C12,\"\")",
+              "=IFERROR($B12/$B$16,\"\")",
+              "=IF($B12=0,\"\",RANK($B12,$B$9:$B$15))"
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              "Cacau Park",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544ce44a0>",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544ce45c0>",
+              "=IF(OR($C13=\"\",$C13=0),\"\",$B13-$C13)",
+              "=IFERROR($D13/$C13,\"\")",
+              "=IFERROR($B13/$B$16,\"\")",
+              "=IF($B13=0,\"\",RANK($B13,$B$9:$B$15))"
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              "Wet'n Wild",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544d5e2d0>",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544ce40b0>",
+              "=IF(OR($C14=\"\",$C14=0),\"\",$B14-$C14)",
+              "=IFERROR($D14/$C14,\"\")",
+              "=IFERROR($B14/$B$16,\"\")",
+              "=IF($B14=0,\"\",RANK($B14,$B$9:$B$15))"
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              "Thermas de São Pedro",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544c3d7c0>",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544c3d010>",
+              "=IF(OR($C15=\"\",$C15=0),\"\",$B15-$C15)",
+              "=IFERROR($D15/$C15,\"\")",
+              "=IFERROR($B15/$B$16,\"\")",
+              "=IF($B15=0,\"\",RANK($B15,$B$9:$B$15))"
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              "TOTAL DO ÍNDICE",
+              "=SUM($B$9:$B$15)",
+              "=IF($H$5=\"\",\"\",SUM($C$9:$C$15))",
+              "=IF($C16=\"\",\"\",$B16-$C16)",
+              "=IFERROR($D16/$C16,\"\")",
+              1.0
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              "DETALHE POR PLATAFORMA  ·  SEMANA SELECIONADA"
+            ]
+          },
+          {
+            "row": 19,
+            "values": [
+              "PARQUE",
+              "Instagram",
+              "TikTok",
+              "Facebook",
+              "YouTube",
+              "LinkedIn",
+              "TOTAL"
+            ]
+          },
+          {
+            "row": 20,
+            "values": [
+              "Hopi Hari",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544c2b080>",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544c2ae40>",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544c2a2a0>",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544c2aed0>",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544c2a1b0>",
+              "=SUM($B20:$F20)"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "EVOLUÇÃO",
+        "max_row": 14,
+        "max_column": 28,
+        "merged_ranges": [
+          "A2:AB2",
+          "A1:AB1"
+        ],
+        "formula_count": 270,
+        "sample_non_empty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "EVOLUÇÃO HISTÓRICA"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "Total de seguidores por parque · 27 semanas · alimentado automaticamente pela aba COLETA"
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "PARQUE",
+              "=COLETA!D$4",
+              "=COLETA!E$4",
+              "=COLETA!F$4",
+              "=COLETA!G$4",
+              "=COLETA!H$4",
+              "=COLETA!I$4",
+              "=COLETA!J$4",
+              "=COLETA!K$4",
+              "=COLETA!L$4",
+              "=COLETA!M$4",
+              "=COLETA!N$4",
+              "=COLETA!O$4",
+              "=COLETA!P$4",
+              "=COLETA!Q$4",
+              "=COLETA!R$4",
+              "=COLETA!S$4",
+              "=COLETA!T$4",
+              "=COLETA!U$4",
+              "=COLETA!V$4",
+              "=COLETA!W$4",
+              "=COLETA!X$4",
+              "=COLETA!Y$4",
+              "=COLETA!Z$4",
+              "=COLETA!AA$4",
+              "=COLETA!AB$4",
+              "=COLETA!AC$4",
+              "=COLETA!AD$4"
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              "Hopi Hari",
+              "=IF(COUNT(COLETA!D$5:D$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!D$5:D$39))",
+              "=IF(COUNT(COLETA!E$5:E$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!E$5:E$39))",
+              "=IF(COUNT(COLETA!F$5:F$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!F$5:F$39))",
+              "=IF(COUNT(COLETA!G$5:G$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!G$5:G$39))",
+              "=IF(COUNT(COLETA!H$5:H$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!H$5:H$39))",
+              "=IF(COUNT(COLETA!I$5:I$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!I$5:I$39))",
+              "=IF(COUNT(COLETA!J$5:J$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!J$5:J$39))",
+              "=IF(COUNT(COLETA!K$5:K$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!K$5:K$39))",
+              "=IF(COUNT(COLETA!L$5:L$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!L$5:L$39))",
+              "=IF(COUNT(COLETA!M$5:M$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!M$5:M$39))",
+              "=IF(COUNT(COLETA!N$5:N$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!N$5:N$39))",
+              "=IF(COUNT(COLETA!O$5:O$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!O$5:O$39))",
+              "=IF(COUNT(COLETA!P$5:P$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!P$5:P$39))",
+              "=IF(COUNT(COLETA!Q$5:Q$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!Q$5:Q$39))",
+              "=IF(COUNT(COLETA!R$5:R$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!R$5:R$39))",
+              "=IF(COUNT(COLETA!S$5:S$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!S$5:S$39))",
+              "=IF(COUNT(COLETA!T$5:T$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!T$5:T$39))",
+              "=IF(COUNT(COLETA!U$5:U$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!U$5:U$39))",
+              "=IF(COUNT(COLETA!V$5:V$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!V$5:V$39))",
+              "=IF(COUNT(COLETA!W$5:W$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!W$5:W$39))",
+              "=IF(COUNT(COLETA!X$5:X$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!X$5:X$39))",
+              "=IF(COUNT(COLETA!Y$5:Y$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!Y$5:Y$39))",
+              "=IF(COUNT(COLETA!Z$5:Z$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!Z$5:Z$39))",
+              "=IF(COUNT(COLETA!AA$5:AA$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!AA$5:AA$39))",
+              "=IF(COUNT(COLETA!AB$5:AB$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!AB$5:AB$39))",
+              "=IF(COUNT(COLETA!AC$5:AC$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!AC$5:AC$39))",
+              "=IF(COUNT(COLETA!AD$5:AD$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A5)*COLETA!AD$5:AD$39))"
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "Beto Carrero World",
+              "=IF(COUNT(COLETA!D$5:D$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!D$5:D$39))",
+              "=IF(COUNT(COLETA!E$5:E$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!E$5:E$39))",
+              "=IF(COUNT(COLETA!F$5:F$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!F$5:F$39))",
+              "=IF(COUNT(COLETA!G$5:G$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!G$5:G$39))",
+              "=IF(COUNT(COLETA!H$5:H$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!H$5:H$39))",
+              "=IF(COUNT(COLETA!I$5:I$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!I$5:I$39))",
+              "=IF(COUNT(COLETA!J$5:J$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!J$5:J$39))",
+              "=IF(COUNT(COLETA!K$5:K$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!K$5:K$39))",
+              "=IF(COUNT(COLETA!L$5:L$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!L$5:L$39))",
+              "=IF(COUNT(COLETA!M$5:M$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!M$5:M$39))",
+              "=IF(COUNT(COLETA!N$5:N$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!N$5:N$39))",
+              "=IF(COUNT(COLETA!O$5:O$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!O$5:O$39))",
+              "=IF(COUNT(COLETA!P$5:P$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!P$5:P$39))",
+              "=IF(COUNT(COLETA!Q$5:Q$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!Q$5:Q$39))",
+              "=IF(COUNT(COLETA!R$5:R$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!R$5:R$39))",
+              "=IF(COUNT(COLETA!S$5:S$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!S$5:S$39))",
+              "=IF(COUNT(COLETA!T$5:T$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!T$5:T$39))",
+              "=IF(COUNT(COLETA!U$5:U$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!U$5:U$39))",
+              "=IF(COUNT(COLETA!V$5:V$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!V$5:V$39))",
+              "=IF(COUNT(COLETA!W$5:W$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!W$5:W$39))",
+              "=IF(COUNT(COLETA!X$5:X$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!X$5:X$39))",
+              "=IF(COUNT(COLETA!Y$5:Y$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!Y$5:Y$39))",
+              "=IF(COUNT(COLETA!Z$5:Z$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!Z$5:Z$39))",
+              "=IF(COUNT(COLETA!AA$5:AA$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!AA$5:AA$39))",
+              "=IF(COUNT(COLETA!AB$5:AB$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!AB$5:AB$39))",
+              "=IF(COUNT(COLETA!AC$5:AC$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!AC$5:AC$39))",
+              "=IF(COUNT(COLETA!AD$5:AD$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A6)*COLETA!AD$5:AD$39))"
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "Beach Park",
+              "=IF(COUNT(COLETA!D$5:D$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!D$5:D$39))",
+              "=IF(COUNT(COLETA!E$5:E$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!E$5:E$39))",
+              "=IF(COUNT(COLETA!F$5:F$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!F$5:F$39))",
+              "=IF(COUNT(COLETA!G$5:G$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!G$5:G$39))",
+              "=IF(COUNT(COLETA!H$5:H$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!H$5:H$39))",
+              "=IF(COUNT(COLETA!I$5:I$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!I$5:I$39))",
+              "=IF(COUNT(COLETA!J$5:J$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!J$5:J$39))",
+              "=IF(COUNT(COLETA!K$5:K$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!K$5:K$39))",
+              "=IF(COUNT(COLETA!L$5:L$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!L$5:L$39))",
+              "=IF(COUNT(COLETA!M$5:M$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!M$5:M$39))",
+              "=IF(COUNT(COLETA!N$5:N$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!N$5:N$39))",
+              "=IF(COUNT(COLETA!O$5:O$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!O$5:O$39))",
+              "=IF(COUNT(COLETA!P$5:P$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!P$5:P$39))",
+              "=IF(COUNT(COLETA!Q$5:Q$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!Q$5:Q$39))",
+              "=IF(COUNT(COLETA!R$5:R$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!R$5:R$39))",
+              "=IF(COUNT(COLETA!S$5:S$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!S$5:S$39))",
+              "=IF(COUNT(COLETA!T$5:T$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!T$5:T$39))",
+              "=IF(COUNT(COLETA!U$5:U$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!U$5:U$39))",
+              "=IF(COUNT(COLETA!V$5:V$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!V$5:V$39))",
+              "=IF(COUNT(COLETA!W$5:W$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!W$5:W$39))",
+              "=IF(COUNT(COLETA!X$5:X$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!X$5:X$39))",
+              "=IF(COUNT(COLETA!Y$5:Y$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!Y$5:Y$39))",
+              "=IF(COUNT(COLETA!Z$5:Z$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!Z$5:Z$39))",
+              "=IF(COUNT(COLETA!AA$5:AA$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!AA$5:AA$39))",
+              "=IF(COUNT(COLETA!AB$5:AB$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!AB$5:AB$39))",
+              "=IF(COUNT(COLETA!AC$5:AC$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!AC$5:AC$39))",
+              "=IF(COUNT(COLETA!AD$5:AD$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A7)*COLETA!AD$5:AD$39))"
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "Hot Park",
+              "=IF(COUNT(COLETA!D$5:D$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!D$5:D$39))",
+              "=IF(COUNT(COLETA!E$5:E$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!E$5:E$39))",
+              "=IF(COUNT(COLETA!F$5:F$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!F$5:F$39))",
+              "=IF(COUNT(COLETA!G$5:G$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!G$5:G$39))",
+              "=IF(COUNT(COLETA!H$5:H$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!H$5:H$39))",
+              "=IF(COUNT(COLETA!I$5:I$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!I$5:I$39))",
+              "=IF(COUNT(COLETA!J$5:J$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!J$5:J$39))",
+              "=IF(COUNT(COLETA!K$5:K$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!K$5:K$39))",
+              "=IF(COUNT(COLETA!L$5:L$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!L$5:L$39))",
+              "=IF(COUNT(COLETA!M$5:M$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!M$5:M$39))",
+              "=IF(COUNT(COLETA!N$5:N$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!N$5:N$39))",
+              "=IF(COUNT(COLETA!O$5:O$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!O$5:O$39))",
+              "=IF(COUNT(COLETA!P$5:P$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!P$5:P$39))",
+              "=IF(COUNT(COLETA!Q$5:Q$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!Q$5:Q$39))",
+              "=IF(COUNT(COLETA!R$5:R$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!R$5:R$39))",
+              "=IF(COUNT(COLETA!S$5:S$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!S$5:S$39))",
+              "=IF(COUNT(COLETA!T$5:T$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!T$5:T$39))",
+              "=IF(COUNT(COLETA!U$5:U$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!U$5:U$39))",
+              "=IF(COUNT(COLETA!V$5:V$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!V$5:V$39))",
+              "=IF(COUNT(COLETA!W$5:W$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!W$5:W$39))",
+              "=IF(COUNT(COLETA!X$5:X$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!X$5:X$39))",
+              "=IF(COUNT(COLETA!Y$5:Y$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!Y$5:Y$39))",
+              "=IF(COUNT(COLETA!Z$5:Z$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!Z$5:Z$39))",
+              "=IF(COUNT(COLETA!AA$5:AA$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!AA$5:AA$39))",
+              "=IF(COUNT(COLETA!AB$5:AB$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!AB$5:AB$39))",
+              "=IF(COUNT(COLETA!AC$5:AC$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!AC$5:AC$39))",
+              "=IF(COUNT(COLETA!AD$5:AD$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A8)*COLETA!AD$5:AD$39))"
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              "Cacau Park",
+              "=IF(COUNT(COLETA!D$5:D$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!D$5:D$39))",
+              "=IF(COUNT(COLETA!E$5:E$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!E$5:E$39))",
+              "=IF(COUNT(COLETA!F$5:F$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!F$5:F$39))",
+              "=IF(COUNT(COLETA!G$5:G$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!G$5:G$39))",
+              "=IF(COUNT(COLETA!H$5:H$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!H$5:H$39))",
+              "=IF(COUNT(COLETA!I$5:I$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!I$5:I$39))",
+              "=IF(COUNT(COLETA!J$5:J$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!J$5:J$39))",
+              "=IF(COUNT(COLETA!K$5:K$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!K$5:K$39))",
+              "=IF(COUNT(COLETA!L$5:L$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!L$5:L$39))",
+              "=IF(COUNT(COLETA!M$5:M$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!M$5:M$39))",
+              "=IF(COUNT(COLETA!N$5:N$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!N$5:N$39))",
+              "=IF(COUNT(COLETA!O$5:O$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!O$5:O$39))",
+              "=IF(COUNT(COLETA!P$5:P$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!P$5:P$39))",
+              "=IF(COUNT(COLETA!Q$5:Q$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!Q$5:Q$39))",
+              "=IF(COUNT(COLETA!R$5:R$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!R$5:R$39))",
+              "=IF(COUNT(COLETA!S$5:S$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!S$5:S$39))",
+              "=IF(COUNT(COLETA!T$5:T$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!T$5:T$39))",
+              "=IF(COUNT(COLETA!U$5:U$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!U$5:U$39))",
+              "=IF(COUNT(COLETA!V$5:V$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!V$5:V$39))",
+              "=IF(COUNT(COLETA!W$5:W$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!W$5:W$39))",
+              "=IF(COUNT(COLETA!X$5:X$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!X$5:X$39))",
+              "=IF(COUNT(COLETA!Y$5:Y$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!Y$5:Y$39))",
+              "=IF(COUNT(COLETA!Z$5:Z$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!Z$5:Z$39))",
+              "=IF(COUNT(COLETA!AA$5:AA$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!AA$5:AA$39))",
+              "=IF(COUNT(COLETA!AB$5:AB$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!AB$5:AB$39))",
+              "=IF(COUNT(COLETA!AC$5:AC$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!AC$5:AC$39))",
+              "=IF(COUNT(COLETA!AD$5:AD$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A9)*COLETA!AD$5:AD$39))"
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "Wet'n Wild",
+              "=IF(COUNT(COLETA!D$5:D$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!D$5:D$39))",
+              "=IF(COUNT(COLETA!E$5:E$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!E$5:E$39))",
+              "=IF(COUNT(COLETA!F$5:F$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!F$5:F$39))",
+              "=IF(COUNT(COLETA!G$5:G$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!G$5:G$39))",
+              "=IF(COUNT(COLETA!H$5:H$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!H$5:H$39))",
+              "=IF(COUNT(COLETA!I$5:I$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!I$5:I$39))",
+              "=IF(COUNT(COLETA!J$5:J$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!J$5:J$39))",
+              "=IF(COUNT(COLETA!K$5:K$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!K$5:K$39))",
+              "=IF(COUNT(COLETA!L$5:L$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!L$5:L$39))",
+              "=IF(COUNT(COLETA!M$5:M$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!M$5:M$39))",
+              "=IF(COUNT(COLETA!N$5:N$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!N$5:N$39))",
+              "=IF(COUNT(COLETA!O$5:O$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!O$5:O$39))",
+              "=IF(COUNT(COLETA!P$5:P$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!P$5:P$39))",
+              "=IF(COUNT(COLETA!Q$5:Q$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!Q$5:Q$39))",
+              "=IF(COUNT(COLETA!R$5:R$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!R$5:R$39))",
+              "=IF(COUNT(COLETA!S$5:S$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!S$5:S$39))",
+              "=IF(COUNT(COLETA!T$5:T$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!T$5:T$39))",
+              "=IF(COUNT(COLETA!U$5:U$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!U$5:U$39))",
+              "=IF(COUNT(COLETA!V$5:V$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!V$5:V$39))",
+              "=IF(COUNT(COLETA!W$5:W$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!W$5:W$39))",
+              "=IF(COUNT(COLETA!X$5:X$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!X$5:X$39))",
+              "=IF(COUNT(COLETA!Y$5:Y$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!Y$5:Y$39))",
+              "=IF(COUNT(COLETA!Z$5:Z$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!Z$5:Z$39))",
+              "=IF(COUNT(COLETA!AA$5:AA$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!AA$5:AA$39))",
+              "=IF(COUNT(COLETA!AB$5:AB$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!AB$5:AB$39))",
+              "=IF(COUNT(COLETA!AC$5:AC$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!AC$5:AC$39))",
+              "=IF(COUNT(COLETA!AD$5:AD$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A10)*COLETA!AD$5:AD$39))"
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              "Thermas de São Pedro",
+              "=IF(COUNT(COLETA!D$5:D$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!D$5:D$39))",
+              "=IF(COUNT(COLETA!E$5:E$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!E$5:E$39))",
+              "=IF(COUNT(COLETA!F$5:F$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!F$5:F$39))",
+              "=IF(COUNT(COLETA!G$5:G$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!G$5:G$39))",
+              "=IF(COUNT(COLETA!H$5:H$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!H$5:H$39))",
+              "=IF(COUNT(COLETA!I$5:I$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!I$5:I$39))",
+              "=IF(COUNT(COLETA!J$5:J$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!J$5:J$39))",
+              "=IF(COUNT(COLETA!K$5:K$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!K$5:K$39))",
+              "=IF(COUNT(COLETA!L$5:L$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!L$5:L$39))",
+              "=IF(COUNT(COLETA!M$5:M$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!M$5:M$39))",
+              "=IF(COUNT(COLETA!N$5:N$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!N$5:N$39))",
+              "=IF(COUNT(COLETA!O$5:O$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!O$5:O$39))",
+              "=IF(COUNT(COLETA!P$5:P$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!P$5:P$39))",
+              "=IF(COUNT(COLETA!Q$5:Q$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!Q$5:Q$39))",
+              "=IF(COUNT(COLETA!R$5:R$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!R$5:R$39))",
+              "=IF(COUNT(COLETA!S$5:S$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!S$5:S$39))",
+              "=IF(COUNT(COLETA!T$5:T$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!T$5:T$39))",
+              "=IF(COUNT(COLETA!U$5:U$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!U$5:U$39))",
+              "=IF(COUNT(COLETA!V$5:V$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!V$5:V$39))",
+              "=IF(COUNT(COLETA!W$5:W$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!W$5:W$39))",
+              "=IF(COUNT(COLETA!X$5:X$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!X$5:X$39))",
+              "=IF(COUNT(COLETA!Y$5:Y$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!Y$5:Y$39))",
+              "=IF(COUNT(COLETA!Z$5:Z$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!Z$5:Z$39))",
+              "=IF(COUNT(COLETA!AA$5:AA$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!AA$5:AA$39))",
+              "=IF(COUNT(COLETA!AB$5:AB$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!AB$5:AB$39))",
+              "=IF(COUNT(COLETA!AC$5:AC$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!AC$5:AC$39))",
+              "=IF(COUNT(COLETA!AD$5:AD$39)=0,\"\",SUMPRODUCT((COLETA!$A$5:$A$39=$A11)*COLETA!AD$5:AD$39))"
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              "ÍNDICE CONCORRENTES (6)",
+              "=IF(B5=\"\",\"\",SUM(B6:B11))",
+              "=IF(C5=\"\",\"\",SUM(C6:C11))",
+              "=IF(D5=\"\",\"\",SUM(D6:D11))",
+              "=IF(E5=\"\",\"\",SUM(E6:E11))",
+              "=IF(F5=\"\",\"\",SUM(F6:F11))",
+              "=IF(G5=\"\",\"\",SUM(G6:G11))",
+              "=IF(H5=\"\",\"\",SUM(H6:H11))",
+              "=IF(I5=\"\",\"\",SUM(I6:I11))",
+              "=IF(J5=\"\",\"\",SUM(J6:J11))",
+              "=IF(K5=\"\",\"\",SUM(K6:K11))",
+              "=IF(L5=\"\",\"\",SUM(L6:L11))",
+              "=IF(M5=\"\",\"\",SUM(M6:M11))",
+              "=IF(N5=\"\",\"\",SUM(N6:N11))",
+              "=IF(O5=\"\",\"\",SUM(O6:O11))",
+              "=IF(P5=\"\",\"\",SUM(P6:P11))",
+              "=IF(Q5=\"\",\"\",SUM(Q6:Q11))",
+              "=IF(R5=\"\",\"\",SUM(R6:R11))",
+              "=IF(S5=\"\",\"\",SUM(S6:S11))",
+              "=IF(T5=\"\",\"\",SUM(T6:T11))",
+              "=IF(U5=\"\",\"\",SUM(U6:U11))",
+              "=IF(V5=\"\",\"\",SUM(V6:V11))",
+              "=IF(W5=\"\",\"\",SUM(W6:W11))",
+              "=IF(X5=\"\",\"\",SUM(X6:X11))",
+              "=IF(Y5=\"\",\"\",SUM(Y6:Y11))",
+              "=IF(Z5=\"\",\"\",SUM(Z6:Z11))",
+              "=IF(AA5=\"\",\"\",SUM(AA6:AA11))",
+              "=IF(AB5=\"\",\"\",SUM(AB6:AB11))"
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              "SHARE HOPI HARI",
+              "=IFERROR(B5/SUM(B5:B11),\"\")",
+              "=IFERROR(C5/SUM(C5:C11),\"\")",
+              "=IFERROR(D5/SUM(D5:D11),\"\")",
+              "=IFERROR(E5/SUM(E5:E11),\"\")",
+              "=IFERROR(F5/SUM(F5:F11),\"\")",
+              "=IFERROR(G5/SUM(G5:G11),\"\")",
+              "=IFERROR(H5/SUM(H5:H11),\"\")",
+              "=IFERROR(I5/SUM(I5:I11),\"\")",
+              "=IFERROR(J5/SUM(J5:J11),\"\")",
+              "=IFERROR(K5/SUM(K5:K11),\"\")",
+              "=IFERROR(L5/SUM(L5:L11),\"\")",
+              "=IFERROR(M5/SUM(M5:M11),\"\")",
+              "=IFERROR(N5/SUM(N5:N11),\"\")",
+              "=IFERROR(O5/SUM(O5:O11),\"\")",
+              "=IFERROR(P5/SUM(P5:P11),\"\")",
+              "=IFERROR(Q5/SUM(Q5:Q11),\"\")",
+              "=IFERROR(R5/SUM(R5:R11),\"\")",
+              "=IFERROR(S5/SUM(S5:S11),\"\")",
+              "=IFERROR(T5/SUM(T5:T11),\"\")",
+              "=IFERROR(U5/SUM(U5:U11),\"\")",
+              "=IFERROR(V5/SUM(V5:V11),\"\")",
+              "=IFERROR(W5/SUM(W5:W11),\"\")",
+              "=IFERROR(X5/SUM(X5:X11),\"\")",
+              "=IFERROR(Y5/SUM(Y5:Y11),\"\")",
+              "=IFERROR(Z5/SUM(Z5:Z11),\"\")",
+              "=IFERROR(AA5/SUM(AA5:AA11),\"\")",
+              "=IFERROR(AB5/SUM(AB5:AB11),\"\")"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "hopi_followers": {
+    "file": "hopi-followers.xlsx",
+    "sheet_count": 3,
+    "sheets": [
+      {
+        "title": "Log Diário",
+        "max_row": 217,
+        "max_column": 13,
+        "merged_ranges": [
+          "B3:F3",
+          "I3:M3",
+          "A1:M1",
+          "A2:M2"
+        ],
+        "formula_count": 1273,
+        "sample_non_empty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "HOPI HARI · LOG DIÁRIO DE SEGUIDORES"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "Preencha o total de cada rede por dia (colunas azuis). TOTAL, META e deltas calculam sozinhos. Correção aplicada em 13/06 (Instagram)."
+            ]
+          },
+          {
+            "row": 3,
+            "values": [
+              null,
+              "TOTAL DE SEGUIDORES (preencher)",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              "NET DIÁRIO (calculado)"
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "Data",
+              "Instagram",
+              "TikTok",
+              "Facebook",
+              "YouTube",
+              "LinkedIn",
+              "TOTAL",
+              "META (3M)",
+              "Δ Instagram",
+              "Δ TikTok",
+              "Δ Facebook",
+              "Δ YouTube",
+              "Δ LinkedIn"
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              "2026-06-02 00:00:00",
+              1521064.0,
+              404326.0,
+              988295.0,
+              56858.0,
+              16824.0,
+              "=IF(COUNT(B5:F5)=0,\"\",SUM(B5:F5))",
+              3000000.0,
+              "—",
+              "—",
+              "—",
+              "—",
+              "—"
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "2026-06-03 00:00:00",
+              1521132.0,
+              404553.0,
+              986000.0,
+              57000.0,
+              17000.0,
+              "=IF(COUNT(B6:F6)=0,\"\",SUM(B6:F6))",
+              3000000.0,
+              "=IF(OR(B6=\"\",B5=\"\"),\"\",B6-B5)",
+              "=IF(OR(C6=\"\",C5=\"\"),\"\",C6-C5)",
+              "=IF(OR(D6=\"\",D5=\"\"),\"\",D6-D5)",
+              "=IF(OR(E6=\"\",E5=\"\"),\"\",E6-E5)",
+              "=IF(OR(F6=\"\",F5=\"\"),\"\",F6-F5)"
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "2026-06-04 00:00:00",
+              1521866.0,
+              404700.0,
+              986000.0,
+              57000.0,
+              17000.0,
+              "=IF(COUNT(B7:F7)=0,\"\",SUM(B7:F7))",
+              3000000.0,
+              "=IF(OR(B7=\"\",B6=\"\"),\"\",B7-B6)",
+              "=IF(OR(C7=\"\",C6=\"\"),\"\",C7-C6)",
+              "=IF(OR(D7=\"\",D6=\"\"),\"\",D7-D6)",
+              "=IF(OR(E7=\"\",E6=\"\"),\"\",E7-E6)",
+              "=IF(OR(F7=\"\",F6=\"\"),\"\",F7-F6)"
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "2026-06-05 00:00:00",
+              1521866.0,
+              404700.0,
+              986000.0,
+              57000.0,
+              17000.0,
+              "=IF(COUNT(B8:F8)=0,\"\",SUM(B8:F8))",
+              3000000.0,
+              "=IF(OR(B8=\"\",B7=\"\"),\"\",B8-B7)",
+              "=IF(OR(C8=\"\",C7=\"\"),\"\",C8-C7)",
+              "=IF(OR(D8=\"\",D7=\"\"),\"\",D8-D7)",
+              "=IF(OR(E8=\"\",E7=\"\"),\"\",E8-E7)",
+              "=IF(OR(F8=\"\",F7=\"\"),\"\",F8-F7)"
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              "2026-06-06 00:00:00",
+              1522351.0,
+              404800.0,
+              986000.0,
+              57000.0,
+              17000.0,
+              "=IF(COUNT(B9:F9)=0,\"\",SUM(B9:F9))",
+              3000000.0,
+              "=IF(OR(B9=\"\",B8=\"\"),\"\",B9-B8)",
+              "=IF(OR(C9=\"\",C8=\"\"),\"\",C9-C8)",
+              "=IF(OR(D9=\"\",D8=\"\"),\"\",D9-D8)",
+              "=IF(OR(E9=\"\",E8=\"\"),\"\",E9-E8)",
+              "=IF(OR(F9=\"\",F8=\"\"),\"\",F9-F8)"
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "2026-06-07 00:00:00",
+              1522845.0,
+              404800.0,
+              986000.0,
+              57000.0,
+              17000.0,
+              "=IF(COUNT(B10:F10)=0,\"\",SUM(B10:F10))",
+              3000000.0,
+              "=IF(OR(B10=\"\",B9=\"\"),\"\",B10-B9)",
+              "=IF(OR(C10=\"\",C9=\"\"),\"\",C10-C9)",
+              "=IF(OR(D10=\"\",D9=\"\"),\"\",D10-D9)",
+              "=IF(OR(E10=\"\",E9=\"\"),\"\",E10-E9)",
+              "=IF(OR(F10=\"\",F9=\"\"),\"\",F10-F9)"
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              "2026-06-08 00:00:00",
+              1522845.0,
+              404800.0,
+              986000.0,
+              57000.0,
+              17000.0,
+              "=IF(COUNT(B11:F11)=0,\"\",SUM(B11:F11))",
+              3000000.0,
+              "=IF(OR(B11=\"\",B10=\"\"),\"\",B11-B10)",
+              "=IF(OR(C11=\"\",C10=\"\"),\"\",C11-C10)",
+              "=IF(OR(D11=\"\",D10=\"\"),\"\",D11-D10)",
+              "=IF(OR(E11=\"\",E10=\"\"),\"\",E11-E10)",
+              "=IF(OR(F11=\"\",F10=\"\"),\"\",F11-F10)"
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              "2026-06-09 00:00:00",
+              1522793.0,
+              404790.0,
+              986300.0,
+              57100.0,
+              17000.0,
+              "=IF(COUNT(B12:F12)=0,\"\",SUM(B12:F12))",
+              3000000.0,
+              "=IF(OR(B12=\"\",B11=\"\"),\"\",B12-B11)",
+              "=IF(OR(C12=\"\",C11=\"\"),\"\",C12-C11)",
+              "=IF(OR(D12=\"\",D11=\"\"),\"\",D12-D11)",
+              "=IF(OR(E12=\"\",E11=\"\"),\"\",E12-E11)",
+              "=IF(OR(F12=\"\",F11=\"\"),\"\",F12-F11)"
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              "2026-06-10 00:00:00",
+              1522602.0,
+              404829.0,
+              986191.0,
+              57100.0,
+              17000.0,
+              "=IF(COUNT(B13:F13)=0,\"\",SUM(B13:F13))",
+              3000000.0,
+              "=IF(OR(B13=\"\",B12=\"\"),\"\",B13-B12)",
+              "=IF(OR(C13=\"\",C12=\"\"),\"\",C13-C12)",
+              "=IF(OR(D13=\"\",D12=\"\"),\"\",D13-D12)",
+              "=IF(OR(E13=\"\",E12=\"\"),\"\",E13-E12)",
+              "=IF(OR(F13=\"\",F12=\"\"),\"\",F13-F12)"
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              "2026-06-11 00:00:00",
+              1522602.0,
+              404829.0,
+              986191.0,
+              57100.0,
+              16984.0,
+              "=IF(COUNT(B14:F14)=0,\"\",SUM(B14:F14))",
+              3000000.0,
+              "=IF(OR(B14=\"\",B13=\"\"),\"\",B14-B13)",
+              "=IF(OR(C14=\"\",C13=\"\"),\"\",C14-C13)",
+              "=IF(OR(D14=\"\",D13=\"\"),\"\",D14-D13)",
+              "=IF(OR(E14=\"\",E13=\"\"),\"\",E14-E13)",
+              "=IF(OR(F14=\"\",F13=\"\"),\"\",F14-F13)"
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              "2026-06-12 00:00:00",
+              1522521.0,
+              404821.0,
+              986139.0,
+              57115.0,
+              16987.0,
+              "=IF(COUNT(B15:F15)=0,\"\",SUM(B15:F15))",
+              3000000.0,
+              "=IF(OR(B15=\"\",B14=\"\"),\"\",B15-B14)",
+              "=IF(OR(C15=\"\",C14=\"\"),\"\",C15-C14)",
+              "=IF(OR(D15=\"\",D14=\"\"),\"\",D15-D14)",
+              "=IF(OR(E15=\"\",E14=\"\"),\"\",E15-E14)",
+              "=IF(OR(F15=\"\",F14=\"\"),\"\",F15-F14)"
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              "2026-06-13 00:00:00",
+              1522444.0,
+              404823.0,
+              986089.0,
+              57134.0,
+              16991.0,
+              "=IF(COUNT(B16:F16)=0,\"\",SUM(B16:F16))",
+              3000000.0,
+              "=IF(OR(B16=\"\",B15=\"\"),\"\",B16-B15)",
+              "=IF(OR(C16=\"\",C15=\"\"),\"\",C16-C15)",
+              "=IF(OR(D16=\"\",D15=\"\"),\"\",D16-D15)",
+              "=IF(OR(E16=\"\",E15=\"\"),\"\",E16-E15)",
+              "=IF(OR(F16=\"\",F15=\"\"),\"\",F16-F15)"
+            ]
+          },
+          {
+            "row": 17,
+            "values": [
+              "2026-06-14 00:00:00",
+              1522336.0,
+              404865.0,
+              986005.0,
+              57149.0,
+              16992.0,
+              "=IF(COUNT(B17:F17)=0,\"\",SUM(B17:F17))",
+              3000000.0,
+              "=IF(OR(B17=\"\",B16=\"\"),\"\",B17-B16)",
+              "=IF(OR(C17=\"\",C16=\"\"),\"\",C17-C16)",
+              "=IF(OR(D17=\"\",D16=\"\"),\"\",D17-D16)",
+              "=IF(OR(E17=\"\",E16=\"\"),\"\",E17-E16)",
+              "=IF(OR(F17=\"\",F16=\"\"),\"\",F17-F16)"
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              "2026-06-15 00:00:00",
+              1522007.0,
+              404863.0,
+              985951.0,
+              57157.0,
+              16997.0,
+              "=IF(COUNT(B18:F18)=0,\"\",SUM(B18:F18))",
+              3000000.0,
+              "=IF(OR(B18=\"\",B17=\"\"),\"\",B18-B17)",
+              "=IF(OR(C18=\"\",C17=\"\"),\"\",C18-C17)",
+              "=IF(OR(D18=\"\",D17=\"\"),\"\",D18-D17)",
+              "=IF(OR(E18=\"\",E17=\"\"),\"\",E18-E17)",
+              "=IF(OR(F18=\"\",F17=\"\"),\"\",F18-F17)"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Meta 3M",
+        "max_row": 50,
+        "max_column": 6,
+        "merged_ranges": [
+          "A1:F1",
+          "A17:F17"
+        ],
+        "formula_count": 71,
+        "sample_non_empty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "META · 4.000.000 DE SEGUIDORES"
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "Meta de seguidores",
+              4000000.0
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              "Total atual (último dia)",
+              "=LOOKUP(9.99E+307,'Log Diário'!G5:G217)"
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "Data do último registro",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544d56780>"
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "% da meta atingido",
+              "=B5/B4"
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "Quanto falta para 3M",
+              "=B4-B5"
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              "Ganho da última semana (7d)",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544d56b40>"
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "Ritmo semanal médio (desde 02/06)",
+              "=(B5-'Log Diário'!G5)/((B6-'Log Diário'!A5)/7)"
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              "Semanas restantes (ritmo última semana)",
+              "=IF(B9<=0,\"—\",B8/B9)"
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              "Data prevista 3M (ritmo última semana)",
+              "=IF(B9<=0,\"—\",B6+B11*7)"
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              "Data prevista 3M (ritmo médio)",
+              "=IF(B10<=0,\"—\",B6+(B8/B10)*7)"
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              "Célula amarela = editável (meta). Todo o resto calcula sozinho."
+            ]
+          },
+          {
+            "row": 17,
+            "values": [
+              "SEMANA A SEMANA · RESULTADO vs META"
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              "Semana (fim)",
+              "Total no fim da semana",
+              "Meta (3M)",
+              "Ganho na semana",
+              "% da meta",
+              "Falta para 3M"
+            ]
+          },
+          {
+            "row": 19,
+            "values": [
+              "2026-06-09 00:00:00",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544d57620>",
+              3000000.0,
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544d57440>",
+              "=IF(B19=\"\",\"\",B19/$B$4)",
+              "=IF(B19=\"\",\"\",$B$4-B19)"
+            ]
+          },
+          {
+            "row": 20,
+            "values": [
+              "2026-06-16 00:00:00",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544d54e60>",
+              3000000.0,
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544d54fe0>",
+              "=IF(B20=\"\",\"\",B20/$B$4)",
+              "=IF(B20=\"\",\"\",$B$4-B20)"
+            ]
+          },
+          {
+            "row": 21,
+            "values": [
+              "2026-06-23 00:00:00",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544d54b90>",
+              3000000.0,
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544d54bc0>",
+              "=IF(B21=\"\",\"\",B21/$B$4)",
+              "=IF(B21=\"\",\"\",$B$4-B21)"
+            ]
+          },
+          {
+            "row": 22,
+            "values": [
+              "2026-06-30 00:00:00",
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544d542f0>",
+              3000000.0,
+              "<openpyxl.worksheet.formula.ArrayFormula object at 0x7fb544d55130>",
+              "=IF(B22=\"\",\"\",B22/$B$4)",
+              "=IF(B22=\"\",\"\",$B$4-B22)"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Dashboard",
+        "max_row": 58,
+        "max_column": 8,
+        "merged_ranges": [
+          "A1:E1"
+        ],
+        "formula_count": 40,
+        "sample_non_empty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "DASHBOARD · CRESCIMENTO vs META 3M"
+            ]
+          },
+          {
+            "row": 3,
+            "values": [
+              "RESUMO POR REDE"
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "Rede",
+              "Atual",
+              "Início (02/06)",
+              "Crescimento",
+              "% Crescimento",
+              "Meta proporcional"
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              "Instagram",
+              "=LOOKUP(9.99E+307,'Log Diário'!B5:B217)",
+              "='Log Diário'!B5",
+              "=B5-C5",
+              "=IF(C5=0,\"\",D5/C5)",
+              "=$H$5*(B5/$B$10)",
+              null,
+              4000000.0
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "TikTok",
+              "=LOOKUP(9.99E+307,'Log Diário'!C5:C217)",
+              "='Log Diário'!C5",
+              "=B6-C6",
+              "=IF(C6=0,\"\",D6/C6)",
+              "=$H$5*(B6/$B$10)"
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "Facebook",
+              "=LOOKUP(9.99E+307,'Log Diário'!D5:D217)",
+              "='Log Diário'!D5",
+              "=B7-C7",
+              "=IF(C7=0,\"\",D7/C7)",
+              "=$H$5*(B7/$B$10)"
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "YouTube",
+              "=LOOKUP(9.99E+307,'Log Diário'!E5:E217)",
+              "='Log Diário'!E5",
+              "=B8-C8",
+              "=IF(C8=0,\"\",D8/C8)",
+              "=$H$5*(B8/$B$10)"
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              "LinkedIn",
+              "=LOOKUP(9.99E+307,'Log Diário'!F5:F217)",
+              "='Log Diário'!F5",
+              "=B9-C9",
+              "=IF(C9=0,\"\",D9/C9)",
+              "=$H$5*(B9/$B$10)"
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "TOTAL",
+              "=SUM(B5:B9)",
+              "=SUM(C5:C9)",
+              "=B10-C10",
+              "=D10/C10",
+              "=H5"
+            ]
+          },
+          {
+            "row": 52,
+            "values": [
+              "REDE vs META PROPORCIONAL"
+            ]
+          },
+          {
+            "row": 53,
+            "values": [
+              "Rede",
+              "Atual",
+              "Meta proporcional"
+            ]
+          },
+          {
+            "row": 54,
+            "values": [
+              "Instagram",
+              "=B5",
+              "=F5"
+            ]
+          },
+          {
+            "row": 55,
+            "values": [
+              "TikTok",
+              "=B6",
+              "=F6"
+            ]
+          },
+          {
+            "row": 56,
+            "values": [
+              "Facebook",
+              "=B7",
+              "=F7"
+            ]
+          },
+          {
+            "row": 57,
+            "values": [
+              "YouTube",
+              "=B8",
+              "=F8"
+            ]
+          },
+          {
+            "row": 58,
+            "values": [
+              "LinkedIn",
+              "=B9",
+              "=F9"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
