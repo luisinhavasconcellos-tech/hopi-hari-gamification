@@ -1,0 +1,1235 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070a1c">
+<title>Rumo aos 5 Milhões</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Nunito:wght@600;700;800;900&display=swap">
+<style>
+  /* Hopi Hari x Black Friday — single dark "night at the park" look, by design. */
+  :root {
+    color-scheme: dark;
+    --night: #070a1c;
+    --night-2: #0e1433;
+    --panel: #111940;
+    --panel-2: #18225a;
+    --line: rgba(160, 180, 255, 0.14);
+    --blue: #2b57e0;
+    --blue-deep: #1c3eb8;
+    --yellow: #ffc72c;
+    --yellow-deep: #f0a800;
+    --green: #62bb46;
+    --red: #e84b3c;
+    --pink: #ff7ab6;
+    --text: #f4f6ff;
+    --dim: rgba(226, 233, 255, 0.7);
+    --faint: rgba(226, 233, 255, 0.4);
+    --bulb-off: #262e5c;
+    --display: "Bungee", "Arial Black", Impact, sans-serif;
+    --shade: "Bungee Shade", "Bungee", "Arial Black", Impact, sans-serif;
+    --sans: "Nunito", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(900px 520px at 8% -10%, rgba(43, 87, 224, 0.38), transparent 70%),
+      radial-gradient(700px 480px at 100% 110%, rgba(232, 75, 60, 0.22), transparent 70%),
+      var(--night);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+  button, input { font: inherit; color: inherit; }
+  button { cursor: pointer; border: 0; background: none; }
+  :focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; border-radius: 8px; }
+
+  /* ---------- Black Friday tape ---------- */
+  .tape {
+    background: repeating-linear-gradient(-45deg, #0a0a0a 0 14px, var(--yellow) 14px 28px);
+    padding-block: 7px;
+    overflow: hidden;
+  }
+  .tape-inner {
+    background: #0a0a0a;
+    display: flex;
+    width: max-content;
+    animation: tape 38s linear infinite;
+  }
+  .tape span {
+    font-family: var(--display);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: var(--yellow);
+    padding: 5px 18px;
+    white-space: nowrap;
+  }
+  .tape span b { color: #fff; font-weight: 400; }
+  @keyframes tape { to { transform: translateX(-50%); } }
+
+  .wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding-inline: clamp(16px, 3vw, 32px);
+    padding-block: 22px 40px;
+    display: grid;
+    gap: 22px;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .eyebrow {
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 64px);
+    line-height: 0.95;
+    margin: 6px 0 8px;
+    text-wrap: balance;
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--yellow);
+    text-shadow: 0 0 28px rgba(255, 199, 44, 0.45);
+  }
+  .sub { color: var(--dim); margin: 0; font-weight: 700; }
+  .sub strong { color: var(--text); }
+
+  .bf {
+    background: #000;
+    border: 2px solid var(--yellow);
+    border-radius: 16px;
+    padding: 12px 16px;
+    display: grid;
+    gap: 8px;
+    box-shadow: 0 0 0 4px rgba(255, 199, 44, 0.12), 0 14px 40px rgba(0, 0, 0, 0.5);
+  }
+  .bf-label {
+    font-family: var(--display);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--yellow);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .bf-label .tag {
+    background: var(--red);
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 999px;
+    letter-spacing: 0.1em;
+  }
+  .bf-clock { display: flex; gap: 6px; }
+  .bf-unit {
+    background: #141414;
+    border-radius: 10px;
+    min-width: 58px;
+    padding: 6px 6px 4px;
+    text-align: center;
+  }
+  .bf-unit b {
+    display: block;
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .bf-unit small {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .bf-live {
+    font-family: var(--display);
+    font-size: 24px;
+    color: var(--red);
+    animation: blink 1s steps(2) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0.35; } }
+
+  /* ---------- Main grid ---------- */
+  main {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+  }
+  @media (max-width: 920px) { main { grid-template-columns: minmax(0, 1fr); } }
+
+  .stage {
+    position: relative;
+    background:
+      radial-gradient(420px 300px at 50% 42%, rgba(43, 87, 224, 0.28), transparent 70%),
+      linear-gradient(180deg, var(--night-2), #0a0f28);
+    border: 1px solid var(--line);
+    border-radius: 26px;
+    padding: 18px clamp(14px, 3vw, 28px) 24px;
+    display: grid;
+    gap: 16px;
+    overflow: hidden;
+  }
+  .stage.done { border-color: var(--yellow); box-shadow: 0 0 60px rgba(255, 199, 44, 0.25); }
+  .wheel-box { width: min(100%, 470px); margin: 0 auto; }
+  .wheel-box svg { display: block; width: 100%; height: auto; }
+
+  .rim-progress { transition: stroke-dashoffset 1.6s cubic-bezier(.2, .8, .2, 1); }
+  .bulb { fill: var(--bulb-off); transition: fill 0.4s; }
+  .bulb.on { fill: var(--yellow); animation: twinkle 1.4s ease-in-out infinite; animation-delay: var(--d); }
+  @keyframes twinkle { 50% { fill: #fff3c4; } }
+  .gondola rect { fill: var(--night-2); stroke: rgba(255, 255, 255, 0.28); stroke-width: 2; transition: fill 0.5s; }
+  .gondola text { fill: var(--faint); font-family: var(--sans); font-weight: 900; font-size: 10px; }
+  .gondola.lit rect { fill: var(--c); stroke: #fff; }
+  .gondola.lit text { fill: #0a0f28; }
+  .gondola.pop { animation: pop 0.8s cubic-bezier(.3, 1.6, .5, 1); transform-box: fill-box; transform-origin: center; }
+  @keyframes pop { 0% { transform: scale(1); } 40% { transform: scale(1.45); } 100% { transform: scale(1); } }
+  .hub-pct { font-family: var(--display); font-size: 36px; fill: var(--yellow); }
+  .hub-cap { font-family: var(--sans); font-weight: 900; font-size: 10px; letter-spacing: 0.2em; fill: var(--dim); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  @media (max-width: 560px) { .stats { grid-template-columns: minmax(0, 1fr); } }
+  .stat {
+    position: relative;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 14px 16px;
+    display: grid;
+    gap: 6px;
+    container-type: inline-size;
+    min-width: 0;
+  }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+  .stat-of { font-size: 13px; font-weight: 700; color: var(--faint); }
+  .stat-bar { height: 8px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); overflow: hidden; }
+  .stat-bar i {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--green), var(--yellow));
+    transition: width 1.6s cubic-bezier(.2, .8, .2, 1);
+  }
+
+  /* odometer */
+  .odo {
+    display: flex;
+    align-items: baseline;
+    font-family: var(--display);
+    font-size: min(46px, 12cqi);
+    line-height: 1;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .odo .pre { font-size: 0.5em; color: var(--yellow); margin-right: 0.18em; align-self: center; }
+  .odo .col { display: inline-block; height: 1em; overflow: hidden; width: 0.78em; text-align: center; }
+  .odo .strip { display: block; transition: transform 1.4s cubic-bezier(.2, .9, .2, 1); }
+  .odo .strip span { display: block; height: 1em; }
+  .odo .col.lead { opacity: 0.18; }
+  .odo .sep { width: 0.3em; text-align: center; }
+  .odo .sep.lead { opacity: 0.18; }
+
+  .float {
+    position: absolute;
+    right: 14px;
+    top: 8px;
+    font-family: var(--display);
+    font-size: 18px;
+    color: var(--green);
+    pointer-events: none;
+    animation: floatUp 1.6s ease-out forwards;
+  }
+  @keyframes floatUp { from { opacity: 1; transform: translateY(8px); } to { opacity: 0; transform: translateY(-34px); } }
+
+  .remaining {
+    text-align: center;
+    font-weight: 800;
+    color: var(--dim);
+    margin: 0;
+  }
+  .remaining b { color: var(--text); }
+  .done-badge {
+    justify-self: center;
+    font-family: var(--display);
+    background: var(--yellow);
+    color: #0a0f28;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 15px;
+  }
+
+  /* ---------- Control panel ---------- */
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 26px;
+    padding: 20px;
+    display: grid;
+    gap: 18px;
+  }
+  .panel h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+  .panel h3 {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin: 0;
+  }
+  .quick { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .quick button {
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px 4px 10px;
+    font-family: var(--display);
+    font-size: 20px;
+    line-height: 1;
+    transition: transform 0.12s, background 0.2s;
+  }
+  .quick button small { display: block; font-family: var(--sans); font-size: 10px; font-weight: 800; color: var(--faint); margin-top: 5px; letter-spacing: 0.06em; }
+  .quick button:hover { background: var(--blue-deep); }
+  .quick button:active { transform: scale(0.94); }
+
+  form { display: grid; gap: 12px; }
+  .fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  label { display: grid; gap: 5px; font-size: 12px; font-weight: 800; color: var(--dim); }
+  input[type="number"] {
+    width: 100%;
+    background: #0a0f28;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 11px 12px;
+    font-size: 18px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  input[type="number"]:focus { border-color: var(--yellow); outline: none; }
+  .hint { font-size: 12px; color: var(--faint); margin: 0; font-weight: 700; }
+  .cta {
+    background: var(--yellow);
+    color: #0a0f28;
+    font-family: var(--display);
+    font-size: 18px;
+    padding: 14px 18px;
+    border-radius: 999px;
+    box-shadow: 0 6px 0 var(--yellow-deep), 0 12px 30px rgba(255, 199, 44, 0.3);
+    transition: transform 0.1s, box-shadow 0.1s;
+  }
+  .cta:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--yellow-deep); }
+
+  .log { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; max-height: 260px; overflow-y: auto; }
+  .log li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 10px;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    padding: 8px 10px 8px 12px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .log li .q { color: var(--text); }
+  .log li .q small { display: block; color: var(--faint); font-weight: 700; font-size: 12px; }
+  .log li time { color: var(--faint); font-size: 12px; }
+  .log li button { color: var(--faint); font-size: 12px; font-weight: 800; padding: 4px 8px; border-radius: 8px; }
+  .log li button:hover { color: var(--red); background: rgba(232, 75, 60, 0.12); }
+  .log .empty { grid-template-columns: 1fr; color: var(--faint); background: none; padding-left: 0; }
+
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tools button {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 13px;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--dim);
+  }
+  .tools button:hover { color: var(--text); border-color: var(--faint); }
+  .tools .party-btn { color: var(--yellow); border-color: rgba(255, 199, 44, 0.45); }
+  .inline-box {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px dashed var(--line);
+    border-radius: 16px;
+    padding: 14px;
+    display: grid;
+    gap: 10px;
+  }
+  .inline-box p { margin: 0; font-weight: 700; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .btn-sm { border-radius: 999px; padding: 8px 14px; font-weight: 900; font-size: 13px; background: var(--panel-2); }
+  .btn-sm.danger { background: var(--red); color: #fff; }
+  .btn-sm.ok { background: var(--green); color: #0a0f28; }
+
+  /* ---------- Toast ---------- */
+  .toast {
+    position: fixed;
+    left: 50%;
+    bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+    transform: translateX(-50%);
+    background: var(--yellow);
+    color: #0a0f28;
+    font-family: var(--display);
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    z-index: 40;
+    max-width: calc(100% - 32px);
+    text-align: center;
+    animation: toastIn 0.4s cubic-bezier(.3, 1.5, .5, 1);
+  }
+  @keyframes toastIn { from { transform: translate(-50%, 30px); opacity: 0; } }
+
+  /* ---------- Party ---------- */
+  #fx { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 60; }
+  .party {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: grid;
+    place-items: center;
+    padding: 24px 16px;
+    background: radial-gradient(circle at 50% 45%, rgba(28, 62, 184, 0.92), rgba(5, 7, 20, 0.97) 70%);
+    overflow: hidden;
+    text-align: center;
+  }
+  .rays {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    width: 220vmax;
+    height: 220vmax;
+    margin: -110vmax 0 0 -110vmax;
+    background: repeating-conic-gradient(rgba(255, 199, 44, 0.16) 0 9deg, transparent 9deg 18deg);
+    animation: spin 26s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .spot {
+    position: absolute;
+    top: -20%;
+    width: 38vmax;
+    height: 140%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 80%);
+    filter: blur(6px);
+    transform-origin: 50% 0;
+    clip-path: polygon(45% 0, 55% 0, 100% 100%, 0 100%);
+    mix-blend-mode: screen;
+  }
+  .spot.a { left: 5%; animation: sweepA 4s ease-in-out infinite alternate; }
+  .spot.b { right: 5%; animation: sweepB 4.6s ease-in-out infinite alternate; background: linear-gradient(180deg, rgba(98, 187, 70, 0.3), transparent 80%); }
+  .spot.c { left: 35%; animation: sweepA 5.2s ease-in-out infinite alternate-reverse; background: linear-gradient(180deg, rgba(232, 75, 60, 0.28), transparent 80%); }
+  @keyframes sweepA { from { transform: rotate(-28deg); } to { transform: rotate(24deg); } }
+  @keyframes sweepB { from { transform: rotate(26deg); } to { transform: rotate(-24deg); } }
+
+  .party-card { position: relative; z-index: 2; display: grid; gap: 14px; justify-items: center; max-width: 900px; }
+  .party-eyebrow {
+    font-family: var(--display);
+    background: #000;
+    color: var(--yellow);
+    border: 2px solid var(--yellow);
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: clamp(12px, 2vw, 16px);
+    letter-spacing: 0.08em;
+  }
+  .party h2 {
+    font-family: var(--shade);
+    font-weight: 400;
+    font-size: clamp(56px, 13vw, 170px);
+    line-height: 0.9;
+    margin: 0;
+    color: var(--yellow);
+    text-shadow: 0 0 40px rgba(255, 199, 44, 0.6);
+    animation: bounce 0.9s cubic-bezier(.3, 1.6, .5, 1) both, wobble 2.4s 1s ease-in-out infinite;
+  }
+  @keyframes bounce { from { transform: scale(0.2) rotate(-8deg); opacity: 0; } }
+  @keyframes wobble { 25% { transform: rotate(-2deg) scale(1.03); } 75% { transform: rotate(2deg) scale(1.03); } }
+  .party-big {
+    font-family: var(--display);
+    font-size: clamp(28px, 6vw, 64px);
+    line-height: 1;
+    color: #fff;
+  }
+  .party-big small { display: block; font-family: var(--sans); font-weight: 900; font-size: 0.34em; color: var(--dim); margin-top: 10px; letter-spacing: 0.04em; }
+  .party-msg { font-weight: 800; font-size: clamp(15px, 2.2vw, 20px); color: var(--text); margin: 0; }
+  .party .row { justify-content: center; }
+  .party .cta { font-size: 16px; }
+  .ghost { border: 2px solid rgba(255, 255, 255, 0.4); border-radius: 999px; padding: 12px 18px; font-weight: 900; }
+
+  .balloon {
+    position: absolute;
+    bottom: -160px;
+    width: 64px;
+    height: 80px;
+    border-radius: 50% 50% 48% 48% / 56% 56% 44% 44%;
+    background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.6), transparent 26%), var(--c);
+    animation: rise var(--t) linear var(--delay) infinite;
+    z-index: 1;
+  }
+  .balloon::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 1.5px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  @keyframes rise {
+    0% { transform: translate(0, 0) rotate(-4deg); }
+    50% { transform: translate(24px, -60vh) rotate(5deg); }
+    100% { transform: translate(-10px, -130vh) rotate(-4deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tape-inner, .bulb.on, .rays, .spot, .balloon, .party h2 { animation: none !important; }
+    .odo .strip, .rim-progress, .stat-bar i { transition-duration: 0.01s !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="tape" aria-hidden="true">
+  <div class="tape-inner" id="tape"></div>
+</div>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Hopi Hari · Black Friday 2026 · Passaporte Anual</div>
+      <h1>Rumo aos <em>5 milhões</em></h1>
+      <p class="sub">Meta: <strong>R$ 5.000.000</strong> = <strong>10.000 passaportes anuais</strong> vendidos</p>
+    </div>
+    <div class="bf" aria-live="polite">
+      <div class="bf-label"><span class="tag">BLACK</span><span id="bfTitle">Black Friday começa em</span></div>
+      <div class="bf-clock" id="bfClock">
+        <div class="bf-unit"><b id="bfD">--</b><small>dias</small></div>
+        <div class="bf-unit"><b id="bfH">--</b><small>horas</small></div>
+        <div class="bf-unit"><b id="bfM">--</b><small>min</small></div>
+        <div class="bf-unit"><b id="bfS">--</b><small>seg</small></div>
+      </div>
+      <div class="bf-live" id="bfLive" hidden>AO VIVO!</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="stage" id="stage" aria-label="Progresso da meta">
+      <div class="wheel-box">
+        <svg id="wheel" viewBox="0 0 400 440" role="img" aria-labelledby="wheelTitle">
+          <title id="wheelTitle">Roda-gigante da meta: cada cabine acende a cada 1.000 passaportes anuais</title>
+        </svg>
+      </div>
+
+      <div class="stats">
+        <div class="stat" id="statMoney">
+          <span class="stat-label">Faturado</span>
+          <div class="odo" id="odoMoney"></div>
+          <div class="stat-bar"><i id="barMoney"></i></div>
+          <span class="stat-of">de R$ 5.000.000</span>
+        </div>
+        <div class="stat" id="statPass">
+          <span class="stat-label">Passaportes anuais</span>
+          <div class="odo" id="odoPass"></div>
+          <div class="stat-bar"><i id="barPass"></i></div>
+          <span class="stat-of">de 10.000</span>
+        </div>
+      </div>
+      <p class="remaining" id="remaining"></p>
+      <div class="done-badge" id="doneBadge" hidden>Meta batida!</div>
+    </section>
+
+    <aside class="panel" aria-label="Registrar vendas">
+      <h2>Registrar vendas</h2>
+
+      <div class="quick" id="quick">
+        <button type="button" data-q="1">+1<small>passaporte</small></button>
+        <button type="button" data-q="10">+10<small>passaportes</small></button>
+        <button type="button" data-q="50">+50<small>passaportes</small></button>
+        <button type="button" data-q="100">+100<small>passaportes</small></button>
+      </div>
+
+      <form id="saleForm" autocomplete="off">
+        <div class="fields">
+          <label for="qty">Quantidade
+            <input type="number" id="qty" min="1" step="1" value="25" inputmode="numeric" required>
+          </label>
+          <label for="unit">Preço médio (R$)
+            <input type="number" id="unit" min="0" step="0.01" value="500" inputmode="decimal" required>
+          </label>
+        </div>
+        <p class="hint" id="formHint">Total desta venda: R$ 12.500</p>
+        <button class="cta" type="submit">Registrar venda</button>
+      </form>
+
+      <div style="display:grid;gap:8px">
+        <h3>Últimas vendas</h3>
+        <ul class="log" id="log"></ul>
+      </div>
+
+      <div class="inline-box" id="fixBox" hidden>
+        <p>Corrigir os totais (ex.: fechamento do dia)</p>
+        <div class="fields">
+          <label for="fixPass">Passaportes vendidos
+            <input type="number" id="fixPass" min="0" step="1" inputmode="numeric">
+          </label>
+          <label for="fixMoney">Faturado (R$)
+            <input type="number" id="fixMoney" min="0" step="0.01" inputmode="decimal">
+          </label>
+        </div>
+        <div class="row">
+          <button type="button" class="btn-sm ok" id="fixSave">Salvar totais</button>
+          <button type="button" class="btn-sm" id="fixCancel">Cancelar</button>
+        </div>
+      </div>
+
+      <div class="inline-box" id="resetBox" hidden>
+        <p>Apagar todas as vendas e voltar o cronômetro a zero?</p>
+        <div class="row">
+          <button type="button" class="btn-sm danger" id="resetYes">Sim, zerar tudo</button>
+          <button type="button" class="btn-sm" id="resetNo">Cancelar</button>
+        </div>
+      </div>
+
+      <div class="tools">
+        <button type="button" class="party-btn" id="demoParty">Ver a festa</button>
+        <button type="button" id="fsBtn">Tela cheia</button>
+        <button type="button" id="soundBtn" aria-pressed="true">Som: ligado</button>
+        <button type="button" id="fixBtn">Corrigir totais</button>
+        <button type="button" id="resetBtn">Zerar</button>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<div class="party" id="party" hidden role="dialog" aria-modal="true" aria-labelledby="partyTitle">
+  <div class="rays"></div>
+  <div class="spot a"></div><div class="spot b"></div><div class="spot c"></div>
+  <div id="balloons"></div>
+  <div class="party-card">
+    <div class="party-eyebrow">HOPI HARI · BLACK FRIDAY 2026</div>
+    <h2 id="partyTitle">META<br>BATIDA!</h2>
+    <div class="party-big" id="partyBig">R$ 5.000.000<small>10.000 passaportes anuais vendidos</small></div>
+    <p class="party-msg">Parabéns, time! Hopi Hari mais cheio do que nunca.</p>
+    <div class="row">
+      <button type="button" class="cta" id="moreConfetti">Mais confete!</button>
+      <button type="button" class="ghost" id="closeParty">Voltar ao cronômetro</button>
+    </div>
+  </div>
+</div>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<script>
+(() => {
+  const GOAL_MONEY = 5000000;
+  const GOAL_PASS = 10000;
+  const BF_START = new Date("2026-11-27T00:00:00-03:00");
+  const BF_END = new Date("2026-12-01T00:00:00-03:00"); // até o fim da Cyber Monday
+  const KEY = "hopihari-bf2026-meta5mi";
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const $ = (id) => document.getElementById(id);
+  const nf = new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 0 });
+  const brl = (v) => "R$ " + nf.format(Math.round(v));
+
+  // ---------- state ----------
+  function load() {
+    try {
+      const s = JSON.parse(localStorage.getItem(KEY));
+      if (s && Array.isArray(s.sales)) return { unit: 500, sound: true, ...s };
+    } catch (e) {}
+    return { sales: [], unit: 500, sound: true };
+  }
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+  let state = load();
+  const totals = () => state.sales.reduce(
+    (t, s) => ({ pass: t.pass + s.qty, money: t.money + s.value }),
+    { pass: 0, money: 0 }
+  );
+
+  // ---------- tape ----------
+  const tapeText = ["BLACK FRIDAY <b>HOPI HARI</b>", "PASSAPORTE ANUAL", "META <b>R$ 5 MILHÕES</b>", "10.000 <b>HOPI HARIANOS</b>", "27 · 11 · 2026"];
+  const tapeRun = tapeText.map((t) => `<span>★ ${t}</span>`).join("");
+  $("tape").innerHTML = tapeRun.repeat(4) + tapeRun.repeat(4);
+
+  // ---------- ferris wheel ----------
+  const SVG = "http://www.w3.org/2000/svg";
+  const wheel = $("wheel");
+  const CX = 200, CY = 200, R = 172, BULB_R = 187, BULBS = 60;
+  const C = 2 * Math.PI * R;
+  const GONDOLA_COLORS = ["#ffc72c", "#62bb46", "#e84b3c", "#2b57e0", "#ff7ab6"];
+  const el = (tag, attrs, parent = wheel) => {
+    const n = document.createElementNS(SVG, tag);
+    for (const k in attrs) n.setAttribute(k, attrs[k]);
+    parent.appendChild(n);
+    return n;
+  };
+  // legs + ground
+  el("path", { d: `M${CX} ${CY} L92 430 M${CX} ${CY} L308 430 M128 360 L272 360`, stroke: "#1c3eb8", "stroke-width": 9, "stroke-linecap": "round", fill: "none" });
+  el("line", { x1: 40, y1: 432, x2: 360, y2: 432, stroke: "rgba(160,180,255,.25)", "stroke-width": 3, "stroke-linecap": "round" });
+  // spokes
+  for (let i = 0; i < 10; i++) {
+    const a = ((-90 + i * 36) * Math.PI) / 180;
+    el("line", { x1: CX + Math.cos(a) * 58, y1: CY + Math.sin(a) * 58, x2: CX + Math.cos(a) * R, y2: CY + Math.sin(a) * R, stroke: "rgba(160,180,255,.28)", "stroke-width": 3 });
+  }
+  el("circle", { cx: CX, cy: CY, r: 110, fill: "none", stroke: "rgba(160,180,255,.14)", "stroke-width": 2 });
+  // rim + progress
+  el("circle", { cx: CX, cy: CY, r: R, fill: "none", stroke: "#1a2a78", "stroke-width": 12 });
+  const prog = el("circle", {
+    class: "rim-progress", cx: CX, cy: CY, r: R, fill: "none", stroke: "url(#rimGrad)", "stroke-width": 12,
+    "stroke-linecap": "round", "stroke-dasharray": C, "stroke-dashoffset": C, transform: `rotate(-90 ${CX} ${CY})`,
+  });
+  const defs = el("defs", {});
+  defs.innerHTML = `<linearGradient id="rimGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#62bb46"/><stop offset="1" stop-color="#ffc72c"/></linearGradient>`;
+  // bulbs
+  const bulbs = [];
+  for (let i = 0; i < BULBS; i++) {
+    const a = ((-90 + (i + 0.5) * (360 / BULBS)) * Math.PI) / 180;
+    const b = el("circle", { class: "bulb", cx: CX + Math.cos(a) * BULB_R, cy: CY + Math.sin(a) * BULB_R, r: 4.2 });
+    b.style.setProperty("--d", `${-(i % 12) * 0.12}s`);
+    bulbs.push(b);
+  }
+  // gondolas: cabin i lights at i*1.000 passports (10% of the goal)
+  const gondolas = [];
+  for (let i = 1; i <= 10; i++) {
+    const a = ((-90 + i * 36) * Math.PI) / 180;
+    const x = CX + Math.cos(a) * R, y = CY + Math.sin(a) * R;
+    const g = el("g", { class: "gondola" });
+    g.style.setProperty("--c", GONDOLA_COLORS[(i - 1) % GONDOLA_COLORS.length]);
+    el("line", { x1: x, y1: y, x2: x, y2: y + 10, stroke: "rgba(255,255,255,.45)", "stroke-width": 2 }, g);
+    el("rect", { x: x - 17, y: y + 9, width: 34, height: 24, rx: 7 }, g);
+    const t = el("text", { x, y: y + 25, "text-anchor": "middle" }, g);
+    t.textContent = `${i}k`;
+    gondolas.push(g);
+  }
+  // hub
+  el("circle", { cx: CX, cy: CY, r: 58, fill: "#0a0f28", stroke: "#ffc72c", "stroke-width": 4 });
+  const hubPct = el("text", { class: "hub-pct", x: CX, y: CY + 10, "text-anchor": "middle" });
+  const hubCap = el("text", { class: "hub-cap", x: CX, y: CY + 30, "text-anchor": "middle" });
+  hubCap.textContent = "DA META";
+
+  // ---------- odometers ----------
+  function makeOdo(root, digits, prefix) {
+    root.innerHTML = "";
+    if (prefix) {
+      const p = document.createElement("span");
+      p.className = "pre";
+      p.textContent = prefix;
+      root.appendChild(p);
+    }
+    const cols = [], seps = [];
+    for (let i = 0; i < digits; i++) {
+      const fromRight = digits - i;
+      const col = document.createElement("span");
+      col.className = "col";
+      const strip = document.createElement("span");
+      strip.className = "strip";
+      strip.innerHTML = "0123456789".split("").map((d) => `<span>${d}</span>`).join("");
+      col.appendChild(strip);
+      root.appendChild(col);
+      cols.push({ col, strip });
+      if (fromRight > 1 && (fromRight - 1) % 3 === 0) {
+        const s = document.createElement("span");
+        s.className = "sep";
+        s.textContent = ".";
+        root.appendChild(s);
+        seps.push({ s, after: i });
+      }
+    }
+    return (value) => {
+      const str = String(Math.max(0, Math.floor(value))).padStart(digits, "0").slice(-digits);
+      const firstSig = str.search(/[1-9]/);
+      const lead = firstSig === -1 ? digits - 1 : firstSig;
+      cols.forEach(({ col, strip }, i) => {
+        strip.style.transform = `translateY(${-Number(str[i])}em)`;
+        col.classList.toggle("lead", i < lead);
+      });
+      seps.forEach(({ s, after }) => s.classList.toggle("lead", after < lead));
+    };
+  }
+  const setMoney = makeOdo($("odoMoney"), 7, "R$");
+  const setPass = makeOdo($("odoPass"), 5);
+
+  // ---------- render ----------
+  let lastLit = -1;
+  function render(animateCabins) {
+    const t = totals();
+    const pct = t.money / GOAL_MONEY;
+    const shown = Math.min(pct, 1);
+    setMoney(t.money);
+    setPass(t.pass);
+    prog.setAttribute("stroke-dashoffset", C * (1 - shown));
+    $("barMoney").style.width = `${shown * 100}%`;
+    $("barPass").style.width = `${Math.min(t.pass / GOAL_PASS, 1) * 100}%`;
+    hubPct.textContent = `${Math.floor(pct * 100)}%`;
+    bulbs.forEach((b, i) => b.classList.toggle("on", (i + 1) / BULBS <= shown + 1e-9));
+    const lit = Math.min(10, Math.floor(shown * 10 + 1e-9));
+    gondolas.forEach((g, i) => {
+      g.classList.toggle("lit", i < lit);
+      if (animateCabins && i < lit && i >= lastLit && lastLit >= 0) {
+        g.classList.remove("pop");
+        void g.getBBox();
+        g.classList.add("pop");
+      }
+    });
+    lastLit = lit;
+    const done = pct >= 1;
+    $("stage").classList.toggle("done", done);
+    $("doneBadge").hidden = !done;
+    $("remaining").hidden = done;
+    if (!done) {
+      const leftMoney = GOAL_MONEY - t.money;
+      const leftPass = Math.max(0, GOAL_PASS - t.pass);
+      $("remaining").innerHTML = `Faltam <b>${brl(leftMoney)}</b> · <b>${nf.format(leftPass)}</b> passaportes`;
+    }
+    renderLog();
+  }
+
+  function renderLog() {
+    const log = $("log");
+    const items = state.sales.slice(-12).reverse();
+    if (!items.length) {
+      log.innerHTML = `<li class="empty">Nenhuma venda registrada ainda. Use os botões acima.</li>`;
+      return;
+    }
+    log.innerHTML = items.map((s) => {
+      const d = new Date(s.at);
+      const when = d.toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+      const label = s.adj ? "Correção" : `+${nf.format(s.qty)} ${s.qty === 1 ? "passaporte" : "passaportes"}`;
+      return `<li><span class="q">${label}<small>${s.value >= 0 ? "+" : "−"}${brl(Math.abs(s.value))}</small></span><time datetime="${d.toISOString()}">${when}</time><button type="button" data-undo="${s.id}" aria-label="Desfazer esta venda">desfazer</button></li>`;
+    }).join("");
+  }
+
+  // ---------- sales ----------
+  function addSale(qty, value, opts = {}) {
+    const before = totals().money / GOAL_MONEY;
+    state.sales.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), qty, value, at: Date.now(), adj: !!opts.adj });
+    save();
+    render(true);
+    const after = totals().money / GOAL_MONEY;
+    celebrate(before, after, value, opts.origin);
+  }
+
+  function celebrate(before, after, value, origin) {
+    if (value > 0) {
+      floatText($("statMoney"), `+${brl(value)}`);
+      ding();
+      if (origin) fx.burst(origin.x, origin.y, 26, 7);
+    }
+    if (before < 1 && after >= 1) {
+      setTimeout(() => party(), 900);
+      return;
+    }
+    const mBefore = Math.floor(before * 10), mAfter = Math.floor(after * 10);
+    if (mAfter > mBefore && after < 1) {
+      const r = $("wheel").getBoundingClientRect();
+      fx.burst(r.left + r.width / 2, r.top + r.height * 0.45, 90, 12);
+      chime();
+      const msgs = {
+        5: "Metade do caminho! 50% da meta",
+        9: "Última cabine! 90% da meta",
+      };
+      toast(msgs[mAfter] || `Cabine ${mAfter} acesa! ${mAfter * 10}% da meta`);
+    }
+  }
+
+  function floatText(parent, text) {
+    const f = document.createElement("span");
+    f.className = "float";
+    f.textContent = text;
+    parent.appendChild(f);
+    f.addEventListener("animationend", () => f.remove());
+  }
+
+  let toastTimer;
+  function toast(text) {
+    document.querySelectorAll(".toast").forEach((t) => t.remove());
+    const t = document.createElement("div");
+    t.className = "toast";
+    t.setAttribute("role", "status");
+    t.textContent = text;
+    document.body.appendChild(t);
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.remove(), 3200);
+  }
+
+  const originOf = (elm) => {
+    const r = elm.getBoundingClientRect();
+    return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+  };
+
+  $("quick").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-q]");
+    if (!b) return;
+    const q = Number(b.dataset.q);
+    addSale(q, q * unitPrice(), { origin: originOf(b) });
+  });
+
+  const unitPrice = () => {
+    const v = Number($("unit").value);
+    return isFinite(v) && v >= 0 ? v : 500;
+  };
+  $("unit").value = state.unit;
+  function updateHint() {
+    const q = Math.max(0, Math.floor(Number($("qty").value) || 0));
+    $("formHint").textContent = `Total desta venda: ${brl(q * unitPrice())}`;
+  }
+  $("qty").addEventListener("input", updateHint);
+  $("unit").addEventListener("input", () => {
+    updateHint();
+    state.unit = unitPrice();
+    save();
+  });
+  updateHint();
+
+  $("saleForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const q = Math.floor(Number($("qty").value));
+    if (!q || q < 1) {
+      $("formHint").textContent = "Informe uma quantidade de pelo menos 1 passaporte.";
+      $("qty").focus();
+      return;
+    }
+    addSale(q, q * unitPrice(), { origin: originOf(e.submitter || $("saleForm")) });
+  });
+
+  $("log").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-undo]");
+    if (!b) return;
+    state.sales = state.sales.filter((s) => s.id !== b.dataset.undo);
+    save();
+    render(false);
+    toast("Venda removida");
+  });
+
+  // corrections + reset (in-page confirmations)
+  $("fixBtn").addEventListener("click", () => {
+    const t = totals();
+    $("fixPass").value = t.pass;
+    $("fixMoney").value = Math.round(t.money * 100) / 100;
+    $("resetBox").hidden = true;
+    $("fixBox").hidden = false;
+    $("fixPass").focus();
+  });
+  $("fixCancel").addEventListener("click", () => ($("fixBox").hidden = true));
+  $("fixSave").addEventListener("click", () => {
+    const t = totals();
+    const p = Math.max(0, Math.floor(Number($("fixPass").value) || 0));
+    const m = Math.max(0, Number($("fixMoney").value) || 0);
+    $("fixBox").hidden = true;
+    if (p === t.pass && m === t.money) return;
+    addSale(p - t.pass, m - t.money, { adj: true });
+    toast("Totais corrigidos");
+  });
+  $("resetBtn").addEventListener("click", () => {
+    $("fixBox").hidden = true;
+    $("resetBox").hidden = false;
+  });
+  $("resetNo").addEventListener("click", () => ($("resetBox").hidden = true));
+  $("resetYes").addEventListener("click", () => {
+    state.sales = [];
+    save();
+    lastLit = -1;
+    render(false);
+    $("resetBox").hidden = true;
+    toast("Cronômetro zerado");
+  });
+
+  $("fsBtn").addEventListener("click", () => {
+    try {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else document.documentElement.requestFullscreen().catch(() => toast("Tela cheia não disponível aqui"));
+    } catch (e) { toast("Tela cheia não disponível aqui"); }
+  });
+
+  // keep other tabs (ex.: a TV screen + a laptop) in sync
+  window.addEventListener("storage", (e) => {
+    if (e.key !== KEY) return;
+    const before = totals().money / GOAL_MONEY;
+    state = load();
+    render(true);
+    const after = totals().money / GOAL_MONEY;
+    celebrate(before, after, 0);
+  });
+
+  // keep a TV screen awake while the page is visible
+  let wake;
+  async function keepAwake() {
+    try { if ("wakeLock" in navigator && !wake) { wake = await navigator.wakeLock.request("screen"); wake.addEventListener("release", () => (wake = null)); } } catch (e) {}
+  }
+  document.addEventListener("click", keepAwake, { once: true });
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible" && wake === null) keepAwake(); });
+
+  // ---------- sound ----------
+  let actx;
+  function audio() {
+    if (!state.sound) return null;
+    try {
+      actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+      if (actx.state === "suspended") actx.resume();
+      return actx;
+    } catch (e) { return null; }
+  }
+  function tone(a, f, t0, dur, type = "triangle", vol = 0.14) {
+    const o = a.createOscillator(), g = a.createGain();
+    o.type = type;
+    o.frequency.setValueAtTime(f, t0);
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(vol, t0 + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    o.connect(g).connect(a.destination);
+    o.start(t0);
+    o.stop(t0 + dur + 0.05);
+  }
+  function ding() {
+    const a = audio(); if (!a) return;
+    const t = a.currentTime;
+    tone(a, 1318.5, t, 0.18, "sine", 0.12);
+    tone(a, 1975.5, t + 0.07, 0.3, "sine", 0.08);
+  }
+  function chime() {
+    const a = audio(); if (!a) return;
+    const t = a.currentTime;
+    [784, 988, 1175, 1568].forEach((f, i) => tone(a, f, t + i * 0.09, 0.35, "triangle", 0.12));
+  }
+  function fanfare() {
+    const a = audio(); if (!a) return;
+    const t = a.currentTime + 0.05;
+    const seq = [[523.3, 0, 0.14], [523.3, 0.16, 0.14], [523.3, 0.32, 0.14], [659.3, 0.48, 0.3], [587.3, 0.8, 0.14], [659.3, 0.96, 0.14], [784, 1.12, 0.9]];
+    seq.forEach(([f, d, l]) => { tone(a, f, t + d, l, "square", 0.07); tone(a, f / 2, t + d, l, "triangle", 0.1); });
+    [523.3, 659.3, 784, 1046.5].forEach((f) => tone(a, f, t + 1.12, 1.6, "sawtooth", 0.035));
+    // drum-ish pops for the fireworks
+    for (let i = 0; i < 10; i++) {
+      const s = t + 2 + i * 0.45 + Math.random() * 0.2;
+      tone(a, 90 + Math.random() * 60, s, 0.25, "sine", 0.18);
+    }
+  }
+  function renderSound() {
+    $("soundBtn").textContent = state.sound ? "Som: ligado" : "Som: desligado";
+    $("soundBtn").setAttribute("aria-pressed", String(state.sound));
+  }
+  $("soundBtn").addEventListener("click", () => { state.sound = !state.sound; save(); renderSound(); if (state.sound) ding(); });
+  renderSound();
+
+  // ---------- confetti + fireworks engine ----------
+  const fx = (() => {
+    const cv = $("fx");
+    const ctx = cv.getContext("2d");
+    const COLORS = ["#ffc72c", "#62bb46", "#2b57e0", "#e84b3c", "#ffffff", "#ff7ab6", "#8ed44f"];
+    const MAX = reduced ? 250 : 1400;
+    let W = 0, H = 0, parts = [], raf = 0, rainUntil = 0, fireworksUntil = 0, nextFirework = 0;
+    const rnd = (a, b) => a + Math.random() * (b - a);
+    const pick = (arr) => arr[(Math.random() * arr.length) | 0];
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = innerWidth; H = innerHeight;
+      cv.width = W * dpr; cv.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resize();
+    addEventListener("resize", resize);
+
+    function confetto(x, y, vx, vy) {
+      if (parts.length >= MAX) return;
+      const r = Math.random();
+      parts.push({
+        kind: "c", x, y, vx, vy, rot: rnd(0, 6.28), vr: rnd(-0.25, 0.25), tilt: rnd(0, 6.28), vt: rnd(0.05, 0.2),
+        w: rnd(6, 13), h: rnd(4, 8), color: pick(COLORS), shape: r < 0.18 ? "circle" : r < 0.3 ? "star" : "rect",
+        wob: rnd(0, 6.28), life: 1, fade: 0,
+      });
+    }
+    function spark(x, y, vx, vy, color) {
+      if (parts.length >= MAX) return;
+      parts.push({ kind: "s", x, y, px: x, py: y, vx, vy, color, life: 1, fade: rnd(0.011, 0.02) });
+    }
+    function burst(x, y, n = 60, power = 10) {
+      for (let i = 0; i < n; i++) {
+        const a = rnd(0, Math.PI * 2), s = rnd(power * 0.3, power);
+        confetto(x, y, Math.cos(a) * s, Math.sin(a) * s - power * 0.35);
+      }
+      start();
+    }
+    function cannon(side) {
+      const x = side === "left" ? 0 : W, dir = side === "left" ? 1 : -1;
+      const n = reduced ? 40 : 160;
+      for (let i = 0; i < n; i++) {
+        const a = rnd(-Math.PI * 0.42, -Math.PI * 0.2), s = rnd(12, 24);
+        confetto(x, H, Math.cos(a) * s * dir, Math.sin(a) * s * (H / 800 + 0.4));
+      }
+      start();
+    }
+    function firework(x, y) {
+      const color = pick(COLORS), n = reduced ? 30 : 80;
+      for (let i = 0; i < n; i++) {
+        const a = (i / n) * Math.PI * 2, s = rnd(3, 7.5);
+        spark(x, y, Math.cos(a) * s, Math.sin(a) * s, Math.random() < 0.2 ? "#ffffff" : color);
+      }
+      start();
+    }
+    function rain(ms) { rainUntil = performance.now() + ms; start(); }
+    function fireworks(ms) { fireworksUntil = performance.now() + ms; nextFirework = 0; start(); }
+    function stopAll() { rainUntil = 0; fireworksUntil = 0; }
+
+    function drawStar(x, y, r) {
+      ctx.beginPath();
+      for (let i = 0; i < 10; i++) {
+        const rr = i % 2 ? r * 0.45 : r, a = (i * Math.PI) / 5 - Math.PI / 2;
+        ctx.lineTo(x + Math.cos(a) * rr, y + Math.sin(a) * rr);
+      }
+      ctx.closePath();
+      ctx.fill();
+    }
+    function tick(now) {
+      ctx.clearRect(0, 0, W, H);
+      if (now < rainUntil) {
+        for (let i = 0; i < (reduced ? 1 : 5); i++) confetto(rnd(0, W), -20, rnd(-1, 1), rnd(1, 4));
+      }
+      if (now < fireworksUntil && now > nextFirework) {
+        firework(rnd(W * 0.12, W * 0.88), rnd(H * 0.1, H * 0.45));
+        nextFirework = now + rnd(260, 620);
+      }
+      for (const p of parts) {
+        if (p.kind === "c") {
+          p.vx *= 0.985; p.vy = p.vy * 0.985 + 0.22;
+          if (p.vy > 5.5) p.vy = 5.5;
+          p.wob += 0.08;
+          p.x += p.vx + Math.sin(p.wob) * 0.9;
+          p.y += p.vy;
+          p.rot += p.vr; p.tilt += p.vt;
+          if (p.y > H + 30) p.life = 0;
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rot);
+          ctx.scale(1, Math.cos(p.tilt));
+          ctx.fillStyle = p.color;
+          if (p.shape === "circle") { ctx.beginPath(); ctx.arc(0, 0, p.h * 0.6, 0, 6.28); ctx.fill(); }
+          else if (p.shape === "star") drawStar(0, 0, p.w * 0.6);
+          else ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+          ctx.restore();
+        } else {
+          p.px = p.x; p.py = p.y;
+          p.vx *= 0.975; p.vy = p.vy * 0.975 + 0.06;
+          p.x += p.vx; p.y += p.vy;
+          p.life -= p.fade;
+          ctx.globalAlpha = Math.max(p.life, 0);
+          ctx.strokeStyle = p.color;
+          ctx.lineWidth = 2.4;
+          ctx.beginPath(); ctx.moveTo(p.px, p.py); ctx.lineTo(p.x, p.y); ctx.stroke();
+          ctx.globalAlpha = 1;
+        }
+      }
+      parts = parts.filter((p) => p.life > 0 && p.x > -60 && p.x < W + 60);
+      if (parts.length || now < rainUntil || now < fireworksUntil) raf = requestAnimationFrame(tick);
+      else { raf = 0; ctx.clearRect(0, 0, W, H); }
+    }
+    function start() { if (!raf) raf = requestAnimationFrame(tick); }
+    return { burst, cannon, firework, rain, fireworks, stopAll };
+  })();
+
+  // ---------- the party ----------
+  const BALLOON_COLORS = ["#ffc72c", "#62bb46", "#2b57e0", "#e84b3c", "#ff7ab6"];
+  $("balloons").innerHTML = Array.from({ length: 14 }, (_, i) =>
+    `<span class="balloon" style="left:${(i * 7.3 + 2) % 96}%;--c:${BALLOON_COLORS[i % 5]};--t:${7 + (i % 5) * 1.3}s;--delay:${-(i * 0.9)}s;transform:scale(${0.7 + (i % 3) * 0.2})"></span>`
+  ).join("");
+
+  let partyTimers = [];
+  function blast() {
+    fanfare();
+    [0, 700, 1400, 2400, 3600].forEach((d, i) =>
+      partyTimers.push(setTimeout(() => { fx.cannon("left"); fx.cannon("right"); if (i === 0) fx.burst(innerWidth / 2, innerHeight * 0.4, 200, 18); }, d))
+    );
+    fx.rain(12000);
+    fx.fireworks(10000);
+  }
+  function party(demo) {
+    const t = totals();
+    const money = demo ? GOAL_MONEY : t.money;
+    const pass = demo ? GOAL_PASS : t.pass;
+    $("partyBig").innerHTML = `${brl(money)}<small>${nf.format(pass)} passaportes anuais vendidos</small>`;
+    $("party").hidden = false;
+    $("moreConfetti").focus();
+    blast();
+  }
+  function closeParty() {
+    $("party").hidden = true;
+    partyTimers.forEach(clearTimeout);
+    partyTimers = [];
+    fx.stopAll();
+  }
+  $("moreConfetti").addEventListener("click", blast);
+  $("closeParty").addEventListener("click", closeParty);
+  $("demoParty").addEventListener("click", () => party(true));
+  $("doneBadge").addEventListener("click", () => party());
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("party").hidden) closeParty(); });
+
+  // ---------- Black Friday countdown ----------
+  const pad = (n) => String(n).padStart(2, "0");
+  function tickBF() {
+    const now = Date.now();
+    if (now >= BF_START && now < BF_END) {
+      $("bfTitle").textContent = "Black Friday Hopi Hari";
+      $("bfClock").hidden = true;
+      $("bfLive").hidden = false;
+    } else if (now >= BF_END) {
+      $("bfTitle").textContent = "Black Friday encerrada";
+      $("bfClock").hidden = true;
+      $("bfLive").hidden = true;
+    } else {
+      let s = Math.floor((BF_START - now) / 1000);
+      const d = Math.floor(s / 86400); s -= d * 86400;
+      const h = Math.floor(s / 3600); s -= h * 3600;
+      const m = Math.floor(s / 60); s -= m * 60;
+      $("bfD").textContent = d; $("bfH").textContent = pad(h); $("bfM").textContent = pad(m); $("bfS").textContent = pad(s);
+    }
+  }
+  tickBF();
+  setInterval(tickBF, 1000);
+
+  render(false);
+})();
+</script>
+</body>
+</html>

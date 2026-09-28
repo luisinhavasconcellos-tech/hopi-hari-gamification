@@ -62,6 +62,22 @@ externos): pode ser arrastada para Netlify/Vercel, servida do GitHub Pages, ou
 aberta a partir de qualquer servidor de ficheiros. Para a reunião, basta
 `npm run dev` num portátil — funciona sem internet.
 
+## Cronômetro da meta Black Friday (`public/cronometro.html`)
+
+Painel para acompanhar a meta de **R$ 5.000.000 (10.000 passaportes anuais)**
+da Black Friday. É um único ficheiro HTML, sem build: basta abri-lo no browser
+(ou em `/cronometro.html` depois do deploy) e pô-lo numa TV.
+
+- **Registar vendas** com os botões +1 / +10 / +50 / +100 ou com quantidade e
+  preço médio (R$ 500 por defeito). Cada venda faz rodar os contadores.
+- A **roda-gigante** acende uma cabine a cada 1.000 passaportes (10% da meta),
+  com confete e aviso.
+- Ao chegar a 100%: **festa** com confete, fogo de artifício, balões e fanfarra.
+  O botão "Ver a festa" mostra-a sem alterar os números.
+- "Corrigir totais" acerta os números com o fecho do dia; "Zerar" apaga tudo.
+- As vendas ficam guardadas no `localStorage` desse browser. Duas abas no mesmo
+  computador (ex.: TV + portátil) sincronizam sozinhas; dispositivos diferentes não.
+
 ## Stack
 
 React 18 + TypeScript + Vite. Sem mais dependências: animações em CSS,
