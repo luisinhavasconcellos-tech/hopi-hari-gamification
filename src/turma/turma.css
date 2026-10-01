@@ -6,8 +6,8 @@
 
 /* ---------- Hub ---------- */
 
-.thub-header {
-  padding-bottom: 12px;
+.screen-header.thub-header {
+  padding-bottom: 14px;
 }
 
 /* group photo on a soft stage */
@@ -22,6 +22,7 @@
     linear-gradient(180deg, #cfe0ff 0%, #e6eeff 58%, #e2f3da 100%);
   box-shadow: var(--shadow-card), inset 0 0 0 1px rgba(28, 62, 184, 0.06);
   isolation: isolate;
+  flex-shrink: 0;
 }
 
 .thub-hero-sun {
@@ -89,26 +90,30 @@
   50% { transform: translateX(-50%) translateY(-3px); }
 }
 
-.thub-hero-badge {
+.thub-hero-hi {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 26px;
+  right: 56%;
   z-index: 3;
-  font-size: 11.5px;
-  font-weight: 800;
-  color: var(--blue-deep);
-  background: rgba(255, 255, 255, 0.92);
-  padding: 5px 10px;
-  border-radius: 999px;
-  box-shadow: 0 3px 10px rgba(18, 42, 128, 0.12);
-}
-.thub-hero-badge strong {
-  color: var(--green-deep);
   font-size: 13px;
+  font-weight: 900;
+  color: var(--blue);
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 14px 14px 4px 14px;
+  box-shadow: 0 4px 12px rgba(18, 42, 128, 0.16);
+  animation: thub-hi 3.2s ease-in-out infinite;
+  transform-origin: 100% 100%;
+}
+@keyframes thub-hi {
+  0%, 70%, 100% { transform: rotate(0); }
+  78% { transform: rotate(-6deg); }
+  86% { transform: rotate(4deg); }
 }
 
 /* game cards (structure of .hh-game-card, Hopi day style) */
 .thub-cards {
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -188,8 +193,10 @@
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.35));
 }
 .thub-glyph.home {
-  background: #e8efff;
+  background: linear-gradient(160deg, #e8efff, #d6e2ff);
   color: var(--blue);
+}
+.thub-glyph.home.has-pet {
   align-items: flex-end;
 }
 .thub-glyph.home .thub-pet {
@@ -238,7 +245,7 @@
   gap: 6px;
   font-size: 11px;
   font-weight: 800;
-  color: var(--green-deep);
+  color: #3a7d27;
 }
 .thub-pill {
   display: inline-flex;
@@ -306,6 +313,7 @@
 
 /* collection strip */
 .thub-collection {
+  flex-shrink: 0;
   padding: 22px 0 6px;
 }
 .thub-collection-head {
@@ -324,7 +332,7 @@
   color: var(--ink-dim);
 }
 .thub-collection-head strong {
-  color: var(--green-deep);
+  color: #3a7d27;
   font-size: 15px;
 }
 .thub-progress {
@@ -380,12 +388,12 @@
   left: 8px;
   font-size: 10.5px;
   font-weight: 900;
-  color: var(--ink-faint);
+  color: var(--ink-dim);
 }
 .thub-slot-name {
   font-size: 12px;
   font-weight: 900;
-  color: var(--ink-faint);
+  color: var(--ink-dim);
   white-space: nowrap;
 }
 .thub-slot.got .thub-slot-name {
@@ -394,15 +402,16 @@
 
 /* ---------- Mapa da Turma ---------- */
 
-.tm-screen {
-  padding-bottom: 96px;
+.screen.tm-screen {
+  padding-bottom: 100px;
 }
 
 .tm-head {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 52px 16px 6px;
+  padding: 50px 16px 4px;
+  flex-shrink: 0;
 }
 .tm-back {
   width: 44px;
@@ -435,26 +444,13 @@
   margin-bottom: 2px;
 }
 .tm-head-text h1 {
-  font-size: 21px;
+  font-size: 22px;
   line-height: 1.1;
   color: var(--blue);
 }
-.tm-count {
-  flex-shrink: 0;
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--ink-dim);
-  background: #fff;
-  box-shadow: var(--shadow-card);
-  padding: 7px 11px;
-  border-radius: 999px;
-}
-.tm-count strong {
-  color: var(--green-deep);
-  font-size: 14px;
-}
 .tm-sub {
-  padding: 6px 18px 12px;
+  flex-shrink: 0;
+  padding: 4px 18px 12px;
   font-size: 12.5px;
   line-height: 1.45;
   color: var(--ink-dim);
@@ -596,8 +592,8 @@
   animation: tm-hop 0.55s ease;
 }
 .tm-mon.dim {
-  opacity: 0.72;
-  filter: saturate(0.7);
+  opacity: 0.88;
+  filter: saturate(0.75);
 }
 @keyframes tm-ring {
   0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--zone) 55%, transparent); }
@@ -675,10 +671,9 @@
 
 .tm-arrow {
   position: absolute;
-  top: 50%;
+  bottom: 10px;
   width: 44px;
   height: 44px;
-  margin-top: -22px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.94);
   color: var(--blue);
@@ -707,7 +702,7 @@
 .tm-hint {
   position: absolute;
   left: 50%;
-  bottom: 12px;
+  bottom: 18px;
   transform: translateX(-50%);
   z-index: 8;
   display: inline-flex;
@@ -738,15 +733,20 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px;
-  padding: 12px 12px 0;
+  gap: 0 6px;
+  padding: 6px 12px 0;
 }
 .tm-legend button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.tm-legend button > span {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  min-height: 34px;
-  padding: 0 11px 0 9px;
+  height: 34px;
+  padding: 0 12px 0 10px;
   border-radius: 999px;
   background: #fff;
   box-shadow: 0 3px 10px rgba(18, 42, 128, 0.08);
@@ -756,7 +756,7 @@
   color: var(--ink);
   transition: transform 0.15s;
 }
-.tm-legend button:active {
+.tm-legend button:active > span {
   transform: scale(0.95);
 }
 .tm-legend i {
@@ -767,15 +767,30 @@
 
 /* who lives where (port of the board's zone cards) */
 .tm-zones {
+  flex-shrink: 0;
   padding: 20px 16px 0;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.tm-zones h2 {
+.tm-zones-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 2px 2px;
+}
+.tm-zones-head h2 {
   font-size: 18px;
   color: var(--blue);
-  padding: 0 2px 2px;
+}
+.tm-zones-head span {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink-dim);
+}
+.tm-zones-head strong {
+  font-size: 15px;
+  color: #3a7d27;
 }
 .tm-zone {
   background: #fff;
@@ -809,7 +824,7 @@
 .tm-zone-mon {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
   min-height: 52px;
   padding: 4px 4px 4px 0;
   text-align: left;
@@ -819,8 +834,8 @@
   background: #f2f6ff;
 }
 .tm-ava {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
@@ -859,11 +874,9 @@
 }
 .tm-zone-mon-text small {
   font-size: 11.5px;
+  line-height: 1.25;
   font-weight: 600;
   color: var(--ink-dim);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 /* bottom card for the selected monster */
@@ -875,7 +888,7 @@
   z-index: 32;
   background: #fff;
   border-radius: 22px;
-  padding: 14px 14px 14px;
+  padding: 12px 12px 12px;
   box-shadow: 0 -4px 30px rgba(18, 42, 128, 0.28), 0 0 0 1px var(--line);
 }
 .tm-card-close {
@@ -896,8 +909,8 @@
   padding-right: 34px;
 }
 .tm-card-ava {
-  width: 66px;
-  height: 66px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
@@ -919,7 +932,7 @@
   gap: 2px;
 }
 .tm-card-id h2 {
-  font-size: 22px;
+  font-size: 21px;
   line-height: 1.05;
   color: var(--blue);
 }
@@ -942,9 +955,9 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  margin: 12px 0 12px;
-  padding: 10px 12px;
+  gap: 6px;
+  margin: 10px 0;
+  padding: 9px 12px;
   border-radius: 14px;
   background: #f2f6ff;
 }
@@ -995,14 +1008,20 @@
 .tm-hunt img {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
 }
-.tm-hunt:disabled {
+.btn-primary.tm-hunt {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+.btn-primary.tm-hunt:disabled {
   opacity: 1;
-  background: #e8efff;
-  color: var(--ink-dim);
+  background: rgba(98, 187, 70, 0.14);
+  border: 1.5px solid rgba(98, 187, 70, 0.5);
+  color: #3a7d27;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .thub-fig,
+  .thub-hero-hi,
   .tm-hint,
   .tm-route line,
   .tm-mon.active .tm-mon-ring,

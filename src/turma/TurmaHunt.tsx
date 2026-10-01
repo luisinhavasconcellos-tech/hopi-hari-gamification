@@ -30,9 +30,10 @@ type View = "mapa" | "camera" | "captura" | "result";
 type Gain = ReturnType<typeof catchGain>;
 
 // Zoomed map layer: the 2000x993 park map drawn 1400px wide, with the visitor
-// centred horizontally and at 65% of the frame height.
+// centred horizontally and a little below the middle of the frame.
 const MAP_W = 1400;
 const MAP_H = (1400 * 993) / 2000;
+const USER_TOP = 68; // % of the frame height
 const FIG_SCALE = 0.58; // figure height on the zoomed map vs the 1536px board
 const FAR: TurmaId[] = TURMA.filter((m) => !TURMA_NEAR.includes(m.id)).map((m) => m.id);
 
@@ -89,11 +90,12 @@ export function TurmaHunt({
   const [quality, setQuality] = useState<ThrowQuality>("otimo");
   const [lit, setLit] = useState(0);
   const [locked, setLocked] = useState(false);
-  const [toast, setToast] = useState<string | null>(null);
+  const [toast, setToast] = useState<{ title: string; sub?: string } | null>(null);
   const [encounter, setEncounter] = useState(0); // remounts the ring + monster pop
   const [result, setResult] = useState<{ id: TurmaId; q: ThrowQuality; gain: Gain } | null>(null);
 
   const timers = useRef<number[]>([]);
+  const busy = useRef(false); // an orb is on its way (guards double taps)
   const toastTimer = useRef<number | undefined>(undefined);
   const ringEl = useRef<HTMLSpanElement | null>(null);
   const ringT0 = useRef(0);
@@ -102,6 +104,11 @@ export function TurmaHunt({
   const cardEl = useRef<HTMLElement | null>(null);
   const farEl = useRef<HTMLElement | null>(null);
   const [throwDy, setThrowDy] = useState(-240);
+  // Stable callback: runs only when a ring mounts (its animation starts then).
+  const ringRef = useCallback((el: HTMLSpanElement | null) => {
+    if (el) ringT0.current = performance.now();
+    ringEl.current = el;
+  }, []);
 
   const later = useCallback((fn: () => void, ms: number) => {
     const id = window.setTimeout(() => {
@@ -113,14 +120,15 @@ export function TurmaHunt({
   const clearTimers = useCallback(() => {
     timers.current.forEach((t) => window.clearTimeout(t));
     timers.current = [];
+    busy.current = false;
     window.clearTimeout(toastTimer.current);
   }, []);
   useEffect(() => clearTimers, [clearTimers]);
 
-  const showToast = useCallback((text: string | null) => {
+  const showToast = useCallback((t: { title: string; sub?: string } | null) => {
     window.clearTimeout(toastTimer.current);
-    setToast(text);
-    if (text) toastTimer.current = window.setTimeout(() => setToast(null), 3600);
+    setToast(t);
+    if (t) toastTimer.current = window.setTimeout(() => setToast(null), 3800);
   }, []);
 
   const m = TURMA_BY_ID[sel];
@@ -158,9 +166,10 @@ export function TurmaHunt({
   };
 
   const throwOrb = () => {
-    if (view !== "camera" || throwing || orbs <= 0) return;
+    if (view !== "camera" || throwing || busy.current || orbs <= 0) return;
     const q = throwQuality(ringScaleNow(ringEl.current, ringT0.current, r.ringSeconds));
     if (!game.spendOrb()) return;
+    busy.current = true;
     const id = sel;
     const caught = catches(id, q, game.turmaEscaped.includes(id));
     const orbsLeft = orbs - 1;
@@ -183,6 +192,7 @@ export function TurmaHunt({
       later(() => setLocked(true), FLIGHT_MS + STAR_MS[2]);
       later(() => {
         const gain = game.catchTurma(id, q);
+        busy.current = false;
         setResult({ id, q, gain });
         setThrowing(false);
         setView("result");
@@ -191,10 +201,14 @@ export function TurmaHunt({
       later(() => {
         const mon = TURMA_BY_ID[id];
         game.markEscaped(id);
+        busy.current = false;
         setThrowing(false);
         setEncounter((e) => e + 1);
         setView("camera");
-        showToast(`${art(mon, true)} ${mon.name} escapou da Hari Orb!${orbsLeft > 0 ? " Tenta outra vez." : ""}`);
+        showToast({
+          title: `${art(mon, true)} ${mon.name} escapou da Hari Orb!`,
+          sub: orbsLeft > 0 ? "Tenta outra vez." : undefined,
+        });
       }, FLIGHT_MS + ESCAPE_MS);
     }
   };
@@ -240,30 +254,27 @@ export function TurmaHunt({
                 className={`th-mon ${throwing ? "shake" : encounter > 1 ? "back" : ""}`}
               />
             </div>
-            {!throwing && (
+            {!throwing && orbs > 0 && (
               <div className="th-ring" aria-hidden="true" key={`ring-${encounter}`}>
                 <span className="th-ring-base" />
                 <span className="th-ring-sweet" />
                 <span
                   className="th-ring-live"
-                  ref={(el) => {
-                    if (el && el !== ringEl.current) ringT0.current = performance.now();
-                    ringEl.current = el;
-                  }}
+                  ref={ringRef}
                   style={{ animationDuration: `${r.ringSeconds}s` }}
                 />
               </div>
             )}
             {throwing && (
               <div className="th-qlabel" aria-live="assertive">
-                <span>{q.label}!</span>
+                <span className="th-outline">{q.label}!</span>
               </div>
             )}
             <div className="th-hint">
               <span>
                 {orbs <= 0
-                  ? "Acabaram-se as Hari Orbs. Ganha mais nas missões."
-                  : "Toca na Hari Orb quando o anel estiver pequeno"}
+                  ? "Sem Hari Orbs. Ganha mais nas missões."
+                  : "Toca na Hari Orb quando o anel encolher"}
               </span>
             </div>
             <button
@@ -285,7 +296,7 @@ export function TurmaHunt({
           <div className="th-captura">
             <span className="th-flash" aria-hidden="true" />
             <div className="th-captura-head" role="status">
-              <strong>{locked ? "Apanhado… clique!" : "Segura firme…"}</strong>
+              <strong className="th-outline">{locked ? "Já está!" : "Segura firme…"}</strong>
               <span className="th-qchip">
                 Lançamento {q.label} ×{q.multLabel}
               </span>
@@ -309,7 +320,12 @@ export function TurmaHunt({
         )}
 
         <div className="th-toast" role="status" aria-live="polite">
-          {toast && view === "camera" && !throwing && <span key={toast + encounter}>{toast}</span>}
+          {toast && view === "camera" && !throwing && (
+            <span key={encounter}>
+              <strong>{toast.title}</strong>
+              {toast.sub && <small> {toast.sub}</small>}
+            </span>
+          )}
         </div>
 
         <div className="th-hud">
@@ -350,12 +366,11 @@ export function TurmaHunt({
   // ---------------------------------------------------------------- mapa
   const caughtCount = game.turmaCaught.length;
   const farLeft = FAR.filter((id) => !game.turmaCaught.includes(id)).length;
-  const near = TURMA_NEAR.includes(sel);
   const layer: CSSProperties = {
     width: MAP_W,
     height: MAP_H,
     left: `calc(50% - ${(USER_POS.x / 100) * MAP_W}px)`,
-    top: `calc(65% - ${(USER_POS.y / 100) * MAP_H}px)`,
+    top: `calc(${USER_TOP}% - ${(USER_POS.y / 100) * MAP_H}px)`,
   };
 
   return (
@@ -367,11 +382,11 @@ export function TurmaHunt({
           </svg>
         </button>
         <div className="th-top-chips">
-          <span className="coin-chip" aria-label={`${formatCoins(game.coins)} Hari Coins`}>
-            <CoinIcon size={16} />
+          <span className="th-chip" aria-label={`${formatCoins(game.coins)} Hari Coins`}>
+            <CoinIcon size={20} />
             {formatCoins(game.coins)}
           </span>
-          <span className="th-orb-chip" aria-label={orbsLabel(orbs)}>
+          <span className="th-chip" aria-label={orbsLabel(orbs)}>
             <img src={HARI_ORB_IMG} alt="" />
             {orbs}
           </span>
@@ -466,7 +481,6 @@ export function TurmaHunt({
             </div>
             <span className="th-card-where">
               {ZONES[m.zone].name} · {m.walk.meters} m
-              {near ? " · aqui pertinho" : ` · ${m.walk.minutes} min a pé`}
             </span>
           </div>
           <div className="th-card-pts">
@@ -474,21 +488,22 @@ export function TurmaHunt({
             <small>pontos</small>
           </div>
         </div>
-        {isCaught && (
-          <p className="th-card-done">
-            <CheckIcon size={13} /> {art(m, true)} {m.name} já está na tua Turma
-          </p>
-        )}
-        <button type="button" className="btn-primary btn-block th-cta" disabled={isCaught} onClick={openCamera}>
-          <CameraIcon size={19} />
-          Abrir câmara e apanhar
+        <button
+          type="button"
+          className={`btn-primary btn-block th-cta ${isCaught ? "done" : ""}`}
+          disabled={isCaught}
+          onClick={openCamera}
+          aria-label={isCaught ? `Abrir câmara e apanhar: indisponível, ${art(m)} ${m.name} já está na tua Turma` : undefined}
+        >
+          {isCaught ? <CheckIcon size={16} /> : <CameraIcon size={19} />}
+          {isCaught ? `${art(m, true)} ${m.name} já está na tua Turma` : "Abrir câmara e apanhar"}
         </button>
       </section>
 
       <section className="th-far" ref={farEl} aria-labelledby="th-far-title">
         <div className="th-far-head">
           <h2 id="th-far-title">Pelo parque</h2>
-          <small>Mais longe, mas também os podes apanhar</small>
+          <small>Mais longe daqui, mas também se apanham</small>
         </div>
         <div className="th-far-list">
           {FAR.map((id) => {

@@ -16,7 +16,7 @@ const GROUP: { id: TurmaId; x: number; y: number; h: number }[] = [
   { id: "zigui", x: 14, y: 52, h: 92 },
   { id: "luneli", x: 35, y: 58, h: 88 },
   { id: "azuri", x: 58, y: 56, h: 122 },
-  { id: "mimora", x: 82, y: 54, h: 86 },
+  { id: "mimora", x: 83, y: 62, h: 86 },
   { id: "tutty", x: 9, y: 14, h: 96 },
   { id: "nuvita", x: 29, y: 10, h: 100 },
   { id: "fagulito", x: 50, y: 6, h: 108 },
@@ -78,7 +78,7 @@ export function Turma() {
       <header className="screen-header thub-header">
         <span className="screen-kicker">A Turma · 9 monstros</span>
         <h1>A Turma do Hopi Hari</h1>
-        <p className="screen-sub">Encontra, apanha e cuida dos nove monstros do parque.</p>
+        <p className="screen-sub">Encontra-os, apanha-os e leva um para casa.</p>
       </header>
 
       <div className="thub-hero" role="img" aria-label="Fotografia de grupo dos nove monstros da Turma do Hopi Hari">
@@ -106,9 +106,7 @@ export function Turma() {
             </span>
           );
         })}
-        <span className="thub-hero-badge">
-          <strong>{caught}</strong>/{TURMA.length} na tua coleção
-        </span>
+        <span className="thub-hero-hi" aria-hidden="true">Olá!</span>
       </div>
 
       <div className="thub-cards">
@@ -136,7 +134,9 @@ export function Turma() {
             <small>Aponta a câmara e lança a Hari Orb no momento certo</small>
             <span className="thub-meta">
               <span className="thub-pill">
-                <b>{caught}</b>/{TURMA.length} apanhados
+                <span>
+                  <b>{caught}</b>/{TURMA.length} apanhados
+                </span>
               </span>
               <span className="thub-pill orb">
                 <img src={HARI_ORB_IMG} alt="" />
@@ -149,7 +149,7 @@ export function Turma() {
 
         <button className="thub-card home" onClick={() => setView("casa")}>
           <span
-            className={`thub-glyph home${pet?.morto ? " gone" : ""}`}
+            className={`thub-glyph home${pet ? " has-pet" : ""}${pet?.morto ? " gone" : ""}`}
             style={petMon ? { background: petMon.colors.tint } : undefined}
             aria-hidden="true"
           >
@@ -185,7 +185,7 @@ export function Turma() {
             ) : (
               <>
                 <small>Leva um monstro para casa</small>
-                <span className="thub-meta">Dá-lhe de comer, banho e conversa</span>
+                <span className="thub-meta">Dá-lhe comida, banho e carinho</span>
               </>
             )}
           </span>

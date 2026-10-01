@@ -56,6 +56,29 @@ export function TurmaMap({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Keep the selected monster (and its name tag) visible above the bottom card.
+  useEffect(() => {
+    if (!selected) return;
+    const raf = requestAnimationFrame(() => {
+      const screen = screenRef.current;
+      const tag = screen?.querySelector<HTMLElement>(`.tm-tag[data-id="${selected}"]`);
+      const card = screen?.parentElement?.querySelector<HTMLElement>(".tm-card");
+      if (!screen || !tag || !card) return;
+      const fig = TURMA_BY_ID[selected];
+      const tagRect = tag.getBoundingClientRect();
+      const top = tagRect.top - Math.round(fig.map.h * FIG_SCALE * 1.14) - 12;
+      // offsetTop ignores the card's pop-in transform
+      const host = card.offsetParent as HTMLElement | null;
+      const cardTop = (host?.getBoundingClientRect().top ?? 0) + card.offsetTop;
+      const overlap = tagRect.bottom + 12 - cardTop;
+      const above = screen.getBoundingClientRect().top + 8 - top;
+      if (overlap > 0) screen.scrollBy({ top: overlap, behavior: reduceMotion ? "auto" : "smooth" });
+      else if (above > 0) screen.scrollBy({ top: -above, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+    return () => cancelAnimationFrame(raf);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selected]);
+
   useEffect(() => {
     if (!selected) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setSelected(null);
@@ -91,7 +114,10 @@ export function TurmaMap({
       v.setPointerCapture(d.id);
       v.classList.add("dragging");
     }
-    if (d.moved) v.scrollLeft = d.left - dx;
+    if (d.moved) {
+      v.scrollLeft = d.left - dx;
+      if (!panned) setPanned(true);
+    }
   };
   const endDrag = () => {
     const d = drag.current;
@@ -106,6 +132,7 @@ export function TurmaMap({
   const nudge = (dir: -1 | 1) => {
     const v = viewRef.current;
     if (!v) return;
+    setPanned(true);
     v.scrollBy({ left: dir * v.clientWidth * 0.7, behavior: reduceMotion ? "auto" : "smooth" });
   };
 
@@ -125,20 +152,16 @@ export function TurmaMap({
             <span>Mapa da Turma</span>
             <h1>Onde vive cada monstro</h1>
           </div>
-          <span className="tm-count" aria-label={`${caughtCount} de ${TURMA.length} monstros apanhados`}>
-            <strong>{caughtCount}</strong>/{TURMA.length}
-          </span>
         </header>
-        <p className="tm-sub">Toca num monstro para saberes onde vive e como lá chegar a pé.</p>
+        <p className="tm-sub">Toca num monstro para saberes como lá chegar.</p>
 
         <div className="tm-frame">
           <div
             className="tm-view"
             ref={viewRef}
-            onScroll={() => {
-              updateEdges();
-              if (!panned) setPanned(true);
-            }}
+            onScroll={updateEdges}
+            onWheel={() => !panned && setPanned(true)}
+            onTouchStart={() => !panned && setPanned(true)}
             onPointerDown={onPointerDown}
             onPointerMove={onPointerMove}
             onPointerUp={endDrag}
@@ -212,6 +235,7 @@ export function TurmaMap({
                   <span
                     key={m.id}
                     className={`tm-tag${m.id === selected ? " active" : ""}`}
+                    data-id={m.id}
                     style={{ left: `${m.map.x}%`, top: `${m.map.y}%`, ["--zone" as string]: ZONES[m.zone].color }}
                     aria-hidden="true"
                   >
@@ -251,15 +275,22 @@ export function TurmaMap({
 
         <div className="tm-legend" role="group" aria-label="Zonas do parque">
           {ZONE_ORDER.map((z) => (
-            <button key={z} onClick={() => centreOn(zoneCentre(z))} aria-label={`Ir para ${ZONES[z].name}`}>
-              <i style={{ background: ZONES[z].color }} />
-              {ZONES[z].name}
+            <button key={z} onClick={() => centreOn(zoneCentre(z))} aria-label={`Ver ${ZONES[z].name} no mapa`}>
+              <span>
+                <i style={{ background: ZONES[z].color }} />
+                {ZONES[z].name}
+              </span>
             </button>
           ))}
         </div>
 
         <section className="tm-zones" aria-label="Quem vive em cada zona">
-          <h2>Quem vive onde</h2>
+          <div className="tm-zones-head">
+            <h2>Quem vive onde</h2>
+            <span>
+              <strong>{caughtCount}</strong>/{TURMA.length} apanhados
+            </span>
+          </div>
           {ZONE_ORDER.map((z) => (
             <div key={z} className="tm-zone" style={{ ["--zone" as string]: ZONES[z].color }}>
               <span className="tm-zone-name">
@@ -381,7 +412,9 @@ function MonsterCard({
 
       <button className="btn-primary btn-block tm-hunt" onClick={onHunt} disabled={caught}>
         {caught ? (
-          "Já apanhado"
+          <>
+            <span aria-hidden="true">✓</span> Já apanhado
+          </>
         ) : (
           <>
             <img src={HARI_ORB_IMG} alt="" width={22} height={22} />
