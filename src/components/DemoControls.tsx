@@ -70,6 +70,7 @@ const PRESETS: { id: DemoPreset; label: string }[] = [
   { id: "quase", label: "Quase (5/6)" },
   { id: "completo", label: "Completo" },
   { id: "horror", label: "Hora do Horror" },
+  { id: "turma", label: "A Turma" },
 ];
 
 export function DemoControls() {

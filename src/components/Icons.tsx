@@ -171,3 +171,12 @@ export function CrosshairIcon({ size = 22, color = "currentColor" }: IconProps) 
     </svg>
   );
 }
+
+export function TurmaIcon({ size = 20, color = "currentColor" }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill={color}>
+      <path d="M12 3c-1 0-1.6.9-1.9 1.8C7 5.4 4.8 8.2 4.8 11.6V18a3 3 0 0 0 3 3h8.4a3 3 0 0 0 3-3v-6.4c0-3.4-2.2-6.2-5.3-6.8C13.6 3.9 13 3 12 3Zm-2.6 8.2a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm5.2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM9.6 16.4h4.8a2.4 2.4 0 0 1-4.8 0Z" />
+      <path d="M4.2 8.4 2.6 6.2M19.8 8.4l1.6-2.2" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
+}

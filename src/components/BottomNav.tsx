@@ -5,11 +5,13 @@ import {
   GhostIcon,
   MapIcon,
   TrophyIcon,
+  TurmaIcon,
 } from "../components/Icons";
 
 const TABS: { id: Tab; label: string; Icon: typeof MapIcon }[] = [
   { id: "missao", label: "Missão", Icon: TrophyIcon },
   { id: "tesouro", label: "Mapa", Icon: MapIcon },
+  { id: "turma", label: "Turma", Icon: TurmaIcon },
   { id: "album", label: "Álbum", Icon: CardsIcon },
   { id: "horror", label: "Horror", Icon: GhostIcon },
   { id: "foto", label: "Foto", Icon: CameraIcon },

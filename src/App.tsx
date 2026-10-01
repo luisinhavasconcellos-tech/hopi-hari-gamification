@@ -11,6 +11,7 @@ import { TreasureHunt } from "./screens/TreasureHunt";
 import { Album } from "./screens/Album";
 import { PhotoChallenge } from "./screens/PhotoChallenge";
 import { Horror } from "./screens/Horror";
+import { Turma } from "./screens/Turma";
 
 function Phone() {
   const game = useGame();
@@ -23,7 +24,7 @@ function Phone() {
           <Welcome />
         ) : (
           <>
-            {game.tab !== "horror" && (
+            {game.tab !== "horror" && game.tab !== "turma" && (
               <button
                 className="home-btn"
                 onClick={game.goHome}
@@ -37,6 +38,7 @@ function Phone() {
             {game.tab === "album" && <Album />}
             {game.tab === "horror" && <Horror />}
             {game.tab === "foto" && <PhotoChallenge />}
+            {game.tab === "turma" && <Turma />}
             <BottomNav />
           </>
         )}
